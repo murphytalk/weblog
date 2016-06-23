@@ -13,14 +13,13 @@ TIMEZONE = 'Asia/Tokyo'
 DEFAULT_LANG = u'en'
 
 
-#PLUGIN_PATHS = ["c:/work/OPEN/pelican-plugins"]
 PLUGIN_PATHS = ["../pelican-plugins"]
 PLUGINS = ["tag_cloud"]
-#THEME="voidy-bootstrap" #mobile friendly
 THEME = "../pelican-themes/pelican-bootstrap3"
 
 #pelican-bootstrap3
 CUSTOM_CSS = 'static/custom.css'
+BOOTSTRAP_FLUID = True
 
 STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/custom.css']
 EXTRA_PATH_METADATA = {
