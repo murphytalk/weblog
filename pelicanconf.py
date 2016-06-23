@@ -14,7 +14,15 @@ DEFAULT_LANG = u'en'
 
 
 PLUGIN_PATHS = ["../pelican-plugins"]
-PLUGINS = ["tag_cloud"]
+PLUGINS = [
+    "tag_cloud",
+    #http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/
+    "better_figures_and_images"
+]
+# Setting for the better_figures_and_images plugin
+RESPONSIVE_IMAGES = True
+FIGURE_NUMBERS = True
+
 THEME = "../pelican-themes/pelican-bootstrap3"
 
 #pelican-bootstrap3

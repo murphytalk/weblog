@@ -2,13 +2,11 @@ Title: ChatOps with Hubot - Anki automation
 Category: computer
 Tags: chatops,anki,bot,coffeescript
 Date: 2016-06-22 23:40
-
-
-Well , this very topic of [ChatOps](https://www.google.co.jp/?ion=1&espv=2#q=chatops) has already been discussed at length by many people, so I am gonna jump to my very first ChatOps with Hubot  right away.
+Well, the very topic of [ChatOps](https://www.google.co.jp/?ion=1&espv=2#q=chatops) has already been discussed at length by many people, so I am gonna jump to my very first ChatOps with Hubot  right away.
 
 First : the motivation.
 
-I have discovered [Anki](https://en.wikipedia.org/wiki/Anki_(software)) for quite a while, it helps me to increase my English vocabulary - and my kid's Chinese vocabulary as well. It comes with a mobile app (only the [Android version](https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en) is free, but I am sure Apple fanboys won't mind to pay extra for their beloved iPhone) which is handy, but still whenever I wanted to add a new word that I bumped into during my reading, it does not feel that convinent: You know what I mean if you have ever tried to manually add a new word to Anki.
+I discovered [Anki](https://en.wikipedia.org/wiki/Anki_(software)) quite a while ago, it has been helping me to expand and improve my English vocabulary - and my kid's Chinese vocabulary as well. It comes with a mobile app (only the [Android version](https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en) is free, but I am sure Apple fanboys won't mind to pay extra for their beloved iPhone) which is handy, but still whenever I wanted to add a new word that I bumped into during my reading, it does not feel that convenient: You know what I mean if you have ever tried to manually add a new word to Anki.
 
 Enter [anki-sync-server](https://github.com/dsnopek/anki-sync-server).
 
@@ -42,19 +40,29 @@ wget --post-data='{"model":"English","fields":{"Word":"exasperate","Meaning":"ir
 
 Next: the goal.
 
-With the logistics being sorted out, here's the deal : next time when I bump into a word that I don't recognize and know, I will paste the word to my slack channle where my bot is wating for commands, and I want my bot to figure out the new word's meaning, pronounciation as well, and then add the results it found to Anki automatically. All I need to do later is to sync my Anki app with my private Anki server.
+With the logistics being sorted out, here's the deal : next time when a new word finds me, I will paste it to my slack channle where my bot is wating for commands, and I want my bot to figure out the new word's meaning, pronounciation, along with examples, and add them to my private Anki server automatically. All I need to do later is to sync my Anki app with the server.
 
-Obviously the bot would need a dictionary, and lucky for him the [Longman dictionary API](http://developer.pearson.com/apis/dictionaries) is free for up to 4,000,000 calls per month (Thank you! Pearson Inc !!).
+Obviously my bot would need a dictionary, and lucky for him the [Longman dictionary API](http://developer.pearson.com/apis/dictionaries) is free for up to 4,000,000 calls per month (Thank you! Pearson Inc !!).
 
-Again, a quick `wget` example:
+Again, a quick `wget` dry run:
 
 ```bash
 wget --header "Accept: application/json" http://api.pearson.com/v2/dictionaries/ldoce5/entries?headword=exasperate
 
 ```
 
-`ldoce5` is the ID of Longman Dictionary of Contemporary English. Note GET is used. Multiple results will be returned as a JSON object.
+`ldoce5` is the ID of Longman Dictionary of Contemporary English. Note `GET` is used. Multiple results will be returned as a JSON object. There are some details to be taken care of, please refer to [this little CoffeeScript](https://github.com/murphytalk/mubot/blob/master/scripts/anki.coffee). By the way, [CoffeeScript](https://en.wikipedia.org/wiki/CoffeeScript) was chosen by the author of Hubot not me, and that's the virgin piece of CoffeeScript of mine, I have every right to be lousy and clumsy :)
 
-This little CoffeeScript 
+What's left is to connect my bot with Slack and join my team (it's called _Under Lu's Roof_, obviously it's meant for family business). This is no-brainer as people in the Hubot community have contributed all sorts of adapters inlcuding [Hubot Slack](https://github.com/slackhq/hubot-slack). It has some limits : the bot cannot recieve direct message ; and it has to be invited into a channel first, etc. but managable.
 
+Finally, let's put it action:
 
+![Bot in Slack]({filename}/images/hubot-anki.png)
+
+Added ! Then I sync in the Anki app:
+
+![Anki App]({filename}/images/anki.png)
+
+Isn't that neat !?
+
+Oh, did I mention that Anki is also being used to help my kid with his Chinese vocabulary? I couldn't find a good online source to look for Chinese character's pronounciation (namely Pinyin), so I wrote a small Python script to do the trick: it outputs pinyin with tune, and the traditional Chinese form if there is any. Will teach my bot this trick for sure !
