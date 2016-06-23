@@ -12,17 +12,22 @@ TIMEZONE = 'Asia/Tokyo'
 
 DEFAULT_LANG = u'en'
 
-STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico']
-EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'}
-}
 
-PLUGIN_PATHS = ["/home/murphy/work/pelican-plugins"]
+#PLUGIN_PATHS = ["c:/work/OPEN/pelican-plugins"]
+PLUGIN_PATHS = ["../pelican-plugins"]
 PLUGINS = ["tag_cloud"]
 #THEME="voidy-bootstrap" #mobile friendly
-#THEME="my-theme"
+THEME = "../pelican-themes/pelican-bootstrap3"
 
+#pelican-bootstrap3
+CUSTOM_CSS = 'static/custom.css'
+
+STATIC_PATHS = ['images', 'extra/robots.txt', 'extra/favicon.ico', 'extra/custom.css']
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/custom.css': {'path': 'static/custom.css'}
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
