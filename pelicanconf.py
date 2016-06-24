@@ -16,7 +16,7 @@ DEFAULT_LANG = u'en'
 
 
 PLUGIN_PATHS = ["../pelican-plugins"]
-PLUGINS = ["tag_cloud"]
+PLUGINS = ["tag_cloud","tipue_search"]
 THEME = "../pelican-themes/pelican-bootstrap3"
 
 #pelican-bootstrap3
@@ -32,6 +32,8 @@ EXTRA_PATH_METADATA = {
 
 USE_FOLDER_AS_CATEGORY = True
 TYPOGRIFY = True
+
+DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 
 #URL
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
