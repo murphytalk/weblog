@@ -2,6 +2,7 @@ Title: ChatOps with Hubot - Anki automation
 Category: computer
 Tags: chatops,anki,bot,coffeescript
 Date: 2016-06-22 23:40
+
 Well, the very topic of [ChatOps](https://www.google.co.jp/?ion=1&espv=2#q=chatops) has already been discussed at length by many people, so I am gonna jump to my very first ChatOps with Hubot  right away.
 
 First : the motivation.
@@ -40,7 +41,7 @@ wget --post-data='{"model":"English","fields":{"Word":"exasperate","Meaning":"ir
 
 Next: the goal.
 
-With the logistics being sorted out, here's the deal : next time when a new word finds me, I will paste it to my slack channle where my bot is wating for commands, and I want my bot to figure out the new word's meaning, pronounciation, along with examples, and add them to my private Anki server automatically. All I need to do later is to sync my Anki app with the server.
+With the logistics being sorted out, here's the deal : next time when a new word finds me, I will paste it to my slack channel where my bot is waiting for commands, and I want my bot to figure out the new word's meaning, pronunciation, along with examples, and add them to my private Anki server automatically. All I need to do later is to sync my Anki app with the server.
 
 Obviously my bot would need a dictionary, and lucky for him the [Longman dictionary API](http://developer.pearson.com/apis/dictionaries) is free for up to 4,000,000 calls per month (Thank you! Pearson Inc !!).
 
@@ -51,9 +52,22 @@ wget --header "Accept: application/json" http://api.pearson.com/v2/dictionaries/
 
 ```
 
-`ldoce5` is the ID of Longman Dictionary of Contemporary English. Note `GET` is used. Multiple results will be returned as a JSON object. There are some details to be taken care of, please refer to [this little CoffeeScript](https://github.com/murphytalk/mubot/blob/master/scripts/anki.coffee). By the way, [CoffeeScript](https://en.wikipedia.org/wiki/CoffeeScript) was chosen by the author of Hubot not me, and that's the virgin piece of CoffeeScript of mine, I have every right to be lousy and clumsy :)
+`ldoce5` is the ID of Longman Dictionary of Contemporary English. Note `GET` is used. Multiple results will be returned as a JSON object. So that's everything we need to automate the task, let's teach my bot the trick.
 
-What's left is to connect my bot with Slack and join my team (it's called _Under Lu's Roof_, obviously it's meant for family business). This is no-brainer as people in the Hubot community have contributed all sorts of adapters inlcuding [Hubot Slack](https://github.com/slackhq/hubot-slack). It has some limits : the bot cannot recieve direct message ; and it has to be invited into a channel first, etc. but managable.
+My bot is a [Hubot](https://hubot.github.com/), commissioned by GitHub (who, by the way, also coined the term ChatOps). I am pretty sure the original author must be one of those front-end guys who just invaded the back-end territory, because the language he or she chose to write Hubot is  [CoffeeScript](https://en.wikipedia.org/wiki/CoffeeScript), which is not only a bad name play of JavaScript, but also complied to JavaScript. 
+
+The bot uses adapter to listen command (which is basically a string of text), then it launches scripts you write to parse the command, and executes the corresponding logic if the command is recognized. I will teach my bot two commands :
+
+- `dict <word>` when the bot sees this command, it will 
+    1. use `<word>` to query the dictionary API
+    2. parse the results
+    3. group the answers(there could be more than one) into explanations, pronunciations and examples
+    4. show the answers.
+- `anki <word>` same as `dict`, but the answer will also be added to my private Anki sync server.
+
+Please refer to [this little CoffeeScript](https://github.com/murphytalk/mubot/blob/master/scripts/anki.coffee) for the implementation. Please note this is the virgin piece of CoffeeScript of mine, I have every right to be lousy and clumsy :)
+
+What's left is to connect my bot with Slack and join my team (called _Under Lu's Roof_, it's obviously meant for family business). This is no-brainer as people in the Hubot community have contributed all sorts of adapters including [Hubot Slack](https://github.com/slackhq/hubot-slack). It has some limits : the bot cannot receive direct message ; and it has to be invited into a channel first, etc. but manageable.
 
 Finally, let's put it action:
 
@@ -67,4 +81,4 @@ Added ! Then I sync in the Anki app:
 
 Isn't that neat !?
 
-Oh, did I mention that Anki is also being used to help my kid with his Chinese vocabulary? I couldn't find a good online source to look for Chinese character's pronounciation (namely Pinyin), so I wrote a small Python script to do the trick: it outputs pinyin with tune, and the traditional Chinese form if there is any. Will teach my bot this trick for sure !
+Oh, did I mention that Anki is also being used to help my kid with his Chinese vocabulary? I couldn't find a good online source to look for Chinese character's pronunciation (namely Pinyin), so I wrote a small Python script to do the trick: it outputs pinyin with tune, and the traditional Chinese form if there is any. Will teach my bot this trick for sure !
