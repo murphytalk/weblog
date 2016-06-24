@@ -13,7 +13,7 @@ PATH = 'content'
 TIMEZONE = 'Asia/Tokyo'
 
 DEFAULT_LANG = u'en'
-
+DEFAULT_DATE_FORMAT = '%a %B %d %Y'
 
 PLUGIN_PATHS = ["../pelican-plugins"]
 
