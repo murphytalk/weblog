@@ -7,13 +7,14 @@ AUTHOR = u'Mu Lu'
 SITENAME = u"murphytalk's digitized memo"
 #PUBLISH en var is set in Makefile publish goal
 SITEURL = '' if environ.get('PUBLISH') is None else 'http://murphytalk.github.io'
-
+CC_LICENSE = 'CC-BY-NC'
 PATH = 'content'
 
 TIMEZONE = 'Asia/Tokyo'
 
 DEFAULT_LANG = u'en'
 DEFAULT_DATE_FORMAT = '%a %B %d %Y'
+
 
 PLUGIN_PATHS = ["../pelican-plugins"]
 
@@ -69,10 +70,22 @@ AUTHOR_FEED_RSS = None
 #         ('The Portal', 'http://murphytalk.vicp.net/'),)
 
 # Social widget
-#SOCIAL = (('You can add links in your config file', '#'),
-#          ('Another social link', '#'),)
+me = "murphytalk"
+SOCIAL = (('twitter', 'http://twitter.com/%s'%me),
+          ('facebook', 'https://www.facebook.com/%s'%me),
+          ('github', 'http://github.com/%s'%me),
+          ('bitbucket', 'http://bitbucket.org/%s'%me),
+          ('linkedin', 'http://www.linkedin.com/in/%s'%me),
+)
 
+#GITHUB_USER = me
+TWITTER_CARDS = True
+TWITTER_USERNAME = me
+ADDTHIS_PROFILE = me
 DEFAULT_PAGINATION = 10
+
+DISQUS_DISPLAY_COUNTS = True
+DISQUS_SITENAME = 'murphytalks-digit-memo'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
