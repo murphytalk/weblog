@@ -1,8 +1,14 @@
-PY?=python2
-PELICAN?=pelican
+ifeq ($(OS),Windows_NT)
+	PELICAN=/c/Python27/Scripts/pelican
+	PY=/c/Python27/python
+else
+	PELICAN=pelican
+	PY=python2
+endif
+
 PELICANOPTS=
 
-BASEDIR=$(CURDIR)
+BASEDIR=$(shell pwd)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
