@@ -19,7 +19,6 @@ PLUGIN_PATHS = ["../pelican-plugins"]
 PLUGINS = ["tag_cloud","tipue_search"]
 THEME = "../pelican-themes/pelican-bootstrap3"
 
-#pelican-bootstrap3
 CUSTOM_CSS = 'static/custom.css'
 BOOTSTRAP_FLUID = True
 
@@ -32,7 +31,7 @@ EXTRA_PATH_METADATA = {
 
 USE_FOLDER_AS_CATEGORY = True
 TYPOGRIFY = True
-
+# SHARIFF = True  #social meida sharing
 DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 
 #URL
@@ -42,8 +41,9 @@ PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
 #Archive
+ARCHIVES_SAVE_AS = 'archives.html'
 YEAR_ARCHIVE_SAVE_AS  = 'posts/{date:%Y}/index.html'
-MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/index.html'
+#MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/index.html'
 
 
 # Feed generation is usually not desired when developing
