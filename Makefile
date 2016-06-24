@@ -104,6 +104,8 @@ stopserver:
 
 publish:
 	PUBLISH=yes $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	ghp-import output
+	git push git@github.com:murphytalk/murphytalk.github.io.git gh-pages:master
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
