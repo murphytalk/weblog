@@ -57,11 +57,13 @@ What's left is to connect my bot with Slack and join my team (it's called _Under
 
 Finally, let's put it action:
 
-![Bot in Slack]({filename}/images/hubot-anki.png)
+<img alt="Bot in Slack" src="{filename}/images/hubot-anki.png" class="img-responsive center-block"/>
+
 
 Added ! Then I sync in the Anki app:
 
-![Anki App]({filename}/images/anki.png)
+<img alt="Anki app" src="{filename}/images/anki.png" class="img-responsive center-block"/>
+
 
 Isn't that neat !?
 
