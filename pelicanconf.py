@@ -57,6 +57,9 @@ ARCHIVES_SAVE_AS = 'archives.html'
 YEAR_ARCHIVE_SAVE_AS  = 'posts/{date:%Y}/index.html'
 #MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/index.html'
 
+#Sidebar
+DISPLAY_TAGS_INLINE = True
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -69,14 +72,10 @@ AUTHOR_FEED_RSS = None
 #LINKS = (('The old blog', 'http://murphytalk-log.appspot.com/'),
 #         ('The Portal', 'http://murphytalk.vicp.net/'),)
 
-# Social widget
 me = "murphytalk"
-SOCIAL = (('twitter', 'http://twitter.com/%s'%me),
-          ('facebook', 'https://www.facebook.com/%s'%me),
-          ('github', 'http://github.com/%s'%me),
-          ('bitbucket', 'http://bitbucket.org/%s'%me),
-          ('linkedin', 'http://www.linkedin.com/in/%s'%me),
-)
+SOCIAL = True
+
+ABOUT_ME = None
 
 #GITHUB_USER = me
 TWITTER_CARDS = True
