@@ -29,7 +29,7 @@ PLUGINS = [
 #FIGURE_NUMBERS = True
 
 
-THEME = "../pelican-themes/pelican-bootstrap3"
+THEME = "../pelican-bootstrap3"
 BOOTSTRAP_THEME = "slate"
 DARK_THEME = True #will affect Twitter timeline
 
