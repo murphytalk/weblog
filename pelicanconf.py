@@ -30,8 +30,9 @@ PLUGINS = [
 
 
 THEME = "../pelican-bootstrap3"
-BOOTSTRAP_THEME = "slate"
-DARK_THEME = True #will affect Twitter timeline
+#https://bootswatch.com/
+#BOOTSTRAP_THEME = "readable"
+DARK_THEME = False #will affect Twitter timeline
 
 CUSTOM_CSS = 'static/custom.css'
 BOOTSTRAP_FLUID = True
