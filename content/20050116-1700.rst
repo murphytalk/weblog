@@ -1,0 +1,26 @@
+############################
+TT3日文显示及输入解决方案
+############################
+:category: Computer
+:tags: DigiLife,Palm
+:date: 2005-01-16 17:00
+
+
+
+更换CJKOS日文字体、采用第三方日文输入法。
+
+CJKOS自带的日文字体非常难看，"Palm.RogueLife.org":http://palm.roguelife.org/cjkos/#fonts 提供了多种供CJKOS使用的日文字体，耐看多了。挑一个顺眼的16点阵字体即可。
+
+CJKOS的日文输入法也基本不可用，在网上找到一个免费的解决方案:"POBox for PalmOS5":http://michieru.com/pamu-u/wiki.cgi?page=POBoxFEP ，以下是使用说明：
+
+* 目前最新版本是2004年2月的1.7.2a版，包括两个文件：POBoxFep.prc和POBoxFepPanel.prc。
+
+* POBox本身提供的输入的日/英文状态切换要用到输入区的Calc/Find，对于TT3很不方便，而且这些寸土寸金的地方还常常会被其他工具软件使用，所以最好使用第三方的“起动辅助Tool”。有好几种可选，因为我有DA Launcher，所以用的是米田屋的"POBox On/Off DA":http://www.shiojiri.ne.jp/~s_yonry/POBox/PBtoggleDA.html
+
+* 最后还需要一个供输入时变换汉字的辞书，也有数种方案可选，我用的是Shutterさん的"大富豪辞书":http://w021.q.fiw-web.net/clie/daifugoudic.shtml ，大小是1700KB多点。
+
+* 以上文件全部安装完毕后，可以在系统设置里找到POBoxFEP的选项，给"POBoxFEPを使用"打上勾即可。输入文本时屏幕下方有一个黑底白字的P显示时既表示处在日文输入状态下，可以用PBtoggleDA切换状态。
+
+最后来幅输入日文时的截图。POBox自称用了一种输入预测算法，另外有记忆功能：我输过一次“入力”，现在只要输个n“入力”就出来了:)
+
+<img src="/blogimages/plone-exported/jap-ime.jpg">

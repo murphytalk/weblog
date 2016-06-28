@@ -1,0 +1,27 @@
+##########################
+wxPython Tips
+##########################
+:category: Computer
+:tags: Python
+:date: 2005-01-25 17:00
+
+
+
+**wxPython类和成员的导入和调用**
+
+首先需要导入wx包::
+
+    import wx
+
+然后wxWindows文档中基本上所有的形如wxXXX的都可以在python用wx.XXX调用。
+
+**两个按钮使用同一id创建时**
+
+可能会造成python异常中止或者发生object被误删除的情况
+
+**BoxSizer**
+
+BoxSizer是可以嵌套的，一般可以先为窗口创建一个vertical的BoxSizer，然后为窗口布局中的每一行分别创建一个Horizonal的BoxSizer。接下来就可以创建各行所要包含的控件，添加入对应的行BoxSizer，再把行BoxSizer按照顺序添加入列BoxSizer即可。最后需要对窗口调用SetSizer(列SizeBoxer)。
+
+用BoxSizer.Add往其内部添加控件时，参数proportion为0时表示该控件将保持原有大小，而大于0的值则表示该控件将自动填充所以剩余空间。一个Sizer内有不止一个控件的proportion0时，proportion大者优先级较高。
+

@@ -1,0 +1,30 @@
+##################################
+使用PyDev开发Python程序
+##################################
+:category: Computer
+:tags: DayDream
+:date: 2005-01-28 17:00
+
+
+
+**安装**
+
+看了"IBM DeveloperWorks的这篇文章":http://www-128.ibm.com/developerworks/opensource/library/os-ecant/后试了试PyDev，感觉还不错：语法的高亮、编辑时函数和成员的提示，调试都支持。还可以在Eclipse的环境里集成Python的shell。
+
+PyDev可以从"http://pydev.sourceforge.net/":http://pydev.sourceforge.net/下载，或者直接用Eclipse的插件更新。我是在Palm Developer Suite 1.1的Eclipse(3.01版)上试用的，步骤如下：
+
+1 选择菜单*HelpSoftware UpdatesFind and Install ...* 然后在对话框中选择 *Search for new features to install*；
+
+2 按*Next*进入下一画面，按*New Remote Site*按钮；
+
+3 PyPython的自动更新地址是 *http://pydev.sf.net/updates/*。填好后接下来基本上一路Next就可以自动下载安装了。
+
+**集成Python shell**
+
+1 选择菜单*RunExternal ToolsExternal Tools*，然后在对话框中选择新建。
+
+2 Name给一个比如“Python Interactive Shell”这样一看就明了的名字;*Location*选择带完整路径的Python.exe;*Working Directory*用变量*${project_loc}*;*Arguments*用*-i*;最后在*Common*页选择*Display in favorites menu*。
+
+
+
+NULL

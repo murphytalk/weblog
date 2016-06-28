@@ -1,0 +1,40 @@
+################################
+在Emacs中为中文使用日文字体
+################################
+:category: Computer
+:tags: DayDream
+:date: 2005-01-29 17:00
+
+
+
+给微软提供简体中文字体的该打屁股，中文字体居然还没有日文字体的中文好看！
+
+很无奈，但Windows自带的日文字体显示中文的效果确实比自带的宋体要好些:( 在.emacs中添加如下代码:
+
+.. code-block:: lisp
+
+   (if (string-match "linux" system-configuration) ()
+     (create-fontset-from-fontset-spec
+      "-*-Bitstream Vera Sans Mono-normal-r-*-*-13-*-*-*-c-*-fontset-most,
+       japanese-jisx0208:-*-MS Gothic-normal-r-*-*-16-*-*-*-c-*-jisx0208-sjis,
+       katakana-jisx0201:-*-MS Gothic-normal-r-*-*-16-*-*-*-c-*-jisx0208-sjis,
+       japanese-jisx0208-1978:-*-MS Gothic-normal-r-*-*-16-*-*-*-c-*-jisx0208-sjis,
+       chinese-gb2312:-*-MS Gothic-normal-r-*-*-15-*-*-*-c-*-gb2312-*,
+       chinese-big5-1:-*-MS Gothic-normal-r-*-*-16-*-*-*-c-*-big5-*,
+       chinese-big5-2:-*-MS Gothic-normal-r-*-*-16-*-*-*-c-*-big5-*" t)
+
+     (setq default-frame-alist
+   	(append
+   	 '((font . "-*-Bitstream Vera Sans Mono-normal-r-*-*-13-*-*-*-c-*-fontset-most"))
+   	 default-frame-alist)))
+
+
+其中第一行是判断操作系统是否为Linux，是的话就不执行其下的代码。
+
+函数 ``create-fontset-from-fontset-spec`` 创建一fontset，其一个参数为fontset_spect，格式如下:
+
+.. code-block:: lisp
+
+   FONTSET-NAME,CHARSET-NAME0:FONT-NAME0,CHARSET-NAME1:FONT-NAME1, ...
+
+所以第一段代码创建了一个名为 ``-*-Bitstream Vera Sans Mono-normal-r-*-*-13-*-*-*-c-*-fontset-most`` 的fontset，创建好后再设定其为系统默认的fontset。
