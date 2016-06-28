@@ -1,0 +1,24 @@
+##########
+T3入手！
+##########
+:category: Computer
+:tags: DigiLife,Palm
+:date: 2004-11-21 17:00
+
+
+
+感觉还不错。
+
+昨天从USPS的Tracking页面上看到说我的T3正由日本这边的海关处理，下午还正想着这回是不是要收到海关要求缴纳消费税的通知，有人在下面按门铃：我的T3到了:D
+
+<img src="/blogimages/plone-exported/T3.JPG">
+
+是在苏州生产的：
+
+<img src="/blogimages/plone-exported/T3-BACK.JPG">
+
+　　机器成色如卖家所言，基本上是新的。拿在手里发现比原先想象的要纤薄很多，那个被戏称作“裤子”的滑盖设计总体感觉有些怪异，也许可以节约些空间吧。对比TG50，TG50的屏幕偏红，T3的更逼真些:) 
+
+　　软件安装基本同TG50，都是OS5嘛。不过T3的软手写区需要安装T3 DIA Compatibility驱动后才可以为第三方软件识别。
+
+　　Graffiti 2果然是个巨大的退化，很多字母都需要写两笔，效率严重降低。得寻找一个替代方案。
