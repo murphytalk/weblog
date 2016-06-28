@@ -1,0 +1,12 @@
+########################################
+发现一个巨快的mirror server
+########################################
+:category: Computer
+:tags: Linux
+:date: 2005-03-16 17:00
+
+
+
+从主要的自由软件项目到ibiblio Linux Archive，应有尽有
+
+下载ArchLinux时发现的，"服务器":http://mirror.pacific.net.au/在澳大利亚，速度奇快，FlashGet下载速度一度达到759KB/s!

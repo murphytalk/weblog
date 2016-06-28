@@ -1,35 +1,95 @@
-####################
-提升Python性能
-####################
+################################
+SimpleBlog 终于弄好了
+################################
 :category: Computer
 :tags: Python
 :date: 2005-02-22 17:00
 
 
 
-源自"dirtsimple.org":http://dirtsimple.org/2004/12/perception-of-speed.html#c110270144133808384 的一场讨论，以下摘录"Ian Bicking":http://blog.ianbicking.org/ 的总结:
+挺费劲。顺便写了个为Zope Instance更新Products的script。
 
-I think Glyph is right when it comes to the perspective of C programmers. At the same time, to non-C programmers we shouldn't be talking much about compilation at all. For most performance issues (like 95% or more) the answer isn't rewriting slow portions in C, it's rewriting slow portions in Python. For most programmers, the suggested steps should be:
+刚开始用的是1.22版，结果提交中文内容时发生unicode编码错。从潘俊勇的blog得知他向作者提交了一个补丁修正了该问题，于是从sourceforge上下载了cvs版本，但安装时还是有许多问题 。。。折腾了一阵子在一个全新的Instance上安装成功了，但是一旦用上原来的Data.fs就失败。后来发现好像是Archetypes的问题（安装失败）。我的deploy策略是所有的Zope/Plone Products都安装在::
 
-1 Try it; maybe performance isn't the issue you expect it to be.
+ /home/murphy/ZopeProducts
 
-2 If it is, run a profiler.
+下。实际存放这些products的子目录的文件名中都带有"-版本号"，然后再在ZopeProducts下分别建立不带版本号的到对应product的符号连接。因为Plone需要好几个product支持，所以我是把从Plone网站下载的products bundle放在::
 
-3 Look for places to leverage Python's built-in functions. Implement algorithms in terms of Python's built-in data structures, like dictionaries and lists.
+  /home/murphy/ZopeProducts/Plone-版本号
 
-4 If startup is slow, do things lazily.
+下，这样以后Plone升级就很方便。接下来在ZopeProducts建立到*Plone-版本号*的符号连接*Plone*，然后再把Plone下的各Product符号连接到ZopeProducts下。最后在实例的Products目录下，建立到前面所述ZopeProducts下的所有Product的符号连接。这么做的好处是如果运行数个实例的话某一product升级时我只需要在ZopeProducts下改一下符号连接就好了。还写了个bash脚本在Instance的Products目录下自动建立到各实际product的符号连接、并清理各product已编译的.pyc文件的脚本::
 
-5 If it's slow after startup, cache results.
+ #!/bin/sh
+ #make symbol links to folders which names do not contain versions
 
-6 Find the (small) performance-critical portions, and use some of the Python-specific tricks, like avoiding global and method lookup.
+ clean_compiled_py_files(){
+         echo Cleaning pyc files in $1 ...
+ 	rm -f $1/*.pyc
+ 	for f in $1/*
+ 	do
+ 		if [ -d "$f" ]; then
+ 			clean_compiled_py_files $1/$f
+ 		fi
+ 	done
+ }
 
-7 Try psyco. It can't hurt, and requires about 20 seconds of effort, including reading the necessary docs.
+ SRC_DIR=
+ DSRC_DIR="../../ZopeProducts"
 
-8 Then, if you've done steps 1-7, maybe try rewriting a portion in a faster compiled language. But you'll probably achieve your goals faster by going through steps 2-7 a second time before you try this.
+ if [ "$1" = "" ]; then
+     SRC_DIR="$DSRC_DIR"
+ else
+     SRC_DIR=$1
+ fi
 
-When people ask for advice about performance, the first message is often "well, you can always rewrite portions in C if you need to", and that's just bad advice. We need to stop saying that.
+ echo Link products in $SRC_DIR
 
-I'll also reiterate that it would be great if someone wrote a book about Python performance. It'd be really good for Python, *and* I think it would sell well.
+ scan_dir(){
+ 	if [ -d "$1" ]; then
+ 	    if ! echo $1|grep "-"  /dev/null; then
+ 		if echo $1|grep "Plone"  /dev/null; then
+ 			for pf in `ls $1`
+ 			do
+ 				echo Linking $1/$pf ...
+ 				ln -sf $1/$pf
+ 				clean_compiled_py_files $1/$pf
+ 			done
+ 		else
+ 			echo Linking $1 ...
+ 			ln -sf $1 .
+ 			clean_compiled_py_files $1
+ 		fi
+ 	    fi
+     	fi
+ }
 
+ FILES=`ls "$SRC_DIR"`
 
-NULL
+ for f in $FILES
+ do
+ 	scan_dir $SRC_DIR/$f
+ done
+
+接下来:
+
+1 建立一个新的Instance在它的Products下运行这个脚本
+
+2 覆盖Data.fs（删除Data.fs.index和Data.fs.tmp）
+
+3 运行该Instance。在ZMI中migrate文件系统到新版本
+
+4 先后安装Archetypes
+
+5 安装SimpleBlog ... 发生错误：SimpleBlog/__init__.py的这行::
+
+   import xmlrpcMonkeyPatch
+
+报告xmlrpcMonkeyPatch找不到:(搜索了下发现没有引用该模块的地方，所以注释掉该行然后重新运行instance就可以安装了。
+
+最后还有几件事情需要解决:
+
+1 目前instance是以普通用户身份运行的，所以无法运行在80端口。
+
+2 新增加的几个Tab在选中后不能象Home Tab那样背景高亮显示。
+
+3 实际运行中SimpleBlog仍有unicode解码/编码的错误输出，不过不影响使用："Traceback":Members/murphytalk/simpleblog-trace.txt

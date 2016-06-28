@@ -1,0 +1,12 @@
+########################################################
+PackageSweeper for ArchLinux
+########################################################
+:category: Computer
+:tags: Linux
+:date: 2005-03-19 17:00
+
+
+
+用来帮助清理不需要的已安装的package。
+
+分类显示已安装package供选择删除。"主页":http://amlug.net/new-projects/pkgsweeper/pkgsweeper.html

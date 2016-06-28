@@ -1,0 +1,50 @@
+##############################
+继续 ArchLinux 之旅
+##############################
+:category: Computer
+:tags: Linux
+:date: 2005-04-08 17:00
+
+
+
+笔记本常任理事OS候选;)
+
+笔记本上的FreeBSD装好后几乎就没用过，昨天把分区腾出来装了ArchLinux。
+
+**硬盘安装**
+
+因为上次刻的光盘有问题（在笔记本的CD上启动不起来，不过PC的DVD可以），所以用的是硬盘安装：拷贝iso中isolinux目录下的vmlinuz和initrd.img，然后在lilo.conf中为vmlinuz添加一个新的入口::
+
+ image=vmlinuz
+ initrd=initrd.img
+
+启动后，mount起iso文件(先mount存放iso的分区到/iso，该分区只能是ext2或ext3)::
+
+ mount /iso/arch-0.7-base.iso /src -o loop -t iso9660
+
+然后就可以正常安装了。
+
+**输入法**
+
+linuxsir上提供了一个中文软件的repositary，直接可以同步scim和scim-pinyin，省得自己安装了。在xinitrc中启动wm前添加如下内容::
+
+ export XMODIFIERS=@im=SCIM    #case matters for this variable!
+ export GTK_IM_MODULE=xim
+ export QT_IM_MODULE=xim
+ scim -d
+
+"scim的文档":http://www.scim-im.org/wiki/documentation/install_configure/all/configuration_of_system说GTK和QT也可以设定为scim，但我的实验结果是不灵，gtk2的firefox里和kde软件里输入法都出不来。
+
+**WM**
+
+KDE 3.4出来了，尝试了下，感觉比3.3快些，但是仍有臃肿的感觉，此外实在和windows太象了，没有看文档，默认的快捷键好像很少。暂时还是用xfce，有时间调调fvwm。
+
+X默认是以75dpi运行的，这样在KDE里gtk的程序字体就恶小。xfce是自己设定了dpi为96。解决方法是用dpi参数启动x（定义一个alias挺好）。
+
+整个系统的速度好像比slackware快些，kde的初次启动时间（从启动x到完全进入kde）在arch和slack上分别是20多秒和30多秒。准备平行运行一段时间，稳定后如果没有发现什么特别不喜欢的地方打算在笔记本上放弃slackware。老本子可以保持青春啊。考虑把windows换成win2k，且尽量压榨其所占空间，除了实在需要用windows的场合，其他时间就跑linux了。
+
+**Arch让我不喜欢的地方**
+
+首先它是对gcc这样的软件的打包方式不象slackware那样每种语言一个package而是把c/c++/obj-c全打在了一起；其次是它的源码编译系统abs好像还无法从cvs取得源代码。它不安装info文档大多数情况下不错，但是对于emacs也这么干就惹麻烦了。makepkg是个脚本，可以控制是否strip编译好的二进制代码，但是无法控制是否删除info。什么时候checkinstall要是可以生成archlinux的包就好了。
+
+PS. 昨天发现emacs支持gtk2了，美观很多。好像可以用freetype的字体，但是中文有问题，研究中...

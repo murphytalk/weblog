@@ -1,0 +1,75 @@
+####################################
+sed/awk与unix命令等价代码
+####################################
+:category: Computer
+:tags: Linux
+:date: 2005-03-15 17:00
+
+
+
+摘录自www.linuxsir.org
+
+ .. code-block:: bash
+
+   cat            |  sed ':'
+   cat -s         |  sed '/./,/^$/!d'
+   tac            |  sed '1!G;h;$!d'
+   grep           |  sed '/patt/!d'
+   grep -v        |  sed '/patt/d'
+   head           |  sed '10q'
+   head -1        |  sed 'q'
+   tail           |  sed -e ':a' -e '$q;N;11,$D;ba'
+   tail -1        |  sed '$!d'
+   tail -f        |  sed -u '/./!d'
+   cut -c 10      |  sed 's/\\(.\\)\\{10\\}.*/\\1/'
+   cut -d: -f4    |  sed 's/\\(\\([^:]*\\):\\)\\{4\\}.*/\\2/'
+   tr A-Z a-z     |  sed 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/'
+   tr a-z A-Z     |  sed 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'
+   tr -s ' '      |  sed 's/ \\+/ /g'
+   tr -d '\\012'   |  sed 'H;$!d;g;s/\
+   //g'
+    wc -l          |  sed -n '$='
+    uniq           |  sed 'N;/^\\(.*\\)\
+   \\1$/!P;D'
+    rev            |  sed '/\
+   /!G;s/\\(.\\)\\(.*\
+   \\)/\\2\\1/;//D;s/.//'
+    basename       |  sed 's,.*/,,'
+    dirname        |  sed 's,[^/]*$,,'
+    xargs          |  sed -e ':a' -e '$!N;s/\
+   / /;ta'
+    paste -sd:     |  sed -e ':a' -e '$!N;s/\
+   /:/;ta'
+    cat -n         |  sed '=' | sed '$!N;s/\
+   / /'
+    grep -n        |  sed -n '/patt/{=;p;}' | sed '$!N;s/\
+   /:/'
+   cp orig new    |  sed 'w new' orig[/code:1:739eb4cef5]
+
+ .. code-block:: bash
+
+   cat            |awk '{print}'
+   cat -s         |awk '{blank = NF == 0 ? ++blank : 0; if (blank = 1) print;}'
+   tac            |awk '{t[NR] = $0;}END{for (i = NR; i = 1; i--) print t[i];}'
+   grep patten    |awk '/patten/{print}'
+   grep -v patten |awk '! /patten/{print}'
+   head           |awk 'NR = 10 {print}' 24.sh
+   head -1        |awk '{print; exit; }' 24.sh
+   tail           |awk '{t[n++ % 10] = $0}END{for (i = 0; i  10; i++) print t[n++ % 10];}'
+   tail -1        |awk '{t = $0}END{print t}'
+   cut -c 10      |awk '{print substr($0, 10, 1)}'
+   cut -d: -f4    |awk -F: '{if (NF  1) print $4; else print;}'
+   tr A-Z a-z     |awk '{print tolower($0);}' se.sh
+   tr a-z A-Z     |awk '{print toupper($0);}' se.sh
+   tr -s ' '      |awk '{print gensub(" +", " ", "g")}'
+   tr -d '\\012'   |awk '{printf "%s", $0}'
+   wc -l          |awk 'END{printf "% 7d", NR-1}'
+   uniq           |awk '{if (NR == 1 || ln != $0) print; ln = $0;}'
+   rev            |awk '{l = ""; for (i = length($0); i  0; i--) printf "%c", substr($0, i, 1); print "";}'
+   basename       |awk -F'/' '{print $NF}'
+   dirname        |awk -F'/' '{if (NF = 1) printf "."; else {OFS="/"; $NF=""; printf "%s", substr($0, 1, length($0) - 1);}}'
+   xargs          |awk '{printf "%s ", $0}END{print}'
+   paste -sd:     |awk 'NR  1{printf ":%s", $0}'
+   cat -n         |awk '{printf "% 6d  %s", NR, $0}'
+   grep -n        |awk '/ss/{print NR":"$0}'
+   cp orig new    |awk '{print  "new"}' orig

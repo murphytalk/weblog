@@ -1,0 +1,31 @@
+####################################################
+wxPython:Dialog中的Grid的编辑问题
+####################################################
+:category: Computer
+:tags: Python
+:date: 2005-04-01 17:00
+
+
+
+编辑Grid的某一Cell时，回车后Cell编辑框不关闭，焦点直接跳到Dialog的其他Control上。Grid的父窗口是Frame的话则无问题。
+
+两个解决方案：一个是定义自己的编辑框，处理对按键的反应，稍微麻烦点。另一种方法就是在Cell的编辑框被激活时，为其设置TE_PROCESS_ENTER属性。下例是在Dialog派生类中处理的情况，当然也可以派生grid类来处理::
+
+ class EditDataDlg(wx.Dialog):
+     def __init__(self,parent,title,data):
+         wx.Dialog.__init__(self,parent,-1,title,
+                           size=(400, 200))
+
+
+         #create a wx.grid.Grid object in grid
+         ...
+         ...
+         #bind grid editor created event
+         wx.grid.EVT_GRID_EDITOR_CREATED(self.grid,self.OnGridEditorCreated)
+
+         ...
+
+     def OnGridEditorCreated(self,evt):
+         ctrl = evt.GetControl()
+         ctrl.SetWindowStyle(ctrl.GetWindowStyle() | wx.TE_PROCESS_ENTER)
+

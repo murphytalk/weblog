@@ -1,24 +1,16 @@
-############################################
-在Plone的日历中显示Blog Entry
-############################################
-:category: Computer
-:tags: Python
+####
+无衣
+####
+:category: Misc
+:tags: DayDream
 :date: 2005-02-22 17:00
 
 
 
-拜SimpleBlog的对象都是用Anchertypes实现的所赐。
+《诗经》
 
-从"tomster.org":http://tomster.org/geek/plonezope/simpleblog-cmfcalendar 学来的小花招:
+岂曰无衣？与子同袍。王于兴师，修我戈矛，与子同仇！
 
-1 Plone的日历（CMFCalendar）是可以定制的。它默认只显示Event对象。所以首先要告诉它还希望它显示什么对象：打开/portal_calendar/manage_configure，再选上BlogEntry；
+岂曰无衣？与子同泽。王于兴师，修我矛戟，与子偕作！
 
-2 CMFCalendar要和对象通话，所以在SimpleBlog/BlogEntry.py里为BlogEntry类加上如下两个方法::
-
- def start(self):
-     return self.creation_date
-
- def end(self):
-     return self.creation_date
-
-3 重启动instance即可。
+岂曰无衣？与子同裳。王于兴师，修我甲兵，与子偕行！

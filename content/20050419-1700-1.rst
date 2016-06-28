@@ -1,0 +1,42 @@
+############################################
+Linux下使用无线网卡的Windows驱动
+############################################
+:category: Computer
+:tags: Linux
+:date: 2005-04-19 17:00
+
+
+
+去年九月份的笔记。
+
+我的Planex NG54GNDS没有提供Linux驱动，kernel 2.6.8.1也不支持。不过有一个出色的自由软件项目叫NdisWrapper，可以直接加载NDIS也就是Windows network driver API的驱动。
+
+首先编译NdisWrapper，编译时需要确认modules的目录下build是指向相应kernel source的链接。安装完毕后向NdisWrapper安装网卡驱动::
+
+ ndiswrapper -i n54gnds.inf
+
+会在/etc/ndiswrapper下建立一n54gnds目录，自动拷入相关文件。
+
+然后可以运行::
+
+ ndiswrapper -l
+
+应该可以看到::
+
+ Installed ndis drivers:
+ n54gnds hardware present
+
+现在装入module::
+
+ modprobe ndiswrapper
+
+注意kernel配置时一定要选择WLAN设备支持，否则此处会失败。
+
+这时wlan0设备已经就绪了，接下来需要设置无线连接的参数。slackware提供一个包wireless-tools，其中包括iwconfig。启动脚本为/etc/rc.d/rc.wireless，配置文件为/etc/rc.d/wireless.conf。对于只有一块WLAN网卡的情况，只需在 case "$HWADDR" in的第一个选择中设定好ESSID、MODE、KEY等即可。运行rc.wireless脚本就可以设置好网卡的状态。
+
+一切ok后，运行 ndiswrapper -m，会在/etc/modprobe.conf中添一条：alias wlan0 ndiswrapper。最后在/etc/rc.d/rc.local中追加::
+
+ /etc/rc.d/rc.wireless wlan0
+ /sbin/dhcpcd -t 10 -d wlan0
+
+这样系统启动后会自动设置网卡，并从dhcp服务器得到自己的Ip地址。

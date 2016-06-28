@@ -1,0 +1,87 @@
+########################
+初品 ArchLinux
+########################
+:category: Computer
+:tags: Linux
+:date: 2005-03-16 17:00
+
+
+
+small,fast,except from an i686 binary package repositary,also comes with a source based build system
+
+**缘起**
+
+slackware用了这些年已经是很满意了，借助于swaret升级也很方便。不过对它所有的软件包都是i486的隐约有些不满，还一个遗憾就是软件库尚不够丰富。
+
+也曾尝试过gentoo，但很快就发现这么一个任何东西、每次升级都要从源码开始编译起的版本走得有些太过头，对我而言玩玩还可以，拿来用还是敬而远之吧。
+
+其实ArchLinux早就听说过，还有CruxLinux，据说都是秉承slackware哲学的基于i686的distro。而ArchLinux吸引我的地方在于，它除了基于i686，并保持slackware小巧简洁的特点外，还同时提供了比slackware完善的二进制的包管理系统和从FreeBSD的port移植来的基于源代码的build系统。其二进制包管理系统提供了slackware所没有的在线更新、依赖管理和group功能(比如gnome的那一大堆杂碎被放在gnome这一个组里，安装起来比slackware省心)，其努力的目标无疑是传说中的debian的dpkg；另一方面，它还通过一种描述了源代码下载位置、编译选项的被称作PKGBUILD的脚本，提供了基于源代码的build系统ABS。所以在我看来这几乎是Slackware、Debian和Gentoo三者的结合。
+
+刚好deepwater上原来的slackware在机器主板、CPU还有windows整个升级后启动不了了，刚好有机可趁，所以自然要试试了;)
+
+**安装**
+
+从前面一篇blog里提到的澳大利亚的那个"巨快的镜像服务器":http://mirror.pacific.net.au/下载了iso，base的就行，才200多兆。我刻光盘时出了点毛病，虽然刻出来的盘可以引导，也可以进入setup，但在选择好包开始安装时报错，估计是那些包文件读不出来。好在可以自己mount放有package的设备，我是在硬盘上准备了一个ext2的分区（或者ext3的，arch的引导盘不支持其他文件系统），用Knoppix的LiveCD引导（另一个居家旅行必备的好东西）后从iso中拷贝所有的包到新的ext2的分区，然后再重新用Arch的安装盘启动，手工mount分区到/src（保证包文件的路径是/src/arch/pkg）就行了。
+
+其余安装步骤还算顺利。Arch把系统设置基本上都放在/etc/rc.conf中，安装时就可以作一些设置。有些设置基本上是必须的，详细后述。
+
+在安装booter时出了点小麻烦：第一次安装GRUB失败，然后企图安装lilo到Arch的分区也失败。只好暂时先安装到MBR。启动后重新安装GRUB：Arch默认用的是devfs，这样我安装Arch的/dev/hda2就成了/dev/discs/disc0/part2。但是用如下命令::
+
+ grub-install /dev/discs/disc0/part2
+
+报错无法安装到指定设备。看了看GRUB的man，于是尝试GRUB的方言::
+
+ grub-install '(hd0,1)'
+
+成功！于是用::
+
+ pacman -R lilo
+
+卸掉lilo。注意pacman在卸掉一个包时会把（改变过的？）设置文件的文件名后加个pacsav保存起来。
+
+**基本设置**
+
+Arch的系统设置基本上都放在/etc/rc.conf中，以下是一些在安装时最好就进行的设置:
+
+1 **TIMEZONE** 安装时我设为Asia/Tokyo
+
+2 **HOSTNAME**
+
+3 **MOUDLES**  启动时希望加载的module罗列在此，如果暂时不希望加载可在模块名前加! 标准的regex，ArchLinux的启动脚本就是按照regex来分析这些设置的。
+
+4 **网络接口**  lo、eth0、... 每个设备一行，标准的ifconfig参数格式。如果希望用dhcp的话写成类似 eth0="dhcp"即可。下面还有一个**INTERFACES**，需要罗列进去所有希望激活的网络接口。
+
+5 **路由** gateway这一行也是标准的route命令参数格式。需要注意的是下一行**ROUTES**的设置中默认路由是被禁止了的，需要把其中gateway前面的！去掉。
+
+6 **DAEMONS**  罗列希望自动启动的服务（/etc/rc.d下的脚本），暂时不启动的还是在前面加! 这些服务默认是按顺序依次启动的，如果某个服务是独立的，后面没有其他服务依赖于它的话，可以在其前面加@，这样Arch就不会等待该服务启动完毕而直接去启动下一个服务了，有并行的效果，可以加快系统启动速度，虽然Arch的启动速度已经很快了;)
+
+**更新系统**
+
+安装完毕后马上更新pacman的repositary。澳大利亚的那个镜像比较快，把下面两行分别添加到/etc/pacman.conf的[current]和[extra]的开头::
+
+ Server = http://mirror.pacific.net.au/ibiblio/distributions/archlinux/current/os/i686/
+
+ Server = http://mirror.pacific.net.au/ibiblio/distributions/archlinux/extra/os/i686/
+
+然后就可以更新repositary了::
+
+  pacman --sync --refresh
+
+或者用简化命令::
+
+  pacman -Sy
+
+接下来更新、升级整个系统::
+
+  pacman -Su
+
+基本上都会发现更新（维护者们还是挺勤奋的）。
+
+从repositary安装/升级一个包::
+
+  pacman -S package_foo
+
+
+基于源码的build系统还没研究，先记录一个来自的linuxsir的"非官方软件包和PKGBUILD列表":http://www.linuxsir.org/bbs/showthread.php?t=178433
+
+嘿嘿，这样就算上路啦:) 要是没有我光盘刻录不好的磨难的话，大概5分钟就可以装好了，然后让吃豆子的小人pacman去帮你更新系统吧。

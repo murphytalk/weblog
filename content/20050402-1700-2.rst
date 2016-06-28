@@ -1,0 +1,12 @@
+##########################
+已安装的Firefox插件
+##########################
+:category: Computer
+:tags: DigiLife
+:date: 2005-04-02 17:00
+
+
+
+备忘
+
+<img src="/blogimages/plone-exported/digital/firefox_ext.JPG  ">

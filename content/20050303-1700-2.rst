@@ -1,0 +1,14 @@
+##########################
+改变emacs窗口标题格式
+##########################
+:category: Computer
+:tags: Emacs
+:date: 2005-03-03 17:00
+
+
+
+具体看变量**frame-title-format**的文档，以下命令设置标题为**emacs@当前buffer名**格式::
+
+ (setq frame-title-format "emacs@%b")
+
+NULL

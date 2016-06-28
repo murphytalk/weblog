@@ -1,0 +1,14 @@
+################################################################
+为已有Visual C++的Project添加Unicode支持
+################################################################
+:category: Computer
+:tags: C/C++
+:date: 2005-03-22 17:00
+
+
+
+避免LNK2001错。
+
+1 Predefine macro **_UNICODE**
+
+2 Set Project  Setting  Link  Output  Entry-point symbol to **wWinMainCRTStartup**，otherwise will get a LNK2001 error:unresolved external symbol _WinMain@16

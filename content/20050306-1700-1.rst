@@ -1,0 +1,50 @@
+####################################################
+在Linux上运行eMule for Windows
+####################################################
+:category: Computer
+:tags: Linux
+:date: 2005-03-06 17:00
+
+
+
+Powered by WINE;)
+
+<img src="/blogimages/plone-exported/emule-on-linux.JPG">
+
+**W** ine **I** s **N** ot **E** mulator!
+
+WINE已经比较成熟了，人们用它来运行office和IE好像都没有什么问题。我一直想在我的linux服务器上跑电骡，可惜原先Linux上那个基于eMule代码(这样兼容性有保证)的lMule停止开发了;也试过aMule，印象比较差，而且担心不兼容eMule的数据，那我用eMule辛辛苦苦养的骡子岂不是前功尽弃？为保护现有资源起见，决定借助WINE，直接在Linux上运行eMule的Win32版。
+
+**安装Wine**
+
+"WINE主页":http://www.winehq.com/上提供了slackware安装包，倒是方便很多。我装的是05年2月11日的版本，装好后先运行一次wine，它会在home下创建.wine子目录，初始化一个假的windows系统目录:~/.wine/drive_c/windows。~/.wine/dosdevices目录下是模拟的Windows的各驱动器，一般是建立c: d:之类的符号连接连接到实际存储位置。我是建立了一个d:连接到/opt/Wine-Windows-Drivers/d。
+
+**安装、运行eMule**
+
+安装eMule倒是很顺利，可以选择d:，当然其实是装到 /opt/Wine-Windows-Drivers/d 下去了。
+
+接下来运行安装好的eMule::
+
+ root@leadmain#wine d:\\\\Programe\\ files\\\\eMule\\\\emule.exe
+
+但是运行时发生异常，根据"eMule on Linux with Wine mini-HOWTO":http://forum.emule-project.net/index.php?s=2a7cfa191e0921e7b0b67b4bcb2ccc25showtopic=42844st=0提供的信息，comctl32.dll和riched20.dll两个文件不能用wine内置的，得用windows的native版本。
+
+我开始是直接把我windows xp sp2的这两个文件拷贝到 ~/.wine/drive_c/windows/system 下，然后修改wine的config，确保如下设置::
+
+ [Version]
+ "Windows"      = "winxp"
+ [DllOverrides]
+ "comctl32"     = "native"
+ "riched20"     = "native"
+
+但是再运行还是出错。注意到此时wine的出错信息是找不到listview等几个windows的common control窗口类，显然wine不认识刚才拷的几个dll。开始怀疑是不是因为这几个dll实际来自于windows xp **sp2** 的原因，遂使用win xp安装光盘上的这两个文件，成功！
+
+**中文**
+
+目前Wine好像只支持GB2312.1980，程序中写死了采用这个编码。通过环境变量告诉Wine语言是中文即可::
+
+ root@leadmain#LANG=zh_CN wine d:\\\\Programe\\ files\\\\eMule\\\\emule.exe
+
+中文字体应该是使用的X自带的点阵字库，比较丑，配置一下应该可以用TrueType的simsun。
+
+除了可以用eMule自己的web介面，还可以通过VNC远程管理;)

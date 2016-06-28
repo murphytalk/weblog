@@ -1,0 +1,12 @@
+##################################################################
+My PC's entry in CPU-Z's database
+##################################################################
+:category: Computer
+:tags: DigiLife
+:date: 2005-02-27 17:00
+
+
+
+ID : 4540
+
+AMD Barton 2500+超外频到200M，伪装成Barton 32000+ 后提交到"CPU-Z网站":http://valid.x86-secret.com/show_oc?id=4540 ;)

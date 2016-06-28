@@ -1,0 +1,81 @@
+##############################################################
+在Linux上运行eMule for Windows : 完善
+##############################################################
+:category: Computer
+:tags: Linux
+:date: 2005-03-20 17:00
+
+
+
+更好地在让eMule象在Windows上一样在Linux持续工作
+
+
+需要达成的目标如下:
+
+1 系统boot时自动启动VNC Server和eMule
+
+2 通过cron定期检查eMule进程是否仍然在运行，否则的话重新启动系统。
+
+自动运行eMule前必须先启动X，对于我没有显示输出的裸体服务器来说就是VNC Server了。VNC Server在用户登录后才能运行。
+
+在/etc/rc.d/rc.local中追加如下内容:
+
+ .. code-block:: bash
+    
+    #start vnc server
+    rm -f /root/vnc.log
+    vnc_users="root"
+    disp=0
+    for user in $vnc_users
+    do
+        echo -e "Starting VNC server for $user (display no. :$disp)...\\c"
+        vncstart="/usr/bin/vncserver -geometry 1280x1024"
+        vnc_cmd="su - $user -c \\"$vncstart\\" 1/root/vnc.log 2/root/vnc.log"
+   
+        if eval $vnc_cmd; then
+            echo "DONE"
+        else
+            echo "***VNC FAILED***"
+        fi
+   
+        disp=$(( $disp + 1 ))
+    done
+
+ #start eMule
+                 
+ su - root -c "DISPLAY=\\":1.0\\" LANG=zh_CN wine d:\\\\\\\\Program\\ Files\\\\\\\\eMule\\\\\\\\emule.exe 1/root/vnc.log 2/root/vnc.log"
+
+说明:
+
+1. `su - root` 进行一个完整的root身份的登录。登录后除PATH外其他环境变量被继承，PATH则被重设。重设的内容可以通过 `/etc/login.defs` 的 `ENV_PATH` 和 `ENV_SUPATH` 定制。前者对应普通用户，后者对应root。VNC Server需要用到X，所以得往 `ENV_SUPATH` 中添加路径 `/usr/X11R6/bin` 。
+
+2. 启动eMule与VNC Server类似，通过DISPLAY环境变量设置的是输出目标，也就是前一步启动的VNC的显示了。
+
+
+由于WINE的不完善，eMule for Windows虽然可以在Linux上运行但是还有不少问题，其中最主要的就是长时间持续运行进程会因累积错误太多而终止。符号链接以下脚本到/etc/cron.hourly下:
+
+ .. code-block:: bash
+
+    #!/bin/sh
+    #run by crond,restart system if eMule is not running
+   
+    if ! ps axj |grep  "DISPLAY=\\":1.0\\" LANG=zh_CN wine.*emule\\.exe"  /dev/null ; then
+        echo "eMule is dead"
+        #eMule is dead
+        if [ ! -e /tmp/emule ] ; then
+    	echo `date` "Reboot because eMule is dead"  /var/log/emule.log
+    	/sbin/reboot
+        else
+    	echo "found do not check emule flag"
+        fi
+    else
+        echo eMule is alive
+    fi
+
+说明:
+
+1. 通过crond每小时检查eMule进程是否在运行。如果进程已死则自动重启动系统。
+
+2. 留了个开关：文件/tmp/emule存在的话会放弃重启动系统。
+
+这样基本上就可以和在windows上运行一样可以放手不用管了;)

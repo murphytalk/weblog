@@ -1,0 +1,43 @@
+##########################################################
+py2exe编译的文件执行文件操作时的encoding问题
+##########################################################
+:category: Computer
+:tags: Python
+:date: 2005-04-01 17:00
+
+
+
+需要在py2exe编译脚本里加入encoding说明。
+
+TRC4模拟器的“对象机器”的模拟，用Python/wxPython写的。保存数据设置用的是pickle，在读入文件时脚本运行没问题但是py2exe编译出来的执行文件运行报错::
+
+ Traceback (most recent call last):
+   File "CommPeer.py", line 442, in OnLoad
+     self.sd_data=pickle.load(f)
+   File "pickle.pyc", line 1390, in load
+   File "pickle.pyc", line 872, in load
+   File "pickle.pyc", line 985, in load_string
+ LookupError: no codec search functions registered: can't find encoding
+ Traceback (most recent call last):
+   File "CommPeer.py", line 442, in OnLoad
+     self.sd_data=pickle.load(f)
+   File "pickle.pyc", line 1390, in load
+   File "pickle.pyc", line 872, in load
+   File "pickle.pyc", line 985, in load_string
+ LookupError: no codec search functions registered: can't find encoding
+
+自然先去拜google大神了:)很快命中:"ctypes and py2exe wiki":http://starship.python.net/crew/theller/moin.cgi/EncodingsAgain
+
+参考后改写py2exe的脚本如下::
+
+ # setup.py
+ from distutils.core import setup
+ import py2exe
+
+ includes = ["encodings","encodings.latin_1",]
+
+ setup(windows=["CommPeer.py"],
+       options = {"py2exe": {"compressed":1,
+                             "optimize":2,
+                             "includes":includes}},)
+
