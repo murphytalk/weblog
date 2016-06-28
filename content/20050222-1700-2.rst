@@ -1,0 +1,35 @@
+####################
+提升Python性能
+####################
+:category: Computer
+:tags: Python
+:date: 2005-02-22 17:00
+
+
+
+源自"dirtsimple.org":http://dirtsimple.org/2004/12/perception-of-speed.html#c110270144133808384 的一场讨论，以下摘录"Ian Bicking":http://blog.ianbicking.org/ 的总结:
+
+I think Glyph is right when it comes to the perspective of C programmers. At the same time, to non-C programmers we shouldn't be talking much about compilation at all. For most performance issues (like 95% or more) the answer isn't rewriting slow portions in C, it's rewriting slow portions in Python. For most programmers, the suggested steps should be:
+
+1 Try it; maybe performance isn't the issue you expect it to be.
+
+2 If it is, run a profiler.
+
+3 Look for places to leverage Python's built-in functions. Implement algorithms in terms of Python's built-in data structures, like dictionaries and lists.
+
+4 If startup is slow, do things lazily.
+
+5 If it's slow after startup, cache results.
+
+6 Find the (small) performance-critical portions, and use some of the Python-specific tricks, like avoiding global and method lookup.
+
+7 Try psyco. It can't hurt, and requires about 20 seconds of effort, including reading the necessary docs.
+
+8 Then, if you've done steps 1-7, maybe try rewriting a portion in a faster compiled language. But you'll probably achieve your goals faster by going through steps 2-7 a second time before you try this.
+
+When people ask for advice about performance, the first message is often "well, you can always rewrite portions in C if you need to", and that's just bad advice. We need to stop saying that.
+
+I'll also reiterate that it would be great if someone wrote a book about Python performance. It'd be really good for Python, *and* I think it would sell well.
+
+
+NULL

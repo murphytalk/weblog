@@ -1,0 +1,14 @@
+##############################
+用SCP/SFTP远程拷贝文件
+##############################
+:category: Misc
+:tags: DayDream
+:date: 2005-02-21 17:00
+
+
+
+基于SSH。Windows客户端使用WinScp，界面类似Windows Explorer。
+
+SCP和SFTP协议基于SSH，实现文件的拷贝。"WinScp":http://winscp.sourceforge.net 是个很棒的开源的SCP/SFTP Windows客户端，界面风格类似于Windows Explorer，并且可以和Windows Shell集成。
+
+今天试验了一下，在川崎办公室从家里的Linux服务器拷贝文件，速度稳定在大概48KB/s，很不错。

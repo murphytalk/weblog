@@ -1,0 +1,21 @@
+##############################################
+Windows XP+SP的启动安装盘的制作 
+##############################################
+:category: Computer
+:tags: DayDream
+:date: 2005-01-29 17:00
+
+
+
+Slipstreamed Windows XP CD Using SP2
+
+1 拷贝windows xp安装光盘的内容到硬盘。注意隐藏的系统文件。
+
+2 sp用 -x 参数解压。
+
+3 到解压后的sp目录下运行 i386\\Update\\Update.exe -S:xp安装盘拷贝的路径。
+sp会更新安装文件。
+
+4 用IsoBuster从xp安装光盘抓出启动映像Microsoft Corporation.img。
+
+5 可以用nero烧盘或者采用nero的disk writer做成iso文件了:)
