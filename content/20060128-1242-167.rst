@@ -1,0 +1,12 @@
+##########################################
+Power Emacs by Python
+##########################################
+:category: Computer
+:tags: Software
+:date: 2006-01-28 12:42
+
+
+
+曾经幻想过能够用python来扩展emacs，刚发现原来已经有人开始动手了
+"Pymacs":http://pymacs.progiciels-bpi.ca/index.html
+

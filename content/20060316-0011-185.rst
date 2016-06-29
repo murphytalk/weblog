@@ -1,0 +1,14 @@
+####################################
+Google Blog Search
+####################################
+:category: Memo
+:tags: Memo
+:date: 2006-03-16 00:11
+
+
+
+尚为Beta，根据Web 2.0原理，也许会永远beta;)
+
+"http://www.google.com/blogsearch":http://www.google.com/blogsearch
+
+NULL

@@ -1,0 +1,12 @@
+########################################################
+Python web framework真是层出不穷啊。
+########################################################
+:category: Computer
+:tags: Python
+:date: 2006-03-19 21:27
+
+
+
+正在学习Django，无意中又看到一个叫"Pylon":http://pylonshq.com/。其philosophy和TurboGears类似：不重新发明轮子，而是整合已有的工具。
+
+NULL

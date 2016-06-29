@@ -1,0 +1,28 @@
+######################################################
+iRiver H10 6GB MP3 Player入手
+######################################################
+:category: Computer
+:tags: DigiLife
+:date: 2005-05-23 17:00
+
+
+
+本来打算买iPod mini的，临时改弦更张。
+
+三万日元不到一点，在Yodobashi买的，所以还有8%的“还原”。放弃iPod mini主要是因为:
+
+1 iPod无FM和Voice Memo
+
+2 iPod电池不可拆卸、更换
+
+3 iPod不支持WMA格式
+
+其实还有一个差别是iPod mini不是彩屏，不过对这点我倒不太在意。另外iPod mini的外形我觉得没有iPod好看，反正我没有Apple情结(更不会有Sony情结啦)，买自己觉得最合适的就好了;)
+
+回来试了下挺满意，界面设定成简体中文后我同步进去的歌无论中文还是日文都能显示 。。。我的中文歌的TAG应该是unicode编码的，用eMule下的中岛美嘉的歌则不确定，反正日文的假名和汉字显示正常。
+
+挺满意;)
+
+<img src="/blogimages/plone-exported/digital/iriver0.JPG">
+
+<img src="/blogimages/plone-exported/digital/iriver1.JPG">

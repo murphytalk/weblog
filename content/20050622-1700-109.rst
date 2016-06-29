@@ -1,0 +1,28 @@
+##################################
+MFC的MDI程序向SDI程序迁移
+##################################
+:category: Computer
+:tags: C/C++
+:date: 2005-06-22 17:00
+
+
+
+因为没有使用DocTemplate，所以要耍点小花招。
+
+KPV项目，要把本来的MDI界面改为SDI。原来的界面是一个MDIChild显示地图，其他的MDIChild作为数据窗口。该为SDI后主窗口用来显示地图。
+
+基本做法就是把原先的地图窗口(CMDIChild派生类)改为由CView派生，然后嵌入到从由CMDIFrame派生改为从CFrameWnd派生的CMainFrm里去。如果采用DocTemplate机制的话就不用自己操心了，否则有几个细节要注意。
+
+首先在CMainFrame::OnCreate()中创建由CView派生的地图窗口，父窗口为CMainFrm。可以调用:
+ 
+ .. code-block:: cpp
+
+    ModifyStyleEx(WS_EX_CLIENTEDGE, 0, SWP_FRAMECHANGED);
+
+来去除框架窗口的三维下陷边框。随后在工具条、状态条被创建后需调用:
+
+ .. code-block:: cpp
+
+    RecalcLayout();
+
+来调整地图窗口的大小（填满框架窗口除工具条和状态条以外的空间）。但是MFC的RecalcLayout()实现在调整诸子窗口时假定View（也就是要填满剩余空间的窗口）的ID从AFX_IDW_PANE_FIRST开始。所以创建View窗口时的ID必须大于等于AFX_IDW_PANE_FIRST。另外style可以直接用MFC预先定义的AFX_WS_DEFAULT_VIEW。

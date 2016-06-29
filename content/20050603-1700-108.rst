@@ -1,0 +1,14 @@
+##############################
+同步Firefox和IE的书签
+##############################
+:category: Computer
+:tags: DigiLife
+:date: 2005-06-03 17:00
+
+
+
+我可以少装一个插件了
+
+"SyncMarks":http://syncmarks.mozdev.org/
+
+可以同步Firefox的书签到IE，貌似将来还可以支持同步到FTP;)

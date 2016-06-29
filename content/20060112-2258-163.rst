@@ -1,0 +1,12 @@
+##############
+OpenWrt
+##############
+:category: Computer
+:tags: DigiLife
+:date: 2006-01-12 22:58
+
+
+
+"OpenWrt":http://openwrt.org/ is a Linux distribution for wireless routers.
+
+在linuxsir的mini linux版看到"这篇文章":http://www.linuxsir.org/bbs/showthread.php?t=235937   介绍了可以运行在Linksys WRT54G等一系列无线路由上的一个Linux定制版本，很有趣。

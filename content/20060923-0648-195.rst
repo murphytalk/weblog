@@ -1,0 +1,15 @@
+##############
+貼兩張衛星照片
+##############
+:category: Computer
+:tags: DigiLife
+:date: 2006-09-23 06:48
+
+
+
+**WARNING** : 圖大殺貓。
+
+經緯度： 31°15'28.52"N 121°34'1.97"E
+<img src="/blogimages/shanghai.PNG">
+
+<img src="/blogimages/osaka.PNG">

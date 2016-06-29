@@ -1,0 +1,14 @@
+##########################################################################
+今天Django "magical-removal" brunch 的改动
+##########################################################################
+:category: Computer
+:tags: Python
+:date: 2006-03-13 05:00
+
+
+
+django.contrib.auth.middleware中去除了类RequestUserMiddleware，代之以AuthenticationMiddleware，所以settings.py中的MIDDLEWARE_CLASSES需要作出相应修改，否则无法运行。
+
+django-admin.py创建出来的新project的settings.py似乎尚未对应这一最新变化。
+
+NULL

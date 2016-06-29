@@ -1,0 +1,81 @@
+############################################################
+编译emacs cvs 20060110版(Windows)
+############################################################
+:category: Computer
+:tags: Emacs
+:date: 2006-01-24 21:16
+
+
+
+libjpeg
+----------
+
+compile to DLL
+Makefile需要作"修改":http://www.kehui.net/html/article/26/26465.html
+
+IME patch
+------------------
+
+* downdload and config
+
+参考`这里<http://homepage3.nifty.com/y3tk/emacs.html#ime-patch>`_
+
+* patching rejects (emacs-cvs-20051202-IME.patch vs emacs-cvs-20060110)
+
+ 1. nt/configure.bat紧接在checkcompiler前增加了一段checkversion，并将原先的goto checkcompiler改为goto checkversion
+
+ 1. nt/makefile.w32-in给bootstrap的规则增加了一个依赖 info 。这个应该是以前编译nt cvs版本没有info的原因。
+
+Compile and link error
+----------------------------
+
+* don't know how to compile addpm.exe
+
+ nt/makefile中`addpm`和`$(BLD)/addpm.exe规则的依赖项用tab重新ident
+
+* lib-src/hexl.c ： EXIT_SUCCESS等未定义。开头添加:
+
+    .. code-block:: cpp
+       
+        #include <stdlib.h>
+
+* lib-src/ctags.c(etags.c) : cannot find _pclose and _popen。开头添加:
+
+    .. code-block:: cpp   
+
+       #define popen _popen
+       #define pclose _pclose
+
+* src/regex.c : cannot find _alloca。开头添加:
+
+     .. code-block:: cpp   
+
+       #define alloca _alloca
+
+* lib-src/movemail.c
+
+ 1. EXIT_SUCCESS等未定义。开头添加:
+
+  .. code-block:: cpp   
+
+     #include <stdlib.h>
+
+ 1. link() undefined: 在undef unlink前添加:
+
+  .. code-block:: cpp   
+    
+     #define link
+
+* lib-src/ebrowse.h
+
+ 1. EXIT_SUCCESS等未定义。开头添加:
+
+    .. code-block:: cpp   
+
+      #include <stdlib.h>
+
+ 1. bzero未定义。开头添加::
+
+     .. code-block:: cpp   
+
+       #define bzero(v1,v2) memset(v1,0,v2)

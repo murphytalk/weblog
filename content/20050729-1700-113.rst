@@ -1,0 +1,39 @@
+##################################
+通过字符找到Python对象的属性
+##################################
+:category: Computer
+:tags: Python
+:date: 2005-07-29 17:00
+
+
+
+纯动态语言就是方便。
+
+前几天同事在给JR忙一个项目，刷Sucia卡的机器通过http协议用GET命令传一组参数，要求在pc上做些简单的运算分析并log这些数据，然后返回OK还是NG的结果给发出请求的机器。最初的方案是在pc装通用的web server然后用PHP写脚本，无奈刷Sucia卡的机器中已经写好的firmware分析web server返回的包括session状态、header和包含各种tag的html正文速度太慢,就让我写个只支持GET命令的小web server,只返回给对方机器它想要的格式。
+
+Python的BaseHTTPServer模块里带的server和handler类用起来很方便，自己写了100行多点代码就完成了任务。顺便看了看BaseHTTPServer的实现，它在响应http客户的request命令时是这么做的::
+
+   def handle_one_request(self):
+       """Handle a single HTTP request.
+
+       You normally don't need to override this method; see the class
+       __doc__ string for information on how to handle specific HTTP
+       commands such as GET and POST.
+
+       """
+       self.raw_requestline = self.rfile.readline()
+       if not self.raw_requestline:
+           self.close_connection = 1
+           return
+       if not self.parse_request(): # An error code has been sent, just exit
+           return
+       mname = 'do_' + self.command
+       if not hasattr(self, mname):
+           self.send_error(501, "Unsupported method (%r)" % self.command)
+           return
+       method = getattr(self, mname)
+       method()
+
+代码中self.command是分析出来的request中的http命令(比如GET)，接下来对不同命令（字符串形式）的处理既不是通过一堆if else或者switch，也没有查表，而是用python的getattr()函数，直接从字符串返回一个当前类的属性:对于GET命令就会去调用当前类的 do_GET() 函数。作为基类的BaseHTTPRequestHandler甚至都不需要定义这个函数，你自己的子类定义就可以了。
+
+呵呵，纯动态语言就是方便啊，看上去也很优美;)

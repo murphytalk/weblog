@@ -1,0 +1,47 @@
+####################################
+从Plone迁移Blog数据完毕;)
+####################################
+:category: Computer
+:tags: Python
+:date: 2005-12-13 07:13
+
+
+
+首先放弃了先学习Zope programming弄明白Plone是怎么工作的再作数据导出的想法，Zope 2学起来实在是太痛苦了:(
+还曾想通过Zope的FTP服务下载文档，不过SimpleBlog的对象全是从Zope的Folder派生的，在FTP里看来全是目录而且进去没有内容，很让人恼火。。。最后还是写了个Python脚本，伪装成浏览器登录进Plone，然后逐次访问所有需要导出的内容的链接，分离出感兴趣的内容，再借助frog的xml引擎保存为frog的格式。因为老Blog中的文本都是Structured Text，所以修改了下frog给其增加了将Structed Text渲染为HTML的功能，现在编辑blog时文本类型可以在BBCode和Structed Text中择一了。
+
+**数据迁移**
+
+直接取Plone渲染好的页面是不行的，因为那些都是已经格式化好的HTML而我需要的是原来的Structured Text，所以必须登录进Plone以Edit方式访问。登录和访问被用户/口令保护的Plone页面借助了ClientCookie和ClientForm。数据取回后直接用了frog的部分代码，用以保存为xml格式，同时更新索引和用户信息文件。我给保存blog的xml文件增加了一个texttype节点，默认为bbcode，而从Plone导入的则为structured，用以区分文本的类型。
+
+**对Frog的修改**
+
+1. 给webapps/frog/frog/objects.py中BlogEntry类的__slots__增加了一个texttype;其__init__()函数也增加了对类的新成员texttype的初始化。
+
+2. 在webapps/frog/frog/xmlstorage/objects.py中BlogEntry类的_loadXML方法的最后检查了有无texttype属性，如果没有则说明该BlogEntry的内容是从原来的frog格式载入的，需要设置texttype属性内容为bbcode。
+
+3. 在userlibs中拷入zope的StructureText包和ZopeChina包中的StructuredTextPak模块（解决Structured Text和中文的兼容问题），然后在webapps/frog/frog/text/中新添一stx.py模块，提供stx2html()方法，借助StructureText包把Structured Text渲染为HTML。
+
+4. 修改webapps/frog/docroot/blog/_showArticle.y中的showArticle()和showArticlePreview()方法，检查传入的BlogEntry实例的texttype属性，然后根据它的值分别调用原有的函数按照BBCode渲染或者调用新增的stx()方法按照Structured Text渲染为HTML。
+
+5. 修改webapps/frog/docroot/blog/submit.y，在原有的article type下增加了一段text type的选择（BBCode或者Structured Text）。这样在新增和编辑Blog时可以选择文本的类型。
+
+6. 修改webapps/frog/frog/SubmitUtils.py中Submit类的process()方法，将从html的表中取得的texttype的值设置到BlogEntry实例的texttype属性，供保存。
+
+**已知问题**
+
+text type为Structured Text的Blog在Preview时仍按照BBCode类型渲染。
+
+**ToDo**
+
+1. 给Structured Text类型文本增加和BBCode一样的笑脸符号支持。
+
+2. 给Frog增加按页排列的所有Blog的一览。目前只是显示最近的部分，其他的要靠在日历上自己去翻，很不方便。
+
+3. 给日历增加在日期上悬停鼠标时显示当天所有Blog的标题。
+
+4. 给搜索结果增加高亮搜索词的效果。
+
+5. 数据保存方式由xml文件更改为数据库。考虑采用BerkleyDB，但是索引和User文件可以保留为xml文件。
+
+6. 哈哈，不用snakelets和frog，在cherrypy或者TurboGears的基础上新写一个!

@@ -1,0 +1,13 @@
+##############
+jQuery?
+##############
+:category: Computer
+:tags: DigiLife,JavaScript/CSS
+:date: 2006-09-25 08:43
+
+
+
+JavaScript/css這套東西和我的技術背景有一定出入，也許jQuery可以免除我從頭學起的煩惱？Have to prove me the old dog **can** learn new tricks ^_^
+
+PS. jQuery的作者還創辦了一個可下載的雜誌"Visual jQuery":http://visualjquery.com/magazine.html , amazing !
+

@@ -1,0 +1,26 @@
+################
+Unlocker
+################
+:category: Memo
+:tags: Memo
+:date: 2006-02-06 11:05
+
+
+
+电脑里有一堆文件的僵尸：之所以称其为僵尸是因为无论如何努力，包括进入Safe Mode，都无法在Windows里把它给删除掉。Windows似乎是在文件属性里用一个很长的ID来记录文件的拥有者的，而因为多次重装电脑的缘故这个ID已经不是现在系统里的任何一个用户，好烦人啊。
+
+不过幸好我找到这么个很棒的免费的工具：Unlocker，它专门用来在删除文件时对付下列情况:
+
+-Cannot delete file: Access is denied
+
+-There has been a sharing violation.
+
+-The source or destination file may be in use.
+
+-The file is in use by another program or user.
+
+哈哈，安装好后在资源管理器中右击目标文件然后选Unlock就可以了。
+
+PS. 这个工具是在一个“软件全得和猪头一样”的网站"Softpedia":http://www.softpedia.com/ 上下载的。
+
+NULL

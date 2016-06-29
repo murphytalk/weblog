@@ -1,0 +1,23 @@
+##################
+装上了Arch64
+##################
+:category: Computer
+:tags: Linux
+:date: 2006-07-30 08:48
+
+
+
+Arch64的第一个Official Install CD引导不起来我的机器，7月份总算出了个新的版本没有这个问题了。Arch64已经被收编了，成为ArchLinux的一个正式分支，是个好事情，软件资源比Slamd64丰富多了。
+
+
+
+我用的是en_US.utf8的locale，pacman好scim后没有中文输入法，只有英文软键盘。翻了下官方的"wiki":http://wiki.archlinux.org/index.php/Configuring_locales，才知道新的glib可以不用傻乎乎地把所有的locale都编译上了;)
+
+
+
+总体不错，基本是以前ArchLinux32的体验的延续。
+
+
+
+**UPDATE** 感觉还不稳定，网络常不工作。和Arch32同样的配置,X的字体效果也很糟糕:(
+

@@ -1,0 +1,16 @@
+########################################################################
+TUGZip & WackGet & Virtual Dimension
+########################################################################
+:category: Computer
+:tags: Software
+:date: 2006-03-01 22:13
+
+
+
+1. "TUGZip":http://www.tugzip.com/看来可以放弃WinRAR了，虽然只是free而不开源，但比用破解版的WinRAR来说无疑是个法理上的进步，更何况从用户界面的角度要进化了很多了呢。
+
+2. "WackGet":http://millweed.com/projects/wackget/ wget的一个UI shell，小巧快速，自带IE的接口，借助FlashGot插件（刚发现FlashGot的一个新功能：Build Gallery）也可以很好地和Firefox配合。
+
+3. "Virtual Dimension":http://virt-dimension.sourceforge.net/这个是我一直在寻找的：Windows上的虚拟桌面，太爽了。
+
+NULL

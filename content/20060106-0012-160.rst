@@ -1,0 +1,27 @@
+##########################
+用NSIS制作软件安装程序
+##########################
+:category: Computer
+:tags: Windows
+:date: 2006-01-06 00:12
+
+
+
+"NSIS":http://nsis.sourceforge.net 是源自Winamp的一个项目，现在感觉已经很实用了，至少比Installshield for VC6强太多了，而且是自由软件，没有任何法律问题。
+
+因为最近收工的一个项目要提供多语的安装盘，所以干脆花点时间研究了下NSIS，以下是简单的总结：
+
+1. **Modern UI** NSIS生成的安装程序的默认界面是传统的winamp安装时的样子，另外它还有一种和目前常见（其实也就是MS的msi所采用的）界面风格一致的选择，叫Modern UI。NSIS的Examples\\Modern UI\\Multilanguage.nsi是个不错的开始，除了界面风格"modern"之外还有多国语言支持。
+
+1. Multilanguage.nsi中用 !insertmacro MUI_LANGUAGE "SimpChinese" 这样的语句导入语言定义和一些预定义的语言相关的字符串(LangString)。在这些MUI_LANGUAGE之后可以定义自己的LangString供显示或创建快捷方式用。
+
+1. 对于多国语言字符串，其编码不是UNICODE：简体中文的话是GB2312;日文的话是Shift JIS; ... 所以可以把LangString按照语言定义在不同的文件里，然后通过!include来引用，避免同一文件里多种编码方式混用。
+
+1. 安装的界面可以分数个步骤：显示license、选择需要安装的组件、选择安装目录等等。NSIS称之为Page，上述几个步骤有预定义好的Page，可以通过 !insertmacro MUI_PAGE_LICENSE 这样的语句直接引用。这些是在开头包含的MUI.nsh中预定义好的。
+
+1. 安装的内容是以section为单位的。section内可以设定本section是必须安装还是可选已经安装路径。具体的文件通过File命令指定。一般File后跟需要安装文件的路径（相对路径也可）即可，安装时会被拷贝到指定的该section的安装路径处。我还用到了File命令的/r和/x选项，分别是子目录循环搜索、拷贝和排除目录/文件名。
+
+1. 用CreateShortcut命令在桌面($DESKTOP)或者开始菜单($SMPROGRAMS)中创建快捷方式。另外要是希望从Windows的Remove Program中反安装的话，还需要用NSIS提供的注册表命令往HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall中添加一系列东西。NSIS自带的Example2有不错的示例。
+
+1. Uninstall是反安装专用的section。此处用Delete和RMDir命令删除安装的文件和目录。Delete和File一样都可以用通配符。注意快捷方式的删除也必须用Delete完成。
+

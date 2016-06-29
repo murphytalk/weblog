@@ -1,0 +1,14 @@
+##############
+IEProxy
+##############
+:category: Computer
+:tags: Software
+:date: 2006-03-05 02:33
+
+
+
+其实是个"网站":http://www.ieproxy.com/ 会加密信息的代理。
+
+PS. 又发现一个 "Hide My Ass":http://www.hidemyass.com/
+
+NULL
