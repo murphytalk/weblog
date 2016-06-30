@@ -3,6 +3,8 @@
 from __future__ import unicode_literals
 from os import environ
 
+CACHE_CONTENT = True
+
 AUTHOR = u'Mu Lu'
 SITENAME = u"murphytalk's digitized memo"
 #PUBLISH en var is set in Makefile publish goal
@@ -43,6 +45,8 @@ EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/custom.css': {'path': 'static/custom.css'}
 }
+
+DISPLAY_ARTICLE_INFO_ON_INDEX = True
 
 USE_FOLDER_AS_CATEGORY = True
 TYPOGRIFY = True

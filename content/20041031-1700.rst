@@ -17,12 +17,20 @@ Newton入手！
 
 還是來幾張照片吧。這些是貼在Hi-PDA上的：
 
-<img src="/blogimages/plone-exported/digital/newton.jpg">
+.. image:: {filename}/images/blogimages/plone-exported/digital/newton.jpg
+   :align: center
+   :alt: Newton
+
 
 桌面。背光打開，不如E2的白色背光效果酷。
 
-<img src="/blogimages/plone-exported/digital/newton2.jpg">
+.. image:: {filename}/images/blogimages/plone-exported/digital/newton2.jpg
+   :align: center
+   :alt: Newton desktop
+
 
 費了我九牛二虎之力才裝進去的8MB的字典。
 
-<img src="Plone/blogimages/plone-exported/digital/newton-dict.jpg">
+.. image:: {filename}/images/blogimages/plone-exported/digital/newton-dict.jpg
+   :align: center
+   :alt: Newton dictionary

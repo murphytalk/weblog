@@ -3,7 +3,7 @@ Category: Misc
 Tags: 八卦
 Slug: zhang-liang-ying
 Date: 2015-04-05 22:00
-Summary: 真心祝英雄過得好
+
 
 張靚穎我是早就知道的，因爲她的唱風類似Mariah Carey，對我的路子，所也算喜歡，但也就是覺得不錯而已，自她出道以來一直沒有關注過。
 

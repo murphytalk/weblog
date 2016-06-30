@@ -9,4 +9,6 @@ ESWN的主人的玉照
 
 感觉敏锐、精力旺盛、技艺高超的强人啊。
 
-<img src="/blogimages/Roland_Soong_ESWN.jpg">
+.. image:: {filename}/images/blogimages/Roland_Soong_ESWN.jpg
+   :align: center
+   :alt: ESWN founder
