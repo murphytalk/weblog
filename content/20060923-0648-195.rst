@@ -10,6 +10,8 @@
 **WARNING** : 圖大殺貓。
 
 經緯度： 31°15'28.52"N 121°34'1.97"E
-<img src="/blogimages/shanghai.PNG">
 
-<img src="/blogimages/osaka.PNG">
+.. image:: {filename}/images/blogimages/shanghai.PNG
+
+.. image:: {filename}images/blogimages/osaka.PNG
+   

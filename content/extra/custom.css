@@ -7,7 +7,13 @@ body {
     /*background: #F5F4EF;*/
     /*color: #000305;*/
     /*font-size: 87.5%; !* Base font size: 14px *!*/
-    font-family: 'Trebuchet MS', Trebuchet, 'Slabo 27px','Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    @font-face{
+        font-family: 'Trebuchet MS', Trebuchet, 'Slabo 27px','Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    @font-face{
+        font-family: 'Microsoft YaHei';
+        unicode-range: U+4E00-9FFF;
+    }
     /*line-height: 1.429;*/
     /*margin: 0;*/
     /*padding: 0;*/
@@ -33,9 +39,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
 }
 
+/*
 ::selection {
     text-shadow: none;
     background: #fed136;
 }
-
+*/
 /*h3, h4, h5, h6 { margin-top: .8em; }*/
