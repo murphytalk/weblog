@@ -18,20 +18,21 @@ DEFAULT_LANG = u'en'
 DEFAULT_DATE_FORMAT = '%a %B %d %Y'
 
 
-PLUGIN_PATHS = ["../pelican-plugins"]
+PLUGIN_PATHS = ["./plugin/pelican-plugins",'./plugin']
 
 PLUGINS = [
     "tag_cloud",
     #http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/
     #"better_figures_and_images",
-    "tipue_search"
+    "tipue_search",
+    "pelican-ipynb.markup"
 ]
 ## Setting for the better_figures_and_images plugin
 #RESPONSIVE_IMAGES = True
 #FIGURE_NUMBERS = True
 
 
-THEME = "../pelican-bootstrap3"
+THEME = "./theme/pelican-bootstrap3"
 #https://bootswatch.com/
 #BOOTSTRAP_THEME = "readable"
 DARK_THEME = False #will affect Twitter timeline
