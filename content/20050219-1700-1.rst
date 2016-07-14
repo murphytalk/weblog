@@ -60,7 +60,7 @@ X Window
 
  **install dropline gnome**
 
-  Download "dropline installer":http://www.dropline.net/gnome/download.php first.
+  Download `dropline installer <http://www.dropline.net/gnome/download.php>`_ first.
 
  While installing if choosed fam package,need to install portmap(to support rpc) and inet(to support portmap) too.fam is a service to notify applications of file system changes.
 
@@ -146,7 +146,7 @@ X Window
 
  **Make English and Chinese display better**
 
- Use "Bitstream Vera Fonts":http://www.gnome.org/fonts/
+ Use "Bitstream Vera Fonts"
 
  /etc/fonts/local.font::
 
@@ -193,7 +193,7 @@ Chinese Support
 
  2 Chinese input
 
-  use "scim":http://www.turbolinux.com.cn/~suzhe/scim/ ,install from its rpm packages (PROBLEM:rpm2tgz seems not works on it),the input method platform scim-0.8.2-1.i586.rpm and a pinyin implementation on this platform scim-chinese-0.2.6-1.i586.rpm. in order to make gtk2 application be aware of scim,need to install scim-gtk2-immodule-0.8.2.i586.rpm too,after that,run::
+  use "scim": ,install from its rpm packages (PROBLEM:rpm2tgz seems not works on it),the input method platform scim-0.8.2-1.i586.rpm and a pinyin implementation on this platform scim-chinese-0.2.6-1.i586.rpm. in order to make gtk2 application be aware of scim,need to install scim-gtk2-immodule-0.8.2.i586.rpm too,after that,run::
 
    gtk-query-immodules-2.0  /etc/gtk-2.0/gtk.immodules
 
@@ -451,7 +451,7 @@ Kernel 2.6.x
 
  **patch NVIDIA driver**
 
- NVIDIA's driver only supports kernel 2.4.x now,"here":http://www.minion.de/ has patches to it.
+ NVIDIA's driver only supports kernel 2.4.x now,http://www.minion.de/ has patches to it.
 
  need to download NVIDIA_kernel-1.0-4496-2.6.diff.
 

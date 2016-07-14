@@ -7,13 +7,13 @@ favorite apps
 
 
 
-在这位同学的"favorite apps collection":http://ifakedit.com/log/other/apps/ 中发现几个不错的东西：
+在这位同学的 `favorite apps collection <http://ifakedit.com/log/other/apps/>`_  中发现几个不错的东西：
 
-1. "Rainlendar":http://www.rainlendar.net 这是一个PIM软件，有一个可以显示在桌面上的很酷的日历还有ToDo和Events。是**自由软件**，本来想是不是添加下自定义节日功能，突然意识到Events就可以拿来派这个用处。支持plugin方式和其他PIM共享数据，现有的plugin包括Outlook plugin和可以直接读iCal格式文件的iCalender plugin。
+1.  `Rainlendar <http://www.rainlendar.net>`_  这是一个PIM软件，有一个可以显示在桌面上的很酷的日历还有ToDo和Events。是**自由软件**，本来想是不是添加下自定义节日功能，突然意识到Events就可以拿来派这个用处。支持plugin方式和其他PIM共享数据，现有的plugin包括Outlook plugin和可以直接读iCal格式文件的iCalender plugin。
 
-1. "Synergy":http://synergy2.sourceforge.net/ 通过TCP/IP在不同电脑间发送鼠标和键盘事件的方法来共享鼠标和键盘，当然支持很多种操作系统。
+1.  `Synergy <http://synergy2.sourceforge.net/>`_  通过TCP/IP在不同电脑间发送鼠标和键盘事件的方法来共享鼠标和键盘，当然支持很多种操作系统。
 
-1. "IrfanView":http://www.irfanview.com/ 一个很酷的看图软件，比日趋臃肿的ACDSee强多了显然。
+1.  `IrfanView <http://www.irfanview.com/>`_  一个很酷的看图软件，比日趋臃肿的ACDSee强多了显然。
 
-1. "LiteStep":http://en.wikipedia.org/wiki/LiteStep 这个显然是个最酷的玩具了：**a Windows shell replacement**！
+1.  `LiteStep <http://en.wikipedia.org/wiki/LiteStep>`_  这个显然是个最酷的玩具了：**a Windows shell replacement**！
 

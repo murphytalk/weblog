@@ -9,4 +9,4 @@ SciTE
 
 一个小巧新颖的代码编辑器。
 
-"SciTE":http://scintilla.sourceforge.net/SciTE.html is a "SCIntilla":http://scintilla.sourceforge.net/index.html based Text Editor. Originally built to demonstrate Scintilla, it has grown to be a generally useful editor with facilities for building and running programs. 
+ `SciTE":http://scintilla.sourceforge.net/SciTE.html is a "SCIntilla <http://scintilla.sourceforge.net/index.html>`_  based Text Editor. Originally built to demonstrate Scintilla, it has grown to be a generally useful editor with facilities for building and running programs. 

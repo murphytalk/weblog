@@ -9,6 +9,6 @@
 
 IT批评家？
 
-今天google资料时无意在"村长的麦田":http://blog.itpub.net/post/325/23446发现一个很有意思的blog" 张恂评论":http://www.zhangxun.com，作者在对准这几年国内小有名气的几个csdn的专家开火，其中包括"透明":http://gigix.blogdriver.com/gigix/index.html。对此人我有点印象，好像是当年C++ View上比较活跃的人之一（好像和那个梦魇很熟吧），我记得他写的几篇关于C++的文章还不错，不知道我有没有弄错人。
+今天google资料时无意在 `村长的麦田 `:http://blog.itpub.net/post/325/23446发现一个很有意思的blog" 张恂评论 <http://www.zhangxun.com>`_ ，作者在对准这几年国内小有名气的几个csdn的专家开火，其中包括"透明 <http://gigix.blogdriver.com/gigix/index.html>`_ 。对此人我有点印象，好像是当年C++ View上比较活跃的人之一（好像和那个梦魇很熟吧），我记得他写的几篇关于C++的文章还不错，不知道我有没有弄错人。
 
 准备闲的话看看这个张恂评论;)

@@ -9,9 +9,9 @@ GTalk rocks!
 
 MSN日漸臃腫、日漸QQ化，搞得我很不喜歡，一個月也難得開一次。
 
-界面簡潔的GTalk很合我意，但我的朋友們基本上都在用MSN所以本來以爲沒什麽意義。今天偶然才發現原來拜其使用的開源協議jabber所賜，"GTalk可以支持其他協議":http://bobo945.bokee.com/5498493.html。
+界面簡潔的GTalk很合我意，但我的朋友們基本上都在用MSN所以本來以爲沒什麽意義。今天偶然才發現原來拜其使用的開源協議jabber所賜， `GTalk可以支持其他協議 <http://bobo945.bokee.com/5498493.html>`_ 。
 
-操作方法就是借助一個開源IM軟件"Psi":http://psi.affinix.com把MSN的Jabber代理和自己的gtalk帳戶綁定起來。Google有"用Psi連接GTalk的詳細説明":http://www.google.com/support/talk/bin/answer.py?answer=24074。
+操作方法就是借助一個開源IM軟件 `Psi":http://psi.affinix.com把MSN的Jabber代理和自己的gtalk帳戶綁定起來。Google有"用Psi連接GTalk的詳細説明 <http://www.google.com/support/talk/bin/answer.py?answer=24074>`_ 。
 
 不足的是沒法在GTalk裏向MSN聯係人傳送文件。
 

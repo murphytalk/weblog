@@ -21,6 +21,6 @@ Unlocker
 
 哈哈，安装好后在资源管理器中右击目标文件然后选Unlock就可以了。
 
-PS. 这个工具是在一个“软件全得和猪头一样”的网站"Softpedia":http://www.softpedia.com/ 上下载的。
+PS. 这个工具是在一个“软件全得和猪头一样”的网站 `Softpedia <http://www.softpedia.com/>`_  上下载的。
 
 NULL

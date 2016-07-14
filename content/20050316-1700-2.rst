@@ -21,7 +21,7 @@ slackware用了这些年已经是很满意了，借助于swaret升级也很方�
 
 **安装**
 
-从前面一篇blog里提到的澳大利亚的那个"巨快的镜像服务器":http://mirror.pacific.net.au/下载了iso，base的就行，才200多兆。我刻光盘时出了点毛病，虽然刻出来的盘可以引导，也可以进入setup，但在选择好包开始安装时报错，估计是那些包文件读不出来。好在可以自己mount放有package的设备，我是在硬盘上准备了一个ext2的分区（或者ext3的，arch的引导盘不支持其他文件系统），用Knoppix的LiveCD引导（另一个居家旅行必备的好东西）后从iso中拷贝所有的包到新的ext2的分区，然后再重新用Arch的安装盘启动，手工mount分区到/src（保证包文件的路径是/src/arch/pkg）就行了。
+从前面一篇blog里提到的澳大利亚的那个 `巨快的镜像服务器 <http://mirror.pacific.net.au/>`_ 下载了iso，base的就行，才200多兆。我刻光盘时出了点毛病，虽然刻出来的盘可以引导，也可以进入setup，但在选择好包开始安装时报错，估计是那些包文件读不出来。好在可以自己mount放有package的设备，我是在硬盘上准备了一个ext2的分区（或者ext3的，arch的引导盘不支持其他文件系统），用Knoppix的LiveCD引导（另一个居家旅行必备的好东西）后从iso中拷贝所有的包到新的ext2的分区，然后再重新用Arch的安装盘启动，手工mount分区到/src（保证包文件的路径是/src/arch/pkg）就行了。
 
 其余安装步骤还算顺利。Arch把系统设置基本上都放在/etc/rc.conf中，安装时就可以作一些设置。有些设置基本上是必须的，详细后述。
 
@@ -82,6 +82,6 @@ Arch的系统设置基本上都放在/etc/rc.conf中，以下是一些在安装�
   pacman -S package_foo
 
 
-基于源码的build系统还没研究，先记录一个来自的linuxsir的"非官方软件包和PKGBUILD列表":http://www.linuxsir.org/bbs/showthread.php?t=178433
+基于源码的build系统还没研究，先记录一个来自的linuxsir的 `非官方软件包和PKGBUILD列表 <http://www.linuxsir.org/bbs/showthread.php?t=178433>`_ 
 
 嘿嘿，这样就算上路啦:) 要是没有我光盘刻录不好的磨难的话，大概5分钟就可以装好了，然后让吃豆子的小人pacman去帮你更新系统吧。

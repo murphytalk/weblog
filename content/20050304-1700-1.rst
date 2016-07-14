@@ -7,6 +7,4 @@ Functional programming language
 
 
 
-"haskell":http://www.haskell.org/
-
-NULL
+`haskell <http://www.haskell.org/>`_ 

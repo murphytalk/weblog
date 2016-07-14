@@ -33,7 +33,7 @@ linuxsir上提供了一个中文软件的repositary，直接可以同步scim和s
  export QT_IM_MODULE=xim
  scim -d
 
-"scim的文档":http://www.scim-im.org/wiki/documentation/install_configure/all/configuration_of_system说GTK和QT也可以设定为scim，但我的实验结果是不灵，gtk2的firefox里和kde软件里输入法都出不来。
+ `scim的文档 <http://www.scim-im.org/wiki/documentation/install_configure/all/configuration_of_system>`_ 说GTK和QT也可以设定为scim，但我的实验结果是不灵，gtk2的firefox里和kde软件里输入法都出不来。
 
 **WM**
 

@@ -7,7 +7,7 @@
 
 
 
-前些天装了Vista的RTM版本，确实很爽啊，立刻就喜欢上了。看来Vista会抓住不少我这样喜欢"Eye Candy":http://en.wikipedia.org/wiki/Eye_candy的家伙的心。。。
+前些天装了Vista的RTM版本，确实很爽啊，立刻就喜欢上了。看来Vista会抓住不少我这样喜欢 `Eye Candy <http://en.wikipedia.org/wiki/Eye_candy>`_ 的家伙的心。。。
 
 接下来的问题就是激活。M$总结XP的经验，Vista不再会有所谓的免激活版本了。大企业批次购入的话需要在企业内架设激活服务器，然后统一激活。
 

@@ -15,16 +15,16 @@ SONY Rootkit 事件
 
 1. SONY开始发布所谓的service pack，供用户反安装它的DRM/rootkit软件。但随后 Princeton的研究者发现它不仅没有删除干净原来的rootkit，反而新安装了一堆文件，包括一个有很大安全隐患的ActiveX。
 
-1. "EFF：Electronic Frontier Foundation":http://www.eff.org/ 的律师仔细分析了SONY唱片的最终用户协议(EULA)，最后的总结是：Sony's EULA is worse than their rootkit。详细见后面的连接。
+1.  `EFF：Electronic Frontier Foundation <http://www.eff.org/>`_  的律师仔细分析了SONY唱片的最终用户协议(EULA)，最后的总结是：Sony's EULA is worse than their rootkit。详细见后面的连接。
 
 1. 这个是最具讽刺意味的：SONY为了保护自己版权的这个DRM/rootkit软件，被发现滥用了按照LGPL协议发布的自由软件LAME Encoder！
 
-"SONY rootkit事件时间表":http://www.boingboing.net/2005/11/14/sony_anticustomer_te.html
+ `SONY rootkit事件时间表 <http://www.boingboing.net/2005/11/14/sony_anticustomer_te.html>`_ 
 
-"发现者的详细技术分析":http://www.sysinternals.com/blog/2005/10/sony-rootkits-and-digital-rights.html
+ `发现者的详细技术分析 <http://www.sysinternals.com/blog/2005/10/sony-rootkits-and-digital-rights.html>`_ 
 
-"EFF:An Open Letter to Sony-BMG":http://www.eff.org/IP/DRM/Sony-BMG/?f=open-letter-2005-11-14.html
+ `EFF:An Open Letter to Sony-BMG <http://www.eff.org/IP/DRM/Sony-BMG/?f=open-letter-2005-11-14.html>`_ 
 
-"EFF:Sony BMG Litigation Info":http://www.eff.org/IP/DRM/Sony-BMG/
+ `EFF:Sony BMG Litigation Info <http://www.eff.org/IP/DRM/Sony-BMG/>`_ 
 
 NULL

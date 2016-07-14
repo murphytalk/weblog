@@ -5,8 +5,4 @@
 :tags: Memo
 :date: 2006-03-11 12:08
 
-
-
-"http://murphytalk.googlepages.com/":http://murphytalk.googlepages.com/home
-
-NULL
+`http://murphytalk.googlepages.com/ <http://murphytalk.googlepages.com/home>`_ 

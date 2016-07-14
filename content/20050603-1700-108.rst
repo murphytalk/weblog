@@ -9,6 +9,6 @@
 
 我可以少装一个插件了
 
-"SyncMarks":http://syncmarks.mozdev.org/
+ `SyncMarks <http://syncmarks.mozdev.org/>`_ 
 
 可以同步Firefox的书签到IE，貌似将来还可以支持同步到FTP;)

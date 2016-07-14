@@ -67,6 +67,9 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
+convert:
+	./convert.sh
+
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 

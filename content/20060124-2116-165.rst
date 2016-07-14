@@ -11,20 +11,20 @@ libjpeg
 ----------
 
 compile to DLL
-Makefile需要作"修改":http://www.kehui.net/html/article/26/26465.html
+Makefile需要作 `修改 <http://www.kehui.net/html/article/26/26465.html>`_ 
 
 IME patch
 ------------------
 
 * downdload and config
 
-参考`这里<http://homepage3.nifty.com/y3tk/emacs.html#ime-patch>`_
+参考 `这里 <http://homepage3.nifty.com/y3tk/emacs.html#ime-patch>`_
 
 * patching rejects (emacs-cvs-20051202-IME.patch vs emacs-cvs-20060110)
 
- 1. nt/configure.bat紧接在checkcompiler前增加了一段checkversion，并将原先的goto checkcompiler改为goto checkversion
+1. nt/configure.bat紧接在checkcompiler前增加了一段checkversion，并将原先的goto checkcompiler改为goto checkversion
 
- 1. nt/makefile.w32-in给bootstrap的规则增加了一个依赖 info 。这个应该是以前编译nt cvs版本没有info的原因。
+2. nt/makefile.w32-in给bootstrap的规则增加了一个依赖 info 。这个应该是以前编译nt cvs版本没有info的原因。
 
 Compile and link error
 ----------------------------
@@ -54,13 +54,13 @@ Compile and link error
 
 * lib-src/movemail.c
 
- 1. EXIT_SUCCESS等未定义。开头添加:
+1. EXIT_SUCCESS等未定义。开头添加:
 
-  .. code-block:: cpp   
+ .. code-block:: cpp   
 
-     #include <stdlib.h>
+    #include <stdlib.h>
 
- 1. link() undefined: 在undef unlink前添加:
+2. link() undefined: 在undef unlink前添加:
 
   .. code-block:: cpp   
     
@@ -68,13 +68,13 @@ Compile and link error
 
 * lib-src/ebrowse.h
 
- 1. EXIT_SUCCESS等未定义。开头添加:
+1. EXIT_SUCCESS等未定义。开头添加:
 
-    .. code-block:: cpp   
+   .. code-block:: cpp   
 
-      #include <stdlib.h>
+     #include <stdlib.h>
 
- 1. bzero未定义。开头添加::
+2. bzero未定义。开头添加::
 
      .. code-block:: cpp   
 

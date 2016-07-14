@@ -7,6 +7,6 @@ iRotate
 
 
 
-"iRotate":http://www.softpedia.com/get/Tweak/Video-Tweak/iRotate.shtml旋转屏幕显示，看罗嗦的代码时把屏幕转个90度很有效果。
+`iRotate <http://www.softpedia.com/get/Tweak/Video-Tweak/iRotate.shtml>`_ 旋转屏幕显示，看罗嗦的代码时把屏幕转个90度很有效果。
 
 

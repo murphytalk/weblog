@@ -9,6 +9,6 @@ Winpdb
 
 Python调试器
 
-"看上去不错":http://www.digitalpeers.com/pythondebugger
+ `看上去不错 <http://www.digitalpeers.com/pythondebugger>`_ 
 
 GUI是基于wxPython的，然后用再用它启动需要调试的程序。

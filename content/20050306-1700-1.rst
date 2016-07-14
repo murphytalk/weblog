@@ -17,7 +17,7 @@ WINE已经比较成熟了，人们用它来运行office和IE好像都没有什�
 
 **安装Wine**
 
-"WINE主页":http://www.winehq.com/上提供了slackware安装包，倒是方便很多。我装的是05年2月11日的版本，装好后先运行一次wine，它会在home下创建.wine子目录，初始化一个假的windows系统目录:~/.wine/drive_c/windows。~/.wine/dosdevices目录下是模拟的Windows的各驱动器，一般是建立c: d:之类的符号连接连接到实际存储位置。我是建立了一个d:连接到/opt/Wine-Windows-Drivers/d。
+ `WINE主页 <http://www.winehq.com/>`_ 上提供了slackware安装包，倒是方便很多。我装的是05年2月11日的版本，装好后先运行一次wine，它会在home下创建.wine子目录，初始化一个假的windows系统目录:~/.wine/drive_c/windows。~/.wine/dosdevices目录下是模拟的Windows的各驱动器，一般是建立c: d:之类的符号连接连接到实际存储位置。我是建立了一个d:连接到/opt/Wine-Windows-Drivers/d。
 
 **安装、运行eMule**
 
@@ -27,7 +27,7 @@ WINE已经比较成熟了，人们用它来运行office和IE好像都没有什�
 
  root@leadmain#wine d:\\\\Programe\\ files\\\\eMule\\\\emule.exe
 
-但是运行时发生异常，根据"eMule on Linux with Wine mini-HOWTO":http://forum.emule-project.net/index.php?s=2a7cfa191e0921e7b0b67b4bcb2ccc25showtopic=42844st=0提供的信息，comctl32.dll和riched20.dll两个文件不能用wine内置的，得用windows的native版本。
+但是运行时发生异常，根据 `eMule on Linux with Wine mini-HOWTO <http://forum.emule-project.net/index.php?s=2a7cfa191e0921e7b0b67b4bcb2ccc25showtopic=42844st=0>`_ 提供的信息，comctl32.dll和riched20.dll两个文件不能用wine内置的，得用windows的native版本。
 
 我开始是直接把我windows xp sp2的这两个文件拷贝到 ~/.wine/drive_c/windows/system 下，然后修改wine的config，确保如下设置::
 

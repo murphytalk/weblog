@@ -11,7 +11,7 @@ Arch64的第一个Official Install CD引导不起来我的机器，7月份总算
 
 
 
-我用的是en_US.utf8的locale，pacman好scim后没有中文输入法，只有英文软键盘。翻了下官方的"wiki":http://wiki.archlinux.org/index.php/Configuring_locales，才知道新的glib可以不用傻乎乎地把所有的locale都编译上了;)
+我用的是en_US.utf8的locale，pacman好scim后没有中文输入法，只有英文软键盘。翻了下官方的 `wiki <http://wiki.archlinux.org/index.php/Configuring_locales>`_ ，才知道新的glib可以不用傻乎乎地把所有的locale都编译上了;)
 
 
 

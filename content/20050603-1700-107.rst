@@ -9,6 +9,6 @@ xplorer² : Windows Explorer's replacement
 
 老忘记这个软件的名字...
 
-"xplorer²":http://zabkat.com/
+ `xplorer² <http://zabkat.com/>`_ 
 
 前身是免费的2xExplorer，现在有免费的Lite版本和收费的共享版本，Lite就足够了。很好用，已经用了大概快一年了吧。

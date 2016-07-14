@@ -9,7 +9,7 @@
 
 VirtualDub和XviD。
 
-对我这样的超业余用户来说"VirtualDub":http://www.virtualdub.org/ 绰绰有余了，而且是自由软件。
+对我这样的超业余用户来说 `VirtualDub <http://www.virtualdub.org/>`_  绰绰有余了，而且是自由软件。
 
 另外尝试了下几种压缩格式，一个43min 352x240 29.97FPS的片子用DivX Pro 5.1.1编码压缩后文件大小为713MB，而用XviD MPEG4则只有569M。
 

@@ -19,6 +19,6 @@
 
 1. 返回多個搜索結果時，點擊其中一項后跳轉到指定post，搜索結果就被隱藏。考慮改進為保持搜索結果的顯示直到被主動關閉。
 
-1. "lighty's life":http://blog.lighttpd.net/的留言預覽效果很DIAO（第三聲），考慮剽竊 ^_^ 
+1.  `lighty's life <http://blog.lighttpd.net/>`_ 的留言預覽效果很DIAO（第三聲），考慮剽竊 ^_^ 
 
-1. 基於jQuery的"ThickBox":http://jquery.com/demo/thickbox/就更DIAO（聲調同上）了，把搜索結果做成它的實例那樣的彈出式窗口肯定很爽。
+1. 基於jQuery的 `ThickBox <http://jquery.com/demo/thickbox/>`_ 就更DIAO（聲調同上）了，把搜索結果做成它的實例那樣的彈出式窗口肯定很爽。

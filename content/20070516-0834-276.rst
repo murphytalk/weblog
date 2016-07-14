@@ -7,19 +7,19 @@
 
 
 
-"MLDonkey":http://mldonkey.sourceforge.net/Main_Page主要的好處是同時支持好幾種協議，而且其core只是一個daemon，很合我胃口。
+`MLDonkey <http://mldonkey.sourceforge.net/Main_Page>`_ 主要的好處是同時支持好幾種協議，而且其core只是一個daemon，很合我胃口。
 
-在"別人的網志":http://pp.punkid.cn/2006/09/30/gentoo-notes-part-2/ 上看到推薦MLDonkey的一個GUI客戶端"Sancho":http://sancho-gui.sourceforge.net/，感覺很不錯。還介紹了一個可以從Firefox里自動向MLDonkey提交e2dk鏈接的"Add-on":http://www.informatik.uni-oldenburg.de/~dyna/mldonkey/
+在`別人的網志 <http://pp.punkid.cn/2006/09/30/gentoo-notes-part-2/>`_ 上看到推薦MLDonkey的一個GUI客戶端 `Sancho <http://sancho-gui.sourceforge.net/>`_ ，感覺很不錯。還介紹了一個可以從Firefox里自動向MLDonkey提交e2dk鏈接的 `Add-on <http://www.informatik.uni-oldenburg.de/~dyna/mldonkey/>`_ 
 
 版本2.8.0之后ed2k協議的默認port改得和emule不一樣了，如果不想改路由器設置的話需要在donkey.ini里修改一下。
 
 速度还是很让人满意的，24小时居然已经下了7G的东西。
 
-设置详细见"MLdonkey的wiki":http://mldonkey.sourceforge.net/MLdonkeyOptionsExplained，这里列几个主要的。
+设置详细见 `MLdonkey的wiki <http://mldonkey.sourceforge.net/MLdonkeyOptionsExplained>`_ ，这里列几个主要的。
 
-以下在~/.mldonkey/download.ini 中设置。
+以下在 `~/.mldonkey/download.ini` 中设置。
 
-**allowed_ips**  允许连接的客户端IP地址，用分号分割，对于一个网段可以用诸如192.168.0.0/24的形式。
+**allowed_ips**  允许连接的客户端IP地址，用分号分割，对于一个网段可以用诸如 `192.168.0.0/24` 的形式。
 
 **max_hard_upload_rate** 最大上传速度。
 
@@ -29,7 +29,7 @@
 
 **temp_directory** 临时下载文件保存路径。
 
-以下在~/.mldonkey/donkey.ini 中设置。
+以下在 `~/.mldonkey/donkey.ini` 中设置。
 
 **port** emule的 TCP端口。UDP端口为TCP端口+4。
 

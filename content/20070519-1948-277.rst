@@ -7,7 +7,7 @@ Firefox : 干掉那个讨厌的提示安装Flash plug-in的黄色小条
 
 
 
-从来就不是Flash的fans，所以只在不常用的IE里装了下Flash以防万一，而Firefox里是不想安装的。问题是Firefox在访问含有Flash的网页时默认会每次弹出一个黄色小条来提示安装，极为烦人，"放狗搜了下":http://www.trilithium.com/johan/2005/07/additional-plugins/，可以通过从about:config里把plugin.default_plugin_disabled设成false来把它给关掉。
+从来就不是Flash的fans，所以只在不常用的IE里装了下Flash以防万一，而Firefox里是不想安装的。问题是Firefox在访问含有Flash的网页时默认会每次弹出一个黄色小条来提示安装，极为烦人， `放狗搜了下 <http://www.trilithium.com/johan/2005/07/additional-plugins/>`_ ，可以通过从about:config里把plugin.default_plugin_disabled设成false来把它给关掉。
 
 世界终于清净了。
 

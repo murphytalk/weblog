@@ -26,7 +26,7 @@ TRC4模拟器的“对象机器”的模拟，用Python/wxPython写的。保存�
    File "pickle.pyc", line 985, in load_string
  LookupError: no codec search functions registered: can't find encoding
 
-自然先去拜google大神了:)很快命中:"ctypes and py2exe wiki":http://starship.python.net/crew/theller/moin.cgi/EncodingsAgain
+自然先去拜google大神了:)很快命中: `ctypes and py2exe wiki <http://starship.python.net/crew/theller/moin.cgi/EncodingsAgain>`_ 
 
 参考后改写py2exe的脚本如下::
 

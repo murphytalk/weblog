@@ -9,6 +9,6 @@ Google Blog Search
 
 尚为Beta，根据Web 2.0原理，也许会永远beta;)
 
-"http://www.google.com/blogsearch":http://www.google.com/blogsearch
+ `http://www.google.com/blogsearch <http://www.google.com/blogsearch>`_ 
 
 NULL

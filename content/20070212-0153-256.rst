@@ -7,7 +7,7 @@ Automount
 
 
 
-基本上可以按照ArchWiki的"这篇HOWTO":http://wiki.archlinux.org/index.php/AutoFS_HowTo  完成。另可参照"这里":http://www.greenfly.org/tips/autofs.html 。
+基本上可以按照ArchWiki的 `这篇HOWTO":http://wiki.archlinux.org/index.php/AutoFS_HowTo  完成。另可参照"这里 <http://www.greenfly.org/tips/autofs.html>`_  。
 
 如果要自动挂接其他机器的Windows（或者samba）文件共享的话，auto.media里可以加这么一行::
 

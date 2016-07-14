@@ -9,4 +9,4 @@
 
 一切为了CWOW!
 
-这里有"按国家顺序排列的socks代理服务器":http://www.samair.ru/proxy/socks.htm,依次用代理猎手验证状态。
+这里有 `按国家顺序排列的socks代理服务器 <http://www.samair.ru/proxy/socks.htm>`_ ,依次用代理猎手验证状态。

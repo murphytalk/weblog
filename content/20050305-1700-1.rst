@@ -7,7 +7,7 @@ Python的文件操作
 
 
 
-摘自"DevShed":http://www.devshed.com/c/a/Python/File-Management-in-Python
+摘自 `DevShed <http://www.devshed.com/c/a/Python/File-Management-in-Python>`_ 
 
 **得到文件信息**::
 

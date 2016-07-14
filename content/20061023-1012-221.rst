@@ -7,7 +7,7 @@
 
 
 
-没有一点Frog的影子了。不过现在这个效果也不是我原创的，扒自lighttpd作者的网志"lighty's life":http://blog.lighttpd.net/所采用的版式"Scribbish":http://quotedprintable.com/pages/scribbish，然后按照自己的喜好作了些改动，还是比较赏心悦目的 ^_^ 还准备模仿"lighty's life":http://blog.lighttpd.net/的搜索功能 :-P
+没有一点Frog的影子了。不过现在这个效果也不是我原创的，扒自lighttpd作者的网志 `lighty's life `:http://blog.lighttpd.net/所采用的版式"Scribbish <http://quotedprintable.com/pages/scribbish>`_ ，然后按照自己的喜好作了些改动，还是比较赏心悦目的 ^_^ 还准备模仿"lighty's life <http://blog.lighttpd.net/>`_ 的搜索功能 :-P
 
 另外改造过程中学到的几个关于gimp（学前班水平）和css（小学水平）的东西记录一下。
 

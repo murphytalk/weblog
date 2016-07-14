@@ -7,12 +7,12 @@
 
 
 
-按照"Guns, Germs, and Steel: The Fates of Human Societies":http://www.amazon.com/Guns-Germs-Steel-Fates-Societies/dp/0393061310/ref=pd_bxgy_b_img_a/102-4480998-5006500?ie=UTF8
+按照 `Guns, Germs, and Steel: The Fates of Human Societies <http://www.amazon.com/Guns-Germs-Steel-Fates-Societies/dp/0393061310/ref=pd_bxgy_b_img_a/102-4480998-5006500?ie=UTF8>`_ 
 前四章的觀點，至少在人類文明發軔之初如此。
 
-爲了證明這個觀點第二章 A Natural Experiment Of History 給了一個"玻里尼西亞":http://zh.wikipedia.org/wiki/%E7%8E%BB%E9%87%8C%E5%B0%BC%E8%A5%BF%E4%BA%9E（"Polynesia":http://en.wikipedia.org/wiki/Polynesia）文明的例子。
+爲了證明這個觀點第二章 A Natural Experiment Of History 給了一個 `玻里尼西亞":http://zh.wikipedia.org/wiki/%E7%8E%BB%E9%87%8C%E5%B0%BC%E8%A5%BF%E4%BA%9E（"Polynesia <http://en.wikipedia.org/wiki/Polynesia>`_ ）文明的例子。
 
-玻里尼西亞是太平洋中南部，大致以新西蘭（左下角）、夏威夷（頂點）和復活節島（右下角）為頂點的三角形區域内散佈的一千多個島嶼的總稱（如下圖，圖片出自"Wikipedia":http://en.wikipedia.org/wiki/Image:Polynesia-triangle.png）
+玻里尼西亞是太平洋中南部，大致以新西蘭（左下角）、夏威夷（頂點）和復活節島（右下角）為頂點的三角形區域内散佈的一千多個島嶼的總稱（如下圖，圖片出自 `Wikipedia <http://en.wikipedia.org/wiki/Image>`_ :Polynesia-triangle.png）
 
 <img src="/blogimages/2006/600px-Polynesia-triangle.png" align=middle>
 

@@ -13,6 +13,6 @@
 
 我把信道(channel)减小到5个，只工作在802.11.g协议下，且限制了无线接入的网卡的MAC（这样就不需要加密了，速度多少能快点）。
 
-在ArchLinux上hwd检测出无线PCMICA卡（Buffalo的型号是WLI2-CB-G54L）用的是Linksys INPROCOMM IPN2220的芯片，好像只能通过ndiswrapper用windows驱动。从"Buffalo主页":http://buffalo.melcoinc.co.jp/download/driver/lan/wdrv.html上可以下载自解压的驱动包，对应我的WiFi PCMCIA卡的驱动在2CBG54L下，用NET2G54L.inf。
+在ArchLinux上hwd检测出无线PCMICA卡（Buffalo的型号是WLI2-CB-G54L）用的是Linksys INPROCOMM IPN2220的芯片，好像只能通过ndiswrapper用windows驱动。从 `Buffalo主页 <http://buffalo.melcoinc.co.jp/download/driver/lan/wdrv.html>`_ 上可以下载自解压的驱动包，对应我的WiFi PCMCIA卡的驱动在2CBG54L下，用NET2G54L.inf。
 
 然后用pacman安装wireless-tools包。ArchLinux的Wiki上提供有Arch风格的wireless启动脚本，但我直接用的以前在slackware上的那一套，详细可见前令一篇关于slackware下安装无线网卡的blog。

@@ -10,9 +10,9 @@
 粮草先行：资料搜集
 
 需要注意的是不是所有的802.11芯片都可以工作在作为AP所必需的master mode。好像比较流行的是Prism和
-Hermes/Orinoco的芯片，分别有"Host Ap":http://hostap.epitest.fi/和"HermesAP":http://hunz.org/hermesap.html支持。Prism 2/2.5只支持802.11.b。
+Hermes/Orinoco的芯片，分别有 `Host Ap":http://hostap.epitest.fi/和"HermesAP <http://hunz.org/hermesap.html>`_ 支持。Prism 2/2.5只支持802.11.b。
 
 参考：
 
-"Building a Slackware Wireless Access Point@LinuxQuestions.org":http://www.linuxquestions.org/questions/answers.php?action=viewarticleartid=45
+ `Building a Slackware Wireless Access Point@LinuxQuestions.org <http://www.linuxquestions.org/questions/answers.php?action=viewarticleartid=45>`_ 
 

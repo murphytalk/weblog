@@ -7,7 +7,7 @@ Dot !
 
 
 
-Dot是在用繪圖軟件（不過人家自稱爲Graph visualization Software）"Graphviz":http://www.graphviz.org“畵”圖時用的描述語言。這幾天在整理文檔，這下無需忍受用Excel和Word畵圖了^_^
+Dot是在用繪圖軟件（不過人家自稱爲Graph visualization Software） `Graphviz <http://www.graphviz.org>`_ “畵”圖時用的描述語言。這幾天在整理文檔，這下無需忍受用Excel和Word畵圖了^_^
 
 用Dot告訴Graphviz這麽一個流程::
 

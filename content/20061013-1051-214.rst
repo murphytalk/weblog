@@ -7,13 +7,13 @@
 
 
 
-從 /. 上看到Reiserfs項目的創建者，同時也是最主要的開發者Hans Reiser因爲殺妻嫌疑而被捕（"詳細報道":http://sfgate.com/cgi-bin/article.cgi?f=/c/a/2006/10/10/BAGERLM3RR15.DTL，以及關於警方掌握的對Hans很不利的證據的"報道":http://www.mercurynews.com/mld/mercurynews/news/15735159.htm）的消息時是還是很感到震撼的。雖然Reiser名聲不佳（尤其是前一陣爲了他的Reiser4進不了Linux Kernel而打的口水仗），他的Reiserfs 3.6被用於我所有機器的Linux的ROOT分區已經有三年了，從沒有出過差錯。 
+從 /. 上看到Reiserfs項目的創建者，同時也是最主要的開發者Hans Reiser因爲殺妻嫌疑而被捕（ `詳細報道":http://sfgate.com/cgi-bin/article.cgi?f=/c/a/2006/10/10/BAGERLM3RR15.DTL，以及關於警方掌握的對Hans很不利的證據的"報道 <http://www.mercurynews.com/mld/mercurynews/news/15735159.htm>`_ ）的消息時是還是很感到震撼的。雖然Reiser名聲不佳（尤其是前一陣爲了他的Reiser4進不了Linux Kernel而打的口水仗），他的Reiserfs 3.6被用於我所有機器的Linux的ROOT分區已經有三年了，從沒有出過差錯。 
 
-/. 在"討論":http://slashdot.org/ Reiserfs的前途，有潔癖者似乎已經不能忍受用一個謀殺嫌疑犯寫的文件系統嚷嚷著要換了，也有滿不在乎者趁機調侃說這下我們有了個真正的**Killer FileSystem**了^_^  還有人說*Rumor has it that OJ Simpson has volunteered to help Hans in his search for the real killers* ^_^ ^_^ 
+/. 在 `討論 <http://slashdot.org/>`_  Reiserfs的前途，有潔癖者似乎已經不能忍受用一個謀殺嫌疑犯寫的文件系統嚷嚷著要換了，也有滿不在乎者趁機調侃說這下我們有了個真正的**Killer FileSystem**了^_^  還有人說*Rumor has it that OJ Simpson has volunteered to help Hans in his search for the real killers* ^_^ ^_^ 
 
 Reiser運營一家叫Namesys的公司，從一些Linux大厰接受捐助開發Reiserfs。Reiser似乎和俄國頗有淵源：他的公司的主要程序員都居住在俄國和烏克蘭；他失蹤的妻子Nina也是俄國人（還是個醫學博士呢）。出事后他的老爸出來說Namesys一直有兩個重點：*pushing the envelope to bring the filesystem up to the 21st Century from the 1970s* 和 *the well being of the* **Russian and Ukrainian programmers** *who have put so much of their lives into giving life to the modern filesystems that Hans envisioned as a young Berkeley University student back in 1983* 。
 
-以前上Namesys網站時就對上面的技術文檔裏動不動就來幅"彌漫死亡氣息的人形圖案":http://www.namesys.com/r4pics/r4signJ.jpg感到不解，看來Reiser同學還真的好這口(!)o_o
+以前上Namesys網站時就對上面的技術文檔裏動不動就來幅 `彌漫死亡氣息的人形圖案 <http://www.namesys.com/r4pics/r4signJ.jpg>`_ 感到不解，看來Reiser同學還真的好這口(!)o_o
 
 
 警方現在掌握的證據：

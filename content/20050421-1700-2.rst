@@ -9,12 +9,12 @@ Web frameworks implemented in Python
 
 为什么老是喜欢游离于主流之外呢？;)
 
-我最早知道的是"Snakelets":http://snakelets.sourceforge.net/，还是在考虑建立自己的blog的时候，在"limodou的学习记录":http://www.donews.net/limodou/上看到了他介绍的Frog，一个作为Snakelets的示例实现的blog系统。很精悍的一个东西，数据以xml文件方式保存，缺省的web页面风格看起来也很清爽美观。但最后还是没有用它来跑我的blog，一个原因是没有全文检索功能，另外毕竟和Zope丰富的产品相比，支持薄弱了些。
+我最早知道的是 `Snakelets":http://snakelets.sourceforge.net/，还是在考虑建立自己的blog的时候，在"limodou的学习记录 <http://www.donews.net/limodou/>`_ 上看到了他介绍的Frog，一个作为Snakelets的示例实现的blog系统。很精悍的一个东西，数据以xml文件方式保存，缺省的web页面风格看起来也很清爽美观。但最后还是没有用它来跑我的blog，一个原因是没有全文检索功能，另外毕竟和Zope丰富的产品相比，支持薄弱了些。
 
-今天又看到了"CherryPy":http://www.cherrypy.org/，看上去似乎比Snakelets要成熟点。
+今天又看到了 `CherryPy <http://www.cherrypy.org/>`_ ，看上去似乎比Snakelets要成熟点。
 
-最后是"Karrigell":http://karrigell.sourceforge.net/，它附带了一个叫"Gadfly":http://gadfly.sourceforge.net/的也是用Python实现的关系数据库。
+最后是 `Karrigell":http://karrigell.sourceforge.net/，它附带了一个叫"Gadfly <http://gadfly.sourceforge.net/>`_ 的也是用Python实现的关系数据库。
 
 **附记**
 
-研究研究"Jython":http://www.jython.org/这样的东西也许是可以兼顾主流的方法;)至于dotNET，不知道Mono对ASP.NET支持得怎么样了。"IronPython":http://www.ironpython.com/也是个有趣得紧的东西。
+研究研究 `Jython":http://www.jython.org/这样的东西也许是可以兼顾主流的方法;)至于dotNET，不知道Mono对ASP.NET支持得怎么样了。"IronPython <http://www.ironpython.com/>`_ 也是个有趣得紧的东西。

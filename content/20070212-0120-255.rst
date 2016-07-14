@@ -7,7 +7,7 @@
 
 
 
-借鉴自"ArchLinux Wiki":http://wiki.archlinux.org/index.php?title=Install_Arch_from_within_another_distro
+借鉴自 `ArchLinux Wiki <http://wiki.archlinux.org/index.php?title=Install_Arch_from_within_another_distro>`_ 
 
 基本要点如下：
 

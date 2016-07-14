@@ -7,5 +7,5 @@ StructuredText説明
 
 
 
-"A cheat sheet for the different Structured Text formatting commands":http://plone.org/documentation/how-to/structured-text-cheatsheet，provided by Plone.
+`A cheat sheet for the different Structured Text formatting commands <http://plone.org/documentation/how-to/structured-text-cheatsheet>`_ ，provided by Plone.
 
