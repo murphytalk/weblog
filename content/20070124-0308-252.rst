@@ -1,0 +1,11 @@
+################
+SlickRun
+################
+:category: Computer
+:tags: Software
+:date: 2007-01-24 03:08
+
+
+
+"SlickRun":http://www.bayden.com/SlickRun/可以設置成平時不顯示，需要時用熱鍵（Win+Q）呼出，然後輸入一個所謂的MagicWord，完成諸如打開指定文件、程序、網站，還有関機之類的動作，輸入時自然是會聰明到逐鍵匹配、提示已定義MagicWord的，很是方便。
+

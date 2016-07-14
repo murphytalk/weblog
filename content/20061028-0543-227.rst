@@ -1,0 +1,11 @@
+################################
+StructuredText説明
+################################
+:category: Memo
+:tags: Memo
+:date: 2006-10-28 05:43
+
+
+
+"A cheat sheet for the different Structured Text formatting commands":http://plone.org/documentation/how-to/structured-text-cheatsheet，provided by Plone.
+

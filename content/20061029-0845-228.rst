@@ -1,0 +1,17 @@
+############################
+Firefox 2的几个设置
+############################
+:category: Memo
+:tags: Memo,Software
+:date: 2006-10-29 08:45
+
+
+
+在地址栏输入 about:cofig
+
+1. browser.startup.page 设为3，重新启动Firefox时打开上次退出时的全部TAB。
+
+1. network.prefetch-next。Firefox 2默认会预先抓取它估计你可能会打开的东西。设为False禁止之。
+
+1. browser.cache.disk.capacity。用作cache的磁盘空间大小。对于内存在512MB~1GB之间的机器建议设置为15000。
+

@@ -1,0 +1,37 @@
+######################################
+Music Player Daemon
+######################################
+:category: Memo
+:tags: DigiLife,Linux,Memo
+:date: 2006-10-22 07:37
+
+
+
+下午花了點時間把早就想做的事情給完成了：在服務器上跑起了MPD，不僅管理了起所有的音樂文件，播放還可以通過瀏覽器遙控。
+
+設置很簡單，附帶的示例配置文件基本上可以直接拿來用。設置好音樂存放路徑後和MPD用來保存音樂信息的db文件路徑後，運行::
+
+ $mpd --create-db
+
+MPD就會搜索指定目錄及其子目錄下的所有音樂文件。MP3的TAG用UTF8編碼時中文沒有問題（MPD的filesystem_charset最好也設為UTF-8）。
+
+沒有配置stream，直接通過ALSA用服務器的聲卡播放。因為我想用我的那對USB喇叭聽，所以機器上實際有兩塊聲卡。相關設置如下::
+
+ audio _output {
+        type        "alsa"
+        name        "My ALSA Device"
+        device      "hw:1,0"     # optional
+ }
+
+ mixer_type        "alsa"
+ mixer_device      "/dev/mixer1"
+ mixer_control     "PCM"
+
+hw:1,0指的就是第二塊聲卡（USB Audio）了，mixer用來調節音量，也對應第二塊聲卡。
+
+MPD的Web客戶端多是用PHP寫的，只好捏著鼻子裝了一個o_o（slackware自帶的和在linuxpackages.net上找到的包都依賴於apache，只好自己編譯了一個，時間真不是一般地長）。給lighttpd設置好PHP FastCGI后剛開始老出現403 Fobidden錯，原來是lighttpd的默認禁止訪問後綴類型的設置的原因::
+
+ #url.access-deny             = ( "~", ".inc", ".php" )
+
+把php去掉就好了。lighttpd這麽做是想避免直接暴露腳本類型？針對PHP的攻擊比較多？
+

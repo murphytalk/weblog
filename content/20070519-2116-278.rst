@@ -1,0 +1,15 @@
+########################
+SlickRun的替代者
+########################
+:category: Memo
+:tags: Memo,Windows
+:date: 2007-05-19 21:16
+
+
+
+一个微软员工的业余作品"Start++":http://brandonlive.com/2007/02/22/new-tool-i-made-for-vista-start/。
+
+基本概念和SlickRun类似，通过自己定义的所谓MagicWord来快速启动应用，但Start++妙在和Vista的Run command(Win+R)和Search(Win)集成在了一起。
+
+方便！
+

@@ -1,0 +1,15 @@
+##################################
+MySQL的Foreign Key
+##################################
+:category: Memo
+:tags: Python,Memo
+:date: 2007-06-18 10:15
+
+
+
+在学习"SQLAlchemy":http://www.sqlalchemy.org。按照示例建立表之间的关系时foreign key创建始终不成功，且无出错提示(create table返回OK)。查了下才发现mysql的默认表格式MyISAM不支持Foreign Key，必须得用InnoDBo_o
+
+SQLAlchemy的SQL Construction Language级API在创建表对象的时候构造函数Table支持一mysql专用参数"mysql_engine":http://www.sqlalchemy.org/docs/metadata.html#metadata_tables_options，还不知道在ORM级别怎么办，因为照道理说ORM级应该是对具体数据库无意识的。
+
+**2007/6/19 UPDATE** 关于上面的疑问，Table这样的数据库对象和用户自己的对象，虽然可以通过mapping建立起关联，从而使得用户基本上除了自己的对象外其他东西比如数据库的细节不用去关心，但按照SQLAlchemy的世界观，这两者终究是截然不同的东西，所以还是从概念上将其隔离开来了。如此一来，某些和DB紧密关联的dirtry tricks就可以被限制在数据库对象一层而不污染用户对象，不仅逻辑清晰，同时支持多种DB也就很方便了。
+

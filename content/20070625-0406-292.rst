@@ -1,0 +1,17 @@
+####################
+二战阵亡率最高的兵种
+####################
+:category: Book
+:tags: Memo,ReadingNotes
+:date: 2007-06-25 04:06
+
+
+
+德国的潜艇兵算一个，只是不知道和美军的轰炸机机组成员相比哪个更高一点。
+
+由于美军为了保证轰炸的精确性坚持在白天执行对德国的轰炸行动（相比之下英国人在吃了德国空军的苦头后马上全部转为夜间轰炸，什么精确性就见鬼去吧，德累斯顿就是这么被夷平的），在欧战中美军损失了约9,950架轰炸机，49,000名机组成员阵亡，另有超过30,000人在跳伞后被德军俘获。在美军整个二战所有阵亡者中，每五人中就有一人是牺牲在欧洲战场的轰炸机机组成员。
+
+意大利将军Giulio Douhet在其1921年出版的书 *The Command Of Air* 中鼓吹独立运作的空军不仅可以独立完成保卫国家的任务(*National defense can be assured only by an Independent Air Force of adequate power*)，而且对敌人后方城市的远程轰炸也是摧毁敌人战斗意志从而确保胜利的最好手段(*The air force would use long-range bombers that could attack an enemy's cities,cowering the populations and destroying his war-making apparatus,such attack would be the best way to assure victory,regardless of any other circumstances whatever ...*)。
+
+虽然他的理论不乏信奉者，但无论是不列颠空战还是二战后期盟国对德国本土的大规模轰炸，都没有能单独凭借空中力量让敌人放弃抵抗。不过最后在广岛和长崎，这个目标最终还是被实现了。
+

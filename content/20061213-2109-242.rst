@@ -1,0 +1,12 @@
+##############
+iRotate
+##############
+:category: Computer
+:tags: Software
+:date: 2006-12-13 21:09
+
+
+
+"iRotate":http://www.softpedia.com/get/Tweak/Video-Tweak/iRotate.shtml旋转屏幕显示，看罗嗦的代码时把屏幕转个90度很有效果。
+
+

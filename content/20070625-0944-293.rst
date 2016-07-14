@@ -1,0 +1,19 @@
+############################################
+Windows sidebar gadget
+############################################
+:category: Computer
+:tags: Windows
+:date: 2007-06-25 09:44
+
+
+
+果然是HTML+CSS+JavaScript，iPhone的所谓API也是这套路数。这让不由得我想起在网上看到过的一句半真半假的话：将来编程语言只会剩下C和JavaScript ^_^
+
+当然最后所有的那一堆文件得Packaging起来，格式也果然不出所料就是zip，需要注意一下的是gadget.xml得在打包好的zip文件的内部阶层构造最上层。（另外发现了Windows一个也许自XP时代就有的功能：用右键的Send To>Compressed Folder可以创建zip文件。另外让我稍感意外的是这么生成的zip文件居然比7-Zip的ultra方式生成的zip还小）。
+
+修改了下从网上找来的电视剧《24小时》风格的时钟gadget，把时间更新间隔从一秒改成了一分钟；相应地显示也改成了只显示到分钟。
+
+.. image:: {filename}/images/blogimages/2007/24Hours.png
+   :align: center
+
+

@@ -1,0 +1,13 @@
+########################################
+IconsExt：偷图标的绝佳工具^_^
+########################################
+:category: Computer
+:tags: Software
+:date: 2006-11-26 02:51
+
+
+
+"IconsExt":http://www.nirsoft.net/utils/iconsext.html，可以支持从指定文件中偷、从指定目录中偷、还是从指定进程中偷^_^
+
+
+

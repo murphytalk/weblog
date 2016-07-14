@@ -1,0 +1,19 @@
+##################
+Automount
+##################
+:category: Memo
+:tags: Linux,Memo
+:date: 2007-02-12 01:53
+
+
+
+基本上可以按照ArchWiki的"这篇HOWTO":http://wiki.archlinux.org/index.php/AutoFS_HowTo  完成。另可参照"这里":http://www.greenfly.org/tips/autofs.html 。
+
+如果要自动挂接其他机器的Windows（或者samba）文件共享的话，auto.media里可以加这么一行::
+
+ leadmain-usb-hdd -fstype=smbfs,username=murphy,password=java2,uid=1000 ://leadmain/usb-hdd
+
+以上把leadmain的usb-hdd共享目录挂接到本地的 leadmain-usb-hdd 下。
+
+
+

@@ -1,0 +1,27 @@
+##################
+删除指定日期的文件
+##################
+:category: Computer
+:tags: Linux
+:date: 2006-12-23 02:05
+
+
+
+应胖子要求草成。
+
+
+
+
+但不能删除目录::
+
+
+ #!/bin/sh
+ #remove files by data - created for YB
+
+ if [ ! -n "$2" ]
+ then
+     echo "Usage: `basename $0` destination_dir YYYY-MM-DD"
+     exit
+ fi
+
+ ls $1 --time-style=+%F -l |grep "^-.*$2" |awk -v PATH=$1 -F "$2 " '{print "\\""PATH"/"$2"\\""}'|xargs rm -f

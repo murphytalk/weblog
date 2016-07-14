@@ -1,6 +1,6 @@
 Title: ChatOps with Hubot - Anki automation
 Category: computer
-Tags: chatops,anki,bot,coffeescript
+Tags: ChatOps,anki,bot,CoffeeScript
 Date: 2016-06-22 23:40
 
 Well, the very topic of [ChatOps](https://www.google.co.jp/?ion=1&espv=2#q=chatops) has already been discussed at length by many people, so I am gonna jump to my very first ChatOps with Hubot  right away.

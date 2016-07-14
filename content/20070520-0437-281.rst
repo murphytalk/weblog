@@ -1,0 +1,18 @@
+####################
+Vista Tips
+####################
+:category: Memo
+:tags: Memo,Windows
+:date: 2007-05-20 04:37
+
+
+
+- 創建SendTo項目的方法: 打開Run對話框（Win+R），然后運行::
+
+   shell:sendto
+
+- 關閉休眠(Hibernate)::
+
+    powercfg -h off 
+
+

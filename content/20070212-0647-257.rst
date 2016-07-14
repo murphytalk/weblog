@@ -1,0 +1,28 @@
+############################################
+emacs unicode-2 brunch
+############################################
+:category: Computer
+:tags: Linux,Emacs
+:date: 2007-02-12 06:47
+
+
+
+也就是未来的emacs 23了。虽说还不稳定，但是已经可以用了，还没有发现什么大问题。
+
+用如下参数启动emacs即可支持Xft，终于在这点上不输于gvim了::
+
+  -enable-font-backend -font Monospace-10
+
+以前的中文字体设置可以继续沿用。
+
+.. image:: http://farm1.static.flickr.com/173/387907497_b9141f3a11_o.jpg
+   :align: center
+
+*UPDATE 2008-03-30* unicode-2 brunch被合并到cvs了，`-enabe-font-backend` 命令似乎也不再被支持。字体可通过如下方式在命令行设定
+
+.. code-block:: bash
+
+   emacs -fn "Dejavu Sans Mono-9"
+
+具体可参见 `EmacsWiki <http://www.emacswiki.org/cgi-bin/wiki/XftGnuEmacs>`_ 和 `Pretty Emacs <http://peadrop.com/blog/2007/01/06/pretty-emacs/>`_ 的说明。
+

@@ -1,0 +1,52 @@
+########################
+Graphviz使用筆記
+########################
+:category: Memo
+:tags: Memo,Software
+:date: 2006-10-13 19:31
+
+
+
+**對象和屬性**
+
+Dot描述三种對象：Graph、Node和Edge。各對象均有若干屬性。可以用類似::
+
+ node [shape=box, fontsize=10,fontname="MSGothic.ttc"];
+
+做全局的設置。也可以用類似::
+
+ START [label=”StartText”,style = filled,fillcolor=lightgrey];
+
+針對個別對象作設置。另外如果要個別設置Edge（連綫）的話，似乎只能如下在Edge指向的Node后設置，而且其後不能再在同句跟其他描述了::
+
+ GetRootEntry -> IfGetRootEntry[headport=n,tailport=s];
+ IfGetRootEntry -> END[color=red,label="No",fontsize=10,fontcolor=red,tailport=s];
+
+**Graph**
+
+可以用subgraph定義子圖，但是普通的子圖似乎在外觀上表現不出來，連Label都不顯示。只有將其指定為cluster時才可以。指定為cluster的方法:subgraph的名字必須以cluster開頭。
+
+**Node**
+
+**Edge**
+
+可以分別用headport和tailport指定頭(指向位置，一般帶箭頭)和尾(指出位置，一般無箭頭)分別出現在關聯Node的什麽位置。可以用的值是n,ne,e,se,s,sw,w,nw等八個方向的縮寫，很直觀。
+
+**佈局**
+
+默認是自上而下佈局的。如果嫌上下拉得太長而寬度沒有被充分利用，可以用rank設定node的排列次序。比如要達到下圖的效果::
+
+        N1   N4
+        N2   N5
+        N3   N6
+
+可作如下設定使得N1和N4兩個Node並排::
+
+  {rank = same; N1;N4};
+
+還可通過rankdir設定排列的方向。默認是TB，即Top -> Bottom，如果設為::
+
+  rankdir=LR;
+
+就是Left -> Right了。
+

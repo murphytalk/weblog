@@ -1,0 +1,13 @@
+########################################################
+Milestone : 2TB downloaded !
+########################################################
+:category: Computer
+:tags: DigiLife
+:date: 2007-01-07 10:44
+
+
+
+aMule has been running on my home server(Dell Inpiron 2100,slackware 11) for 13 months , today the size of accumulated downloaded data reaches 2000 GB! Awesome! o_o
+
+<img src="http://farm1.static.flickr.com/138/347860620_6f1e4b2509_o.png" >
+

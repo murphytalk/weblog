@@ -1,0 +1,22 @@
+####################################
+关于javascript的的几点备忘
+####################################
+:category: Memo
+:tags: Python,JavaScript/CSS,Memo
+:date: 2006-10-27 08:32
+
+
+
+**關於中文在路徑(URL)中傳遞**
+
+至少對於UTF8編碼，Firfox可以毫無問題地直接提交到服務器，但是IE卻不行。解決方法自然是把URL編碼。在javascript中最常用的，但同時也*as old as javascript itself*的方法是escape()函數。但是escape函數會把unicode的「中文」（碼値為「0x92,0x86,0x95,0xb6」）編碼為「%u9286%u95b6」這樣的形式。而在服務器端，Python的cgi包提供的URL解碼函數parse_qs()卻似乎只認識「%92%86%95%b6」這樣的形式。用javascript的encodeURI()則可實現這種結果。
+
+另外注意Python的cgi.parse_qs()是被設計用來分析類似q1=something&&q2=something%20else這樣的帶參數URL的。對於剛才的例子，parse_qs()會返回下面這樣一個一個字典::
+
+ {'q1': ['something'], 'q2': ['something else']}
+
+**關於Form的提交**
+
+根據標準，當Form内只有一個input時，按回車Form會被自動提交(sumbit)。但Form在被提交前，Form的OnSumbit事件會被觸發，如果定義了該事件的響應函數，則瀏覽器會根據該函數的返回値是否為True來決定是否提交Form。
+
+

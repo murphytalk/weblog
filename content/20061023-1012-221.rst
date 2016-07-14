@@ -1,0 +1,43 @@
+############
+版式改造完成
+############
+:category: Memo
+:tags: DigiLife,JavaScript/CSS,Memo
+:date: 2006-10-23 10:12
+
+
+
+没有一点Frog的影子了。不过现在这个效果也不是我原创的，扒自lighttpd作者的网志"lighty's life":http://blog.lighttpd.net/所采用的版式"Scribbish":http://quotedprintable.com/pages/scribbish，然后按照自己的喜好作了些改动，还是比较赏心悦目的 ^_^ 还准备模仿"lighty's life":http://blog.lighttpd.net/的搜索功能 :-P
+
+另外改造过程中学到的几个关于gimp（学前班水平）和css（小学水平）的东西记录一下。
+
+
+**用gimp制作透明背景GIF**
+
+指定某一颜色为透明色即可制作出透明背景GIF（仅GIF89a支持）。在gimp里的做法是（怀疑对其他支持透明效果的图像格式也是大同小异）：
+
+1. 打开或新建图像，颜色数降到256色（GIF所支持的最大色彩数）或更低。
+
+1. 在图中右击打算变为透明的颜色，从弹出菜单中选择LAYERS（图层）> ADD ALPHA CHANNEL（添加到Alpha通道）。此步完成好界面上尚无任何变化。
+
+1. 再次在图中右击，从弹出菜单中选择SELECT（选择）> BY COLOR（按颜色），然后在图中选择准备变为透明的颜色。这步完成后图中所有透明色区域会被标记。
+
+1. 再次在图中右击，从弹出菜单中选择EDIT（选择）> CLEAR（清除），然后确认、保存即可。
+
+**CSS：关于float**
+
+float用来布置页面布局，多用于水平方向。left让一个对象从其左侧对象的最右端开始向右侧延伸直至遇到阻碍，right则反之。目前的布局曾经在footer上留用了frog的风格float:left，结果造成sidebar的下端有时会延伸到footer以下。原因是float:left只关心/尊重了其左侧对象而置其右侧的sidebar于不顾。改为float:both即可。
+
+**CSS：设定某id/class的URL连接的风格**
+
+如下例，设定id为sidebar的div内class为powered-by的部分的URL连接的风格时，应该写成类似于::
+
+ #sidebar .powered-by a:hover, a:active{background: #fff; } 
+
+如果写为::
+
+ #sidebar .powered-by{
+   a:hover, a:active{background: #fff; }
+ }
+
+则不起作用。从程序员的角度看觉得很怪异。 

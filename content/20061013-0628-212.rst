@@ -1,0 +1,63 @@
+##########
+Dot !
+##########
+:category: Memo
+:tags: Memo,Software
+:date: 2006-10-13 06:28
+
+
+
+Dot是在用繪圖軟件（不過人家自稱爲Graph visualization Software）"Graphviz":http://www.graphviz.org“畵”圖時用的描述語言。這幾天在整理文檔，這下無需忍受用Excel和Word畵圖了^_^
+
+用Dot告訴Graphviz這麽一個流程::
+
+ digraph G {
+	rankdir=TB;
+	
+	node [shape=box, fontsize=10,fontname="MSGothic.ttc"];
+
+	START         [style = filled,fillcolor=lightgrey];
+	END           [style = filled,fillcolor=lightgrey];
+	GetStruct     [label="GetStruct()パスの階層数を取得"];
+	GetFileName1  [label="GetFileName（num=1）第1階層（ROOT直下）のパス名を取得"];
+	GetLfnBase1   [label="CreateLfnBase()第１階層（ROOT直下）のパス名をショート名に変換"];
+	GetRootEntry  [label="GetRootEntry()第１階層（ROOT直下）のDir Entry情報を探す"];
+	IfGetRootEntry[shape=diamond,label="成功？"];
+	IfPathAll     [shape=diamond,label="全ての階層を処理完了？"];
+	GetFileName   [label="GetFileName（）次の階層のパス名を取得"];
+	GetLfnBase    [label="CreateLfnBase()取得したパス名をショート名に変換"];
+	GetSubEntry   [label="GetSubEntry（）サブフォルダに移動してDir Entry情報を探す"];
+	IfGetSubEntry [shape=diamond,label="成功？"];
+
+	{rank = same; IfPathAll;GetStruct;};
+
+	START -> GetStruct -> GetFileName1 -> GetLfnBase1 -> GetRootEntry;
+	GetRootEntry -> IfGetRootEntry[headport=n,tailport=s];
+	
+	/*GetRootEntry NG*/
+	IfGetRootEntry -> END[color=red,label="No",fontsize=10,fontcolor=red,tailport=s];
+
+	/*GetRootEntry OK*/
+	IfGetRootEntry -> IfPathAll[color=blue,label="Yes",fontsize=10,fontcolor=blue,headport=e,tailport=w];
+
+	/*all levels of path processed*/
+	IfPathAll -> END[color=blue,label="Yes",fontsize=10,fontcolor=blue,headport=w,tailport=w];
+
+	IfPathAll -> GetFileName[color=red,label="No",fontsize=10,fontcolor=red,headport=n,tailport=s];
+	GetFileName->GetLfnBase -> GetSubEntry;
+	GetSubEntry ->IfGetSubEntry[headport=n,tailport=s];	
+
+	IfGetSubEntry -> END[color=red,label="No",fontsize=10,fontcolor=red,headport=n,tailport=s];
+	IfGetSubEntry -> IfPathAll[color=blue,label="Yes",fontsize=10,fontcolor=blue,headport=w,tailport=w];
+	
+ }
+
+
+它就可以這麽給你Visualization出來:
+
+.. image:: {filename}/images/blogimages/2006/GetDirEntry.png
+   :align: center
+
+嘿嘿，還是很直觀的，再也不需要用鼠標點來點去，左排排右排排、再上下拽來拽去了^_^
+
+附記：如果要輸出CJK文字的話，文本需要採用UTF-8編碼。

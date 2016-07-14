@@ -1,0 +1,13 @@
+################################################################
+在Windows Media Player 11里播放APE文件
+################################################################
+:category: Memo
+:tags: Memo,Software,Windows
+:date: 2007-01-21 11:24
+
+
+
+安装APE Direct Show Filter即可。
+
+WMP直到10我都不屑一用，但跟着Vista来的11却吸引住我了，我尤其喜欢它强大的Music Library功能。iTunes for Windows可以一边呆着去了，虽然WMP11的不少花头显然是从iTunes学来的。
+

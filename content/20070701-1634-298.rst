@@ -1,0 +1,26 @@
+################
+史上最強神風攻擊
+################
+:category: Book
+:tags: ReadingNotes
+:date: 2007-07-01 16:34
+
+
+
+1945年4月16日，在8:27AM～9:47AM之間，美國海軍驅逐艦Laffey號承受了對單艘軍艦發起的最瘋狂的神風攻擊。
+
+排水量2200噸的Laffey號參加過諾曼底登陸,當時正在駛往位于沖繩西北的雷達偵測一號哨位（原文為radar picket station No.1。`Wikipedia <http://en.wikipedia.org/wiki/Picket_%28military%29>`_ 對 *picket* 的解釋為 *In military terminology, a picket refers to soldiers or troops placed on a line forward of a position to warn against an enemy advance. It can also refer to any unit (for example, an aircraft or ship) performing a similar function.* ）。在駐九州的日軍第五航空隊對沖繩水域美艦發起大規模神風攻擊的第一天的4月6號，驅逐艦Bush號^_^和Morrison號就是在此哨位被撞沉。
+
+8:27AM，Laffey號的雷達兵從屏幕上數到有50架飛機從北面靠近，這些飛機隨后從12點、3點、6點和9點鐘方向朝Laffey號撞來。美軍的護航戰斗機在軍艦炮火射程外擊落了幾架神風，并且勇敢地跟著沖到軍艦炮火網內攔截。在接下來的80分鐘里，Laffey號上的水兵們共數到22次神風攻擊，Laffey號除了機關炮掃射，還挨了6架神風和4枚炸彈。到攻擊最終停止時，Laffey號上的三座5英寸雙聯炮、所有的40毫米防空炮和絕大多數20毫米炮都被干掉，全艦只剩下4座20毫米炮還在運作。Laffey號艦尾起火、舵被卡住、31人陣亡、72人受傷。
+
+但是Laffey號沒有沉沒。在被拖離戰區作臨時修理後，她憑借自己的動力航行回美國進行了大修。
+
+書里有張圖詳解了對Laffey號的攻擊情況，不過沒有掃描儀，只好將就下"拍了張照片"
+
+.. image:: {filename}/images/blogimages/2007/USS-Laffey.jpg
+   :align: center
+
+
+
+PS. 美軍在沖繩灘頭登陸時幾乎沒有遭到抵抗，和平得以至于美軍在太平洋的兩棲部隊司令Richmond Kelly Tuner海軍中將（Vice Admiral）在4月8日給尼米茲海軍上將（Admiral）發電報說"也許我瘋了，但日本人好像已經退出戰爭了，至少在我這一塊"( *I may be crazy but it looks like the Japanese have quit the war,at least in this section* )。尼米茲很快回電：“刪掉'瘋了'之后所有的話”( *Delete all after "crazy"* )^_^ 尼米茲是對的，沖繩之戰是整個太平洋戰爭中最慘烈的戰役：負責陸上進攻的美軍第十軍團(U.S. Tenth Army，由有三個師的陸軍24軍和有兩個師的海軍陸戰隊第三兩棲作戰軍編成)陣亡7,613人、負傷31,807人；海軍艦上人員陣亡4,907人、負傷4,824人；而日軍方面（包括沖繩民兵和平民）則共陣亡107,539人；此外，雙方指揮官均陣亡：日軍的 `牛島満陸軍大将 <http://ja.wikipedia.org/wiki/%E7%89%9B%E5%B3%B6%E6%BA%80>`_ (うしじま みつる，南京大屠殺的劊子手之一)和 `長勇陸軍中將 <http://ja.wikipedia.org/wiki/%E9%95%B7%E5%8B%87>`_ （ちょう いさむ）在洞穴內切腹；而美軍的四星上將 `Simon Bolivar Buckner <https://en.wikipedia.org/wiki/Simon_Bolivar_Buckner_Jr.>`_ .則在戰役的最後階段在視察陣地時榴彈片擊中，後因傷口感染死亡。o_o 他是美軍在整個二戰中陣亡的軍銜最高的軍官。
+

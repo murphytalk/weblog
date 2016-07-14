@@ -1,0 +1,13 @@
+################################################################################################################
+Pylons' interactive online debugger knocks my socks off!
+################################################################################################################
+:category: Computer
+:tags: Python
+:date: 2007-04-02 22:15
+
+
+
+Way too convenient than any other web framework I have ever seen, that is what should be called productive! ;)
+
+Be interested in Pylon's  philosophy since the beginning, must give it a try!:-D
+
