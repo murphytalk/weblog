@@ -7,7 +7,7 @@
 
 
 
-軟啓動時會異常的原因找出來了，是CJKOS讀取已被轉移到Flash中的字庫的緣故。順便升級整理下幾乎已有兩年沒有碰過的軟件，另外增加了2days和datebk6。有位叫overkill_palm 的在"這裡":http://forum.gsmhosting.com/vbb/showthread.php?t=202671 狂貼Palm軟件的破解和註冊碼，求之者如潮啊，我一不當心就這麽看到了datebk6的註冊機。。。
+軟啓動時會異常的原因找出來了，是CJKOS讀取已被轉移到Flash中的字庫的緣故。順便升級整理下幾乎已有兩年沒有碰過的軟件，另外增加了2days和datebk6。有位叫overkill_palm 的在 `這裡 <http://forum.gsmhosting.com/vbb/showthread.php?t=202671>`_ 狂貼Palm軟件的破解和註冊碼，求之者如潮啊，我一不當心就這麽看到了datebk6的註冊機。。。
 
 胖子這幾年日薄西山，PPC風頭正勁。連我上次買電話都差點被Willcom的那個Sharp出的PPC手機給誘惑過去。PalmOS6果然如人所言是個大禮花而已，不知道這囘向Linux的遷移又會怎樣呢？我的最低希望是至少運行現有的m68k程序的話能保持Palm一貫的流暢和迅捷。Zaurus的對用戶操作的響應速度真是不敢恭維啊。
 

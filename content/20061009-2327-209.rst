@@ -1,0 +1,31 @@
+########################
+用GDB調試Palm程序
+########################
+:category: Memo
+:tags: Memo,Palm
+:date: 2006-10-09 23:27
+
+
+
+詳見 `prc-tools的説明 <http://prc-tools.sourceforge.net/doc/prc-tools_5.html>`_ 。
+
+除了用-g選項編譯代碼外，還有幾點:
+
+1. 在Emulator/Simulator中需要運行一個stub用來和GDB通訊。對於2.1d22以上的Emulator，只要設置允許Debugging即可；對於其他版本的Emulator以及Simulator，需要運行一個專門的stub程序。可以用prc-tools的samples裏的GDB Panel。
+
+2. 需要編譯出一個供gdb載入的bfd executable文件。可以在Makefile裏如下設置::
+ 
+	 $(APP): $(OBJS) obj/$(APP)-sections.ld
+		$(CC) -o obj/$(APP) $(OBJS) $(CFLAGS) $(LDFLAGS) \\
+		      obj/$(APP)-sections.ld
+	
+	 obj/$(APP)-sections.o: obj/$(APP)-sections.s
+		$(CC) -c obj/$(APP)-sections.s $(CFLAGS) -o obj/$(APP)-sections.o
+	
+	 obj/$(APP)-sections.s obj/$(APP)-sections.ld: $(APP).def
+		$(MG) -b obj/twinkle-sections $(APP).def
+
+3. 啓動gdb后用命令target palmos port和Emulator/Simulator連接。port默認為2000，可以省略。
+
+
+

@@ -1,0 +1,32 @@
+####################
+留言（評論）功能完成
+####################
+:category: Computer
+:tags: Python,Django
+:date: 2006-09-29 09:31
+
+
+
+直接借助django.contrib.comments實現的，只用了其Free Comments模塊，訪客無需註冊就可留言。
+
+另外順便記一下通過request對象往別的模板中傳遞context的方法。
+
+django.contrib.comments自帶了輸入和預覽用模板，看上去似乎很爽但問題在於django.contrib.comments.views的用來處理留言提交和預覽的函數post_free_comment()寫得太死，不僅hard coded了模板名為comments/free_preview.html，而且在渲染頁面調用render_to_response()時直接塞了自己的一個context字典進去，不給調用者任何染指的機會，遠沒有generic views來得靈活。我因爲想直接從我的base模板繼承下來整個網頁的風格、佈局，所以必須得用自己的模版。另外因爲base模板負責顯示tag clound和帖子總數之類數據，所以必須給它傳遞額外的context。
+
+第一個模板的問題倒很好解決。雖然被hard coded寫死了，但是django的template loader默認就是在filesystem loader前運行的，只要在blog的app目錄下的templates裏建好comments路面然後把模版文件放進去，然後在settings.INSTALLED_APPS裡確保django.contrib.comments排在後面就行了，會先匹配到並載自己app的模板。
+
+麻煩是在第二點，因爲踫到渲染頁面的最後一步調用render_to_response()，所以沒有辦法象自己寫view函數時那樣定制作爲render_to_response()的參數直接傳給模板的context。但是render_to_response()在被調用時還被傳入了一名為context_instance的參數，其值為RequestContext類的一個實例。而RequestContext類如其名，是用來從request這個大口袋中解析出context的。RequestContext類是Context的子類，django會把它的dicts成員（就是context字典）傳入模板生成頁面。
+
+RequestContext類在被創建時會調用get_standard_processors()來得到一組processor，而所謂的processor就是這麽一種函數：它接受request對象為參數，然後從中提取出自己能識別的context，匯總成一個dictionary返回。RequestContext類對request對象依次調用一遍它所能找到的所有processor，累積其各processor的處理結果，就得到了藏身于Request中的所有context了。
+
+RequestContext從settings.TEMPLATE_CONTEXT_PROCESSORS這個tuple裏尋找processor，其默認值為::
+
+ TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+ )
+
+我們要做的就是再追加一個我們自己的processor，然後就可以從request中找出自己先前放進去的context了。我的做法就是自己寫一個入口的comments處理函數，往request.META這個大字典例塞進去自己的私貨（extra context），然後再把皮球踢給django.contrib.comments.views.後者在渲染時會找到我的processor並調用它，這時我們就可以根據暗號（request.META中key的名字）拿到想要的東西了^_^
+
+Bingo! Problem solved !! ^_^ ^_^ ^_^

@@ -1,5 +1,5 @@
 ##########################################################################
-This site is made with django now !!!
+This site is powered by django now !!!
 ##########################################################################
 :category: Computer
 :tags: DigiLife,Python,Django
@@ -7,35 +7,37 @@ This site is made with django now !!!
 
 
 
-三月份拿起"django":http://www.djangoproject.com/ 看了看就又放下了，最近才耐下心把教程大致看完，然後陸陸續續用了一周午休的時間居然就把這個網站基本改造完成了！除了css和版面設計，其他都是重頭來過，功能要比原來的frog要強哦，尤其是可以給每個帖子貼任意多個標簽;) django的開發效率果然高，也果然夠newbie friendly，難怪有人呼其為"Python on a Plane":http://www.eweek.com/article2/0,1759,2009631,00.asp?kc=EWRSS03119TX1K0000594 ，和"Ruby on Rails":http://www.rubyonrails.org/ 叫板。
+三月份拿起 `django <http://www.djangoproject.com/>`_ 看了看就又放下了，最近才耐下心把教程大致看完，然後陸陸續續用了一周午休的時間居然就把這個網站基本改造完成了！除了css和版面設計，其他都是重頭來過，功能要比原來的frog要強哦，尤其是可以給每個帖子貼任意多個標簽;) django的開發效率果然高，也果然夠newbie friendly，難怪有人呼其為 `Python on a Plane <http://www.eweek.com/article2/0,1759,2009631,00.asp?kc=EWRSS03119TX1K0000594>`_ ，和 `Ruby on Rails <http://www.rubyonrails.org/>`_ 叫板。
 
-開發階段數據庫用的是sqlite，考慮到mysql的full text index可以利用來方便地實現搜索功能，就轉用mysql了。寫了段python程序在django shell裏運行從frog中導入數據，本來數據庫用sqlite的時候毫無問題，但改mysql後連接mysql時報encoding錯誤。看了下django的代碼，在django.db.backends.mysql.base.DatabaseWrapper.cursor函數中調用Database.connect前加了句::
+開發階段數據庫用的是sqlite，考慮到mysql的full text index可以利用來方便地實現搜索功能，就轉用mysql了。寫了段python程序在django shell裏運行從frog中導入數據，本來數據庫用sqlite的時候毫無問題，但改mysql後連接mysql時報encoding錯誤。看了下django的代碼，在django.db.backends.mysql.base.DatabaseWrapper.cursor函數中調用Database.connect前加了句
 
+.. code-block:: python
+   
   kwargs['charset'] = 'utf8'
 
 強行指定charset為utf8就行了。但加了這句在正式運行web app時又報encode錯，恢復原狀才可以。反正數據進來了，也就沒再多研究。
 
-感覺Django很優雅，確實做到了Writing web application could be fun。其ORM系統也許沒有傳説中的"SQLAlchemy":http://www.sqlalchemy.org/ 強大，但對大多數人而言應該是夠用了；模版系統有很棒的地方比如模版的繼承和自定義filter/tag，但是不能直接嵌入Python有束人手腳之感。有人解釋說這是爲了讓不懂編程的頁面設計人員也能夠輕鬆掌握，我倒不覺得能夠象"Myghty":http://www.myghty.org/ 那樣直接在模版中使用Python和保留一個對非編程人員友好的tag/filter系統之間有什麽衝突。也許和Python試圖通過強制使用ident來保證代碼的可閲讀性一樣，限制在模版中Python的使用可以防止在頁面渲染中摻雜過多邏輯處理？
+感覺Django很優雅，確實做到了Writing web application could be fun。其ORM系統也許沒有傳説中的 `SQLAlchemy <http://www.sqlalchemy.org/>`_  強大，但對大多數人而言應該是夠用了；模版系統有很棒的地方比如模版的繼承和自定義filter/tag，但是不能直接嵌入Python有束人手腳之感。有人解釋說這是爲了讓不懂編程的頁面設計人員也能夠輕鬆掌握，我倒不覺得能夠象 `Myghty <http://www.myghty.org/>`_ 那樣直接在模版中使用Python和保留一個對非編程人員友好的tag/filter系統之間有什麽衝突。也許和Python試圖通過強制使用ident來保證代碼的可閲讀性一樣，限制在模版中Python的使用可以防止在頁面渲染中摻雜過多邏輯處理？
 
-雖然Django的all in one很方便，我還是比較認同"Pylons":http://pylonshq.com/ 的philosophy。通過WSGI把各個部件松耦合在一起，這種自由度是Django沒法相比的。嗯，感覺它們在思想上的差異類似Windows大而全的應用軟件和Unix世界小而精講究分工協作的精神之間的差別了。。。希望什麽時候有時間去研究研究Pylons。
+雖然Django的all in one很方便，我還是比較認同 `Pylons <http://pylonshq.com/>`_ 的philosophy。通過WSGI把各個部件松耦合在一起，這種自由度是Django沒法相比的。嗯，感覺它們在思想上的差異類似Windows大而全的應用軟件和Unix世界小而精講究分工協作的精神之間的差別了。。。希望什麽時候有時間去研究研究Pylons。
 
 最後回到俺的這個小製作，現在雖然已經可堪一用了;) 但還有需要打磨的地方，列一下TODO，自上而下按優先度排序。
 
-1.實現搜索功能。**（2006/10/26 UPDATE：已完成）**
-
-1.改進編輯tag的方式，效果向 del.icio.us 看齊。
-
-1.增加多囯語言支持，這樣老爸來視察也不用猜英文的意思啦。**（2006/10/26 UPDATE：已完成）**
-
-1.留言功能。**（2006/9/28 UPDATE：已完成）**
-
-1.加個日曆？
-
-1.增加reStructuredText的文本類型？
-
-1.渲染StructureText和reStructuredText中的表情符號為表情圖標。**（2006/9/24 UPDATE：已完成）**
-
-1.編輯頁面對IE兼容不夠好，考慮改進。 
-
-1.Ajax化，趨勢啊趨勢! **（2006/10/26 UPDATE：Live Search）**
+- 實現搜索功能。**（2006/10/26 Update：已完成）**
+ 
+- 改進編輯tag的方式，效果向 Del.Icio.Us 看齊。
+ 
+- 增加多囯語言支持，這樣老爸來視察也不用猜英文的意思啦。**（2006/10/26 Update：已完成）**
+ 
+- 留言功能。**（2006/9/28 Update：已完成）**
+ 
+- 加個日曆？
+ 
+- 增加restructuredtext的文本類型？
+ 
+- 渲染structuretext和restructuredtext中的表情符號為表情圖標。**（2006/9/24 Update：已完成）**
+ 
+- 編輯頁面對ie兼容不夠好，考慮改進。 
+ 
+- Ajax化，趨勢啊趨勢! **（2006/10/26 UPDATE：Live Search）**
 
