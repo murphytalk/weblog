@@ -1,0 +1,16 @@
+####################################
+支持其他host上的x client
+####################################
+:category: Computer
+:tags: Linux
+:date: 2008-11-12 02:21
+
+
+
+ArchLinux的X server默认是以 nolisten tcp 方式启动的，没有找到什么参数设置的方法，用了比较dirty的方式：
+直接把 /etc/X11/xinit/xserverrc 里的X的启动参数改掉。
+
+然后要允许从其他host来的X服务请求，也就是/etc/hosts.allow文件啦。
+
+最后是X自己的auth问题，用xhost管理。
+

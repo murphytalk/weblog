@@ -8,6 +8,8 @@ for p in content/*.rst;do
     sed -E -i -e 's/<img *src="(\/.*)">/\n.. image:: {filename}\/images\1\n   :align: center\n/g' $p
     sed -E -i -e 's/<img *src="(http:\/.*)">/\n.. image:: \1\n   :align: center\n/g' $p
     sed -E -i -e 's/^NULL$//g' $p
+    #convert my ..sh to ..code-block
+    sed -E -i -e 's/\.\. *sh/\.\. code-block/g' $p
 done
 
 for p in content/*.md;do

@@ -1,0 +1,33 @@
+##########################################################################################################################
+Solved : Windows cannot sleep on a Windows/Linux dual boot PC
+##########################################################################################################################
+:category: Computer
+:tags: Windows,Linux,English
+:date: 2014-06-29 04:38
+
+
+
+My PC has been set up as Windows/Linux dual boot since the beginning, I use grub to manage the booting, and because I use Clonzilla to backup my Windows partition (so I can easily restore to the original perfect state whenever I messed up my Windows), I install grub on a dedicated small boot partition rather than MBR, so it won't be wiped out when I restore Windows. Obviously, I have to label the boot partition active (boot-able) in order to make this work.
+
+But recently I noticed my Windows refused to sleep : the syndrome is after the sleep button is clicked the screen will go black for a while, then lights on again and show me the login window. Frustrated, I did some google search, and learned the reason is because Windows is not happy about the fact that the Windows system partition is not active.
+
+Adding ``chainloader +1`` to the grub's Windows menu entry will make the Windows partition active when Windows is selected to boot, this will satisfy Windows who has always been demanding and finally it can sleep now.
+
+But this only solves half the problem : since now it is the Windows system partition but not my grub boot partition is active, when my PC restarts it will go straight to Windows ...  I will need to mark my grub boot partition as active and I don't want to click mouse too many times. The following command helped:: 
+
+ diskpart /s script.txt
+
+and ``script.txt`` is something like this::
+
+ select disk 2
+ select partition 2
+ active
+
+where ``disk 2 partition 2`` is the physical location of my grub boot partition.
+ 
+
+
+
+
+
+

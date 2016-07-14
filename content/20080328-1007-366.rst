@@ -1,0 +1,21 @@
+########################
+Maemo开发环境的安装
+########################
+:category: Computer
+:tags: DigiLife
+:date: 2008-03-28 10:07
+
+
+
+maemo网站上有 `安装说明 <http://tablets-dev.nokia.com/4.0.1/INSTALL.txt>`_ 。
+
+maemo钦定开发环境是debian/ubuntu，其他distro也支持，但在ArchLinux上进入scratchbox环境时会有如下错误::
+ 
+ Inconsistency detected by ld.so: rtld.c: 1192: dl_main: Assertion `(void *) ph->p_vaddr == _rtld_local._dl_sysinfo_dso' failed!
+
+`这里 <http://bbs.archlinux.org/viewtopic.php?pid=327217>`_ 给出了解决方法如下::
+
+ Run "sh -c 'echo 0 > /proc/sys/vm/vdso_enabled'" as root. 
+
+
+

@@ -1,0 +1,40 @@
+##########################
+叛逃到SoftBank阵营
+##########################
+:category: Computer
+:tags: DigiLife
+:date: 2008-11-02 09:33
+
+
+
+入手了第一个Windows Mobile手机X02HT。
+
+感觉还是不错的，虽然没有palm那么快，但是UNICODE支持、可以通过PC直接访问手机内文件系统（终于不需要把文件格式转来转去了）值得显示速度上的牺牲。
+
+原生的ROM用的字体不是全UNICODE的，只有日文汉字。所以第一件事情就是替换字体。换了一个网上找来的号称针对wm平台修改过的雅黑，也不知道改了哪里，大小还是十几兆。拷贝到手机里，然后改注册表如下::
+
+ Windows Registry Editor Version 5.00
+
+ [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\FontLink]
+
+
+ [HKEY_LOCAL_MACHINE\\Software\\Microsoft\\FontLink\\SystemLink]
+ "MS UI Gothic"="\\\\windows\\\\msyhfix.ttf,微软雅黑"
+ "MS Gothic"="\\\\windows\\\\msyhfix.ttf,微软雅黑"
+ "MS PGothic"="\\\\windows\\\\msyhfix.ttf,微软雅黑"
+ "ＭＳ ゴシック"="\\\\windows\\\\msyhfix.ttf,微软雅黑"
+ "ＭＳ Ｐゴシック"="\\\\windows\\\\msyhfix.ttf,微软雅黑"
+ "宋体"="\\\\windows\\\\msyhfix.ttf,微软雅黑"
+ "SC_Song"="\\\\Windows\\\\msyhfix.ttf,微软雅黑"
+ "Nina"="\\\\Windows\\\\msyhfix.ttf,微软雅黑"
+ "Courier New"="\\\\Windows\\\\msyhfix.ttf,微软雅黑"
+
+另外雅黑是没有内嵌点阵的，所以一定要开ClearType，建如下的Key [1]_ ::
+
+ HKEY_LOCAL_MACHINE\\SYSTEM\\GDI\\Cleartype
+
+尝试过关闭ClearType而 `启用AntiAlias字体 <http://msdn.microsoft.com/en-us/library/aa911438.aspx>`_ ,效果很不好。
+
+.. [1] 根据MS的术语定义，有子项的叫Key，leaf node则叫Value。
+
+

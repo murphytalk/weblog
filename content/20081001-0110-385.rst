@@ -1,0 +1,21 @@
+####################################################################################################################
+Have been using awesome3 in production for almost one week
+####################################################################################################################
+:category: Computer
+:tags: Linux
+:date: 2008-10-01 01:10
+
+
+
+The experience is pretty good,it works like a charm on my two-display ArchLinux box at office.Very productive indeed.
+
+There are some issues need to be handled though:
+
+1. Need an application launch solution.Currently I am using that shell prompt box to launch applications.I heard dmenu is  a good one.
+
+2. The manipulation of some float window like skype is not good.Sometimes skype just cannot be shown,keeps flicking on the task bar only.
+
+3. If float window can be move around by using mouse that would be even better.
+
+
+

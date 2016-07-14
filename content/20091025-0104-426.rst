@@ -1,0 +1,41 @@
+############################
+升级到Django 1.0了
+############################
+:category: Computer
+:tags: DigiLife,Python,Django
+:date: 2009-10-25 01:04
+
+
+
+怎么感觉速度反而有些慢了？
+
+帖子编辑画面的CSS基本上还是一片mess，有时间慢慢调整，输入的话反正有好用的It's All Text插件。
+另外Text type 选择框的候选项怎么多出来一个「-----」，回头调查一下。
+
+另外还修正了以下几个问题：
+
+#. Django 1.0会给所有不是以反斜杠结尾的URL的在末尾把它给补上。如果在模板里写的URL结尾不是反斜杠的话，两个就不一致，Django就会发一个HTTP 103指示一个permanent redirect。因为在配置lighttpd时是把URL开头是否为 `/mysite` 作为是否通过fcgi连接django的标记，而lighttpd又被配置成除了一些特定URL外所有URL都会被加上一个 `/mysite` 的前缀标示应该发往django，所以其实所有的对django的 `GET` 的URL其实都是以 `/mysite` 开头的。这样在发生如上HTTP 103的时候 `/mysite` 就会被嵌到最后的 URL 中并在浏览器中可见。。。解决方法是确保模板中所以URL都以反斜杠结尾，以避免permanent redirect的发生。
+#. lighttpd被配置成通过unix socket和django通信。这样socket file就必须同时也为lighttpd所能读写。但是现在socket file的权限从以前的所有人都可读写变成只有所有者才可读写其他人只可读了。因为我用不同的用户跑lighttpd和django，所以就有问题了。最后其实没有解决这个问题而是迂回了：改用了TCP socket。
+
+如果以fcgi方式运行Django的话调试是个问题，感觉比较好的方法还是用python的logging包。可以在 `settings.py` 里定义这么一个logger:
+
+.. code-block :: py
+
+ import logging
+ logging.basicConfig(level = logging.DEBUG,
+                     format = '%(asctime)s %(levelname)s %(message)s',
+                     filename = '/tmp/mydjango.log',
+                     filemode = 'w')
+
+然后在需要出log的地方调用:
+
+.. code-block :: py
+
+ import logging
+ logging.debug('debug info')
+
+而且在Django源码里也可以这么插一下，对了解Django的机制还是很有帮助的。
+
+
+
+

@@ -1,0 +1,15 @@
+##########################################################
+用Python的内置http module共享本地文件资源
+##########################################################
+:category: Computer
+:tags: DigiLife,Python,Linux
+:date: 2008-10-06 07:53
+
+
+
+从一个 `年轻有为的同乡的网志 <http://blog.youxu.info/>`_ 上看来的::
+
+ python -m SimpleHTTPServer
+
+还支持断点续传呢。
+

@@ -1,0 +1,20 @@
+##############################
+禁止Firefox检查插件版本
+##############################
+:category: Computer
+:tags: Software
+:date: 2008-02-26 01:19
+
+
+
+Firefox 3已经发布beta 3了，据说很好用：不仅改善了CJK的渲染速度，而且由于采用了新的mem库(windows上本来用的VC的似乎评价很低)，内存使用和释放也有很大改善。
+
+问题在于插件。插件是Firefox之所以强大的主要原因之一，离开了插件的Firefox就如同壮士被缚一臂了。虽然大多数插件其实在Firefox 3上跑起来并没有问题，但因为没有声明自己支持到Firefox 3，所以会被禁止掉。
+
+解决方法是以毒攻毒：禁止Firefox的插件版本检查机制。具体的做法是：在about:config里建如下两个新的boolean型key，值设为false即可::
+
+ extensions.checkCompatibility 
+ extensions.checkUpdateSecurity
+
+
+

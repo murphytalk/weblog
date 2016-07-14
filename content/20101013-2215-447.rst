@@ -1,0 +1,48 @@
+##############################################################
+Fallout3 reloaded ... with MODs
+##############################################################
+:category: Misc
+:tags: Game,Fallout
+:date: 2010-10-13 22:15
+
+
+
+玩了一个礼拜《文明5》，感觉还是放一放等扩展包和MOD都成熟起来比较好。这一阵子听爵士乐，突然怀念起Fallout来，刚好看到有包括所有DLC的年度版，遂重燃起玩的欲望。
+
+安装
+-----
+
+在Windows 7上装好后第一个问题是抱少xlive.dll错。这个是Games for Windows Live的垃圾。所幸有个有用的工具 `Games for Windows LIVE Disabler <http://www.fallout3nexus.com/downloads/file.php?id=1086>`_ 。
+
+这个问题解决了后悲剧地发现一启动就Crash，研究后发现需要把fallout3.exe的Comatibility属性的Disable desktop composition打开。另外保险起见，设成兼容Vista或者XP模式。
+
+然后可启动，但时发跳出游戏的问题，从FOMM的Game Settings里将Screen Effects从HDR改成Bloom有所缓解。
+
+MOD基础
+-----------
+
+很好的一篇介绍 `安装MOD <http://www.fallout3nexus.com/articles/article.php?id=43>`_ 的文章。
+
+里面提到的一个 **ArchiveInvalidation.txt** ，是用来告诉系统哪些mesh/texture已经被重载了的。很多MOD都带mesh或者texture目录，要求安装在Data目录下。Data目录下原本是没有这个目录的，原先的造型和材质都在那些其大无比的BSA文件里。 `FOMM <http://www.fallout3nexus.com/downloads/file.php?id=640>`_ 带一个BSA Browser。ArchiveInvalidation.txt告诉具体什么造型和材质以及被取代了，指示游戏不要用原来的。
+
+有一个工具叫 `ArchiveInvalidation Invalidated! <http://www.fallout3nexus.com/downloads/file.php?id=944>`_ 可以自动维护这个状态，不需要自己操心创建这些文件。需要留意的是它不会避免多个MOD重载同一个造型或材质。这种情况发生时最后一个载入的有效。
+
+
+先行安装的几个MOD
+-----------------------
+
+- FemSmallHands 给女性角色一双小手。
+
+- HairPack 2.2 从上古卷轴移植过来的比较拉风的发型。
+
+- DIMONIZED races and TEXTURES 预设的几个女性角色造型。顺便说下如果不激活ArchiveInvalidation.txt发型可见但颜色完全走样。
+
+- TYPE3_BODY_V3dot5 和 TYPE3_V2_TEXTURE 身材和肤色。我选的自然是Slim。
+
+- NarrowedShoulderBodyMeshe 宽肩膀显然不适合mm。
+
+- Fellout 让野外景色更绿点、天更蓝点、空气更透明点。毕竟核战已经结束200年了。
+
+
+正在研究这个 `Fallout3 MOD wiki <http://falloutmods.wikia.com/wiki/Fallout_3_mods>`_  ，准备试试看几个看上去很不错的MOD。
+

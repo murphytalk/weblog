@@ -1,0 +1,18 @@
+############################################################
+FlashFolder ： 更好用的File Dialog
+############################################################
+:category: Computer
+:tags: Software
+:date: 2007-07-23 13:45
+
+
+
+`FlashFolder <http://www.zett42.de/flashfolder/>`_ 定制了系统的File Dialog，加了不少狠顺手的功能，果然是个一用就离不了的好工具。
+
+电脑玩物也有 `专文 <http://playpcesor.blogspot.com/2007/07/flashfolder.html>`_ 介绍。
+
+
+
+
+.. image:: {filename}/images/blogimages/2007/flash-folder.PNG
+   :align: center

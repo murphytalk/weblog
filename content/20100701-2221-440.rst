@@ -1,0 +1,29 @@
+########################################
+SQLite's index trick
+########################################
+:category: Computer
+:tags: Linux
+:date: 2010-07-01 22:21
+
+
+
+When create index for sqlite database,you have to make sure the columns refereed in index must also appear in the WHERE clause,and for the right-most column of an index that is used, there can be up to two inequalities that must sandwich the allowed values of the column between two extremes.Otherwise the index won't be used.
+
+I had a SQL whose WHERE clause looks like this.
+
+.. code-block :: sql
+
+ WHERE t.Status in( '01', '02', '03', '08', '51', '52', '53', '54', '55', '58', '59', '60') 
+ AND 
+ t.ClientID=a.UserID AND t.Side=s.id AND t.Status=u.status 
+ AND 
+ substr(t.TimeStamp,1,10)>='2010-01-25' AND   substr(t.TimeStamp,1,10)<='2010-01-25'
+
+The index should be created like this::
+
+ CREATE INDEX idx1 on tbl (status,TimeStamp)
+
+
+
+More details on 
+`SQLite site <http://www.sqlite.org/optoverview.html>`_ .

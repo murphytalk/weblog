@@ -1,0 +1,22 @@
+########################################
+lighttp lets me down
+########################################
+:category: Misc
+:tags: DayDream,Linux,English
+:date: 2011-05-15 03:20
+
+
+
+Couldn't get it work with MoinMoin on my LinkStation, kept saying environment variable `SERVER_NAME` could not be found (I was using fcgi). 
+
+Was forced to switch to bloated Apache,no problem.
+
+**UPDATE 2012/5/4** It turns out it can be fixed by assigning URL to the script to variable `fix_script_name` in moinmoin's fastcgi server script:
+
+.. code-block :: python
+
+ fix_script_name = "/"
+
+
+
+

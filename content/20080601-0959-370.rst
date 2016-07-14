@@ -1,0 +1,24 @@
+######################
+再唠叨几句这回攒的机器
+######################
+:category: Misc
+:tags: DigiLife,DayDream
+:date: 2008-06-01 09:59
+
+
+
+上次说到把主板送修，一周后也就是上周末被通知华硕给换了一块新的。兴匆匆跑去新宿把板子拿回来，装上后按电源：纹丝不动 :( 一怒之下把板子、CPU加内存全抱到新宿，找到Yodobashi的卖PC配件的地方让人家给试了下，果然一点问题都没有。应该是电源造的孽了。。。于是又买了个叫“黑带二段”的500W电源，黑乎乎很酷的样子。带回来再全装上去，好了。。。这次很背啊。
+
+不过也不完美：还没能把CPU象以前那样超100%到3.2G，现在只能超50%，再上去就启动不起来，郁闷。不过也有改善的：本来那个软关机切断电源后会自动重启的问题没有了。不清楚这个是本来板子的问题呢还是电源的问题。不过倒有一个是我自己的问题：因为DVD和老硬盘都是IDE的而板子只有一个IDE口我只好把它们串接在一起。因为DVD和硬盘的上下位置的关系，我把DVD跳成了master把硬盘跳成了slave。这么设置的话启动时BIOS要花很长时间才能识别出这两个设备，而且有时候还会找不到硬盘。本来以为板子就这么破，后来因为grub启动不起来的缘故查了下资料，无心插柳地发现人家建议这种情况把两个都跳成CS也就是Cable Select为好。我这么做了，虽然grub的问题没有解决，但是BIOS检测起这两个IDE设备来变得巨快。。。不由得想因为老识别不出硬盘来被我废掉的Biostar的板子来。。。暴汗。。。
+
+grub老是报Error 21启动不起来，换了lilo。不过新的kernel好像和udev勾搭得很紧，而udev会随机地给硬盘编/dev/sda或者/dev/sdb的名字，结果我用arch cd启动起来后（因为系统起不来所以借助arch cd启动后chroot到我的linux分区去装lilo）叫/dev/sda的硬盘在用我硬盘上的kernel启动时被叫成/dev/sdb，结果无法mount root，kernel panic，头大。后来才发现靠谱的方法：用/dev/disk/by-uuid下的名字，这个是固定的。
+
+**2013-5 UPDATE**
+
+Can you believe it? After 5 year I am still using this machine, but :
+
+1. Added an additional 19" monitor last year;
+2. Upgraded graphic card to GeForce GTX 460 last year;
+3. Upgraded CPU to Core Duo E8500 last year;
+4. Added lots of huge HDD over the years, and replaced the system HDD with an Intel SSD this year.
+5. Upgraded memory to 8GB this year.

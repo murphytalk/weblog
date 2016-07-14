@@ -1,0 +1,31 @@
+######
+NFS
+######
+:category: Computer
+:tags: Linux
+:date: 2008-08-27 09:33
+
+
+
+除了ArchWiki，因为服务器跑的是Debian，还可以参考 `这篇文章 <http://www.crazysquirrel.com/computing/debian/servers/nfs.jspx>`_ 。
+
+NFS server会用NFS client传过来的uid和gid去访问在server端被export的目录，为安全起见root默认会被自动重定向到一个低权限的匿名用户上去，这被叫做“squashing”。如果client端的用户的uid和server端被export出来的目录和文件的所有者的uid不一致的话操作权限就只有others了。可以修改exports文件指定uid的匹配规则。比如我的client端的用户的uid是1000，想要匹配到server端的uid为1001的用户的话可以这么做::
+
+ /media/usb-hdd/sda1 192.168.0.0/255.255.255.0(rw,sync,no_subtree_check,crossmnt,all_squash,anonuid=1001,anongid=1001)
+
+server端(debian)需要启动三个服务::
+
+ /etc/init.d/portmap start
+ /etc/init.d/nfs-kernel-server start
+ /etc/init.d/nfs-common start
+
+client端(Arch)则需要启动两个::
+
+ /etc/rc.d/portmap start
+ /etc/rc.d/nfslock start
+
+如果在服务启动后修改了/etc/exports的话，用如下命令让其生效::
+
+ exportfs -r
+
+

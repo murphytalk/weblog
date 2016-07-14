@@ -1,0 +1,36 @@
+######################
+Elixir的动作微调
+######################
+:category: Computer
+:tags: Python,Pylons,SQLAlchemy
+:date: 2008-01-01 12:21
+
+
+
+`Elixir <http://elixir.ematia.de>`_ 是 `SQLAlchemy <http://www.sqlalchemy.org>`_  的一个很薄的封装层 [#]_ ，目标是更加pythonic。
+
+基本上SQLAlchemy的所有行为都可以直接控制，以下是连接时和建表时的两个例子。
+
+**连接到数据库时的database specific设定**
+
+elixir定义了一个全局的metadata [#]_ ，可设置其属性bind来连接数据库。Tutorial中的例子是设一个URI字串，这样就按照标准方式连接数据库了。其实还可设置该属性为create_engine() [#]_ 的返回值。所以可以如前篇所述，先调用create_engine()，设置相关option的方式来在连接时做针对数据库的特别设定，然后将返回值赋值给metadata的bind属性即可。
+
+**创建表时的database specific设定**
+
+mySQL创建表时默认采用myISAM型，如果想用InnoDB，则需显式声明。elixir提供了一个'using_table_options' DSL statement，通过其设定的option会被不加处理的传递给SQLAlchemy的Table对象。对于本例，如下定义Entity即可:
+
+.. code-block:: py
+
+ class Movie(Entity):
+    using_options(tablename='movies')
+    using_table_options(mysql_engine="InnoDB" )
+
+    title = Field(Unicode(30))
+    year = Field(Integer)
+    description = Field(Unicode)
+
+
+.. [#] Alchemy是炼丹术，而elixir则是长生不老药。瞧这名字取的^_^
+.. [#] 数据类型是SQLAlchemy的MetaData型。
+.. [#] SQLAlchemy的函数。
+

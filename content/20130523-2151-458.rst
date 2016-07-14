@@ -1,0 +1,27 @@
+##################################################
+Hosting my life in Clouds
+##################################################
+:category: Computer
+:tags: DigiLife,English
+:date: 2013-05-23 21:51
+
+
+
+When I was moving to my new home one year ago, there was one thing upset me : the tower building I was moving in hires this ISP who, although offer a quite fast 1G Internet connection, does not give me public IP address.
+
+I have been running my little home server for years, and having a home server which I can connect to at anywhere and anytime has become so nature.
+
+
+
+But compared with a public IP, a brand new comfortable home is more attractive, so I had to accept it, although reluctantly.
+
+Now one year has passed, I  just realized I am already hosting a pretty chunk of my digital life in the clouds:
+
+- Close to 10,000 thousands of pictures on Flicker.
+- Dropbox to sync personal data between home computers and smartphone.
+- This is the latest : I start to host my git repositories on Bitbucket_.
+ 
+As for the home server?  Yes I still have it which is basically my data store with daily incremental backup ; and No I no longer need to access it when I am not at home now :)
+
+
+.. _Bitbucket: https://bitbucket.org/murphytalk/profile/repositories

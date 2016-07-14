@@ -1,0 +1,41 @@
+################################
+BASH脚本：用date取得日期
+################################
+:category: Computer
+:tags: Linux
+:date: 2007-07-23 13:39
+
+
+
+写了个脚本从服务器上下载night build的代码。night build的成果是以日期为文件名保存的，虽然每夜都会自动build，但是万一哪个粗心的家伙提交了编译通不过的代码那么当天晚上的night build成果就没有了，所以我希望我的脚本在找不到当天的night build时能逐次找前一天的成果。
+
+date命令的-d选项狠强大，可以以超多方式指定日期。详细可以从info date里找到，我这里需要的只是前某某天。
+
+实例::
+
+  function download {
+  #
+  # param 1 - file name of the compressed file on remote server to be downloaded
+  # param 2 - full path of the compressed file on remote server to be downloaded
+  # param 3 - phone type: Pro700 etc.
+  
+          WGET_RESULT=1
+          DAYS_AGO=0
+  
+          until [ $WGET_RESULT -eq 0 ];do
+  	    if [ -e $1 ];then
+  	        echo found $1 in local,skip downloading
+                  WGET_RESULT=0
+              else
+                  wget $ZIPPATH
+                  WGET_RESULT=$?
+              fi
+              if [ $WGET_RESULT -ne 0 ];then
+                  echo Not found source for `date -d "-$DAYS_AGO day"`,try the previous day
+                  ZIP="Sim"$3"_`date -d "-$DAYS_AGO day" +%Y%m%d`_ALL.lzh"
+                  ZIPPATH=$SIMDIR$ZIP
+  
+                  let DAYS_AGO=DAYS_AGO+1
+              fi
+          done
+  }

@@ -1,0 +1,47 @@
+####################################################
+SQLAlchemy/MySQL的Unicode处理
+####################################################
+:category: Computer
+:tags: Python,Pylons,SQLAlchemy
+:date: 2008-01-01 06:13
+
+
+
+从0.4版开始SQLAlchemy可以指定文字列内部用unicode编码。在定义表时通过指定字符串列为Unicode型，SQLAlchemy在存取数据时就会自动进行unicode和实际编码 [#]_ 间的转码工作，保证在用户的Python程序中出现的字符串都是unicode编码的。
+
+比如mysql数据库中有一表data，其data字段为utf-8编码。首先是创建engine。因为很多mysql的默认安装的client编码为是latin，保险起见，连接时设定charset为utf8为好。create_engine()有一个 **connect_args** 参数 [#]_  ，其说明为： a dictionary of options which will be passed directly to the DBAPI's connect() method as additional keyword argument。如果给这个参数传递如下dictionary:
+
+.. code-block:: py
+
+ {'charset':'utf8'}
+
+charset就会被SQLAlchemy传递给MySQLdb [#]_  ，MySQLdb则调用mysql API的mysql_options()来进行设定。
+
+整个从连接到读取表内容的操作示例如下:
+
+.. code-block:: py
+
+ args={'charset':'utf8'}
+ URI="mysql://root:passwd@localhost:3306/sandbox"
+ engine = create_engine(URI,encoding='utf-8',connect_args = args,echo=True)
+ metadata = MetaData()
+ conn = engine.connect()
+ tbl = Table('data',metadata,
+                Column('id',Integer,primary_key=True),
+                Column('data',Unicode(30)))
+ s = select([tbl])
+ result = conn.execute(s)
+
+
+.. [#] 实际编码通过调用create_engine()时传递的encoding参数指定。
+.. [#]  **2008/01/04 UPDATE** 还有个更简单的方式是直接通过URI传递参数。本例的URI可以写为：
+
+.. code-block:: py
+
+ URI="mysql://root:passwd@localhost:3306/sandbox?charset=utf8"
+
+详细可参见SQLAlchemy文档的Database Engines之Custom DBAPI connect() arguments部分。
+
+.. [#] SQLAlchemy采用的mysql python库。
+
+

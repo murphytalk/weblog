@@ -1,0 +1,18 @@
+############
+未来城市北京
+############
+:category: Misc
+:tags: DayDream
+:date: 2008-09-15 10:44
+
+
+
+截屏自NBC版本的奥运开幕式片头，是夜空中航拍的新央视大楼一带，活脱脱好莱坞电影里的未来城市。。。
+
+.. image:: /blogimages/2008/beijing-olympic.jpeg
+    :scale: 50
+
+
+
+
+

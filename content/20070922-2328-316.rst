@@ -1,0 +1,25 @@
+############################
+定制Fvwm-Crystal
+############################
+:category: Computer
+:tags: Linux
+:date: 2007-09-22 23:28
+
+
+
+Fvwm-Crystal和KDE真是绝配啊，太爽了。不过为了用得更顺手，我要按自己的口味定制下Fvwm-crystal。先来列几个和定制相关的要点。
+
+**Override default configuration**
+
+1. Fvwm-Crystal的设置文件分散于/usr/share/fvwm-crystal下的诸文件中。这些文件由Include命令读入。Fvwm-Crystal在Include这些文件时所用路径都是相对路径，所以如果在~/.fvwm-crystal下有同名文件的话，Fvwm-Crystal会载入改版本而放弃/usr/share/fvwm-crystal下的版本。比如Fvwm-Crystal默认定义了一组热键来控制mpd，恼人的是居然把Alt-x给占用了。Fvwm-Crystal默认的键盘设置是在/usr/share/fvwm-crystal/fvwm/components/desktop/Keyboard中定义的，其中Include了components/bindings/Music来设置mpd热键，所以，只要创建文件 ~/.fvwm-crystal/components/bindings/Music 就可覆盖掉所有默认设置。
+
+1. 至于Fvwm的全局属性，如字体之类，可以在~/.fvwm-crystal下的userconfig中将想覆盖的属性重新定义一遍。因为这个文件在最后被读取，所以其设定是被最后保留的。
+
+
+**窗口的定位**
+
+1. 默认的Viewport的起点在屏幕的左上角。对窗口可以用Geometry命令控制其大小及位置。位置可以用相对值来表示：正数表示是窗口的左/上顶点相对屏幕左上角的位置；如果是负数则意味着窗口的右/下顶点相对屏幕右下角的位置。比如如下命令，会把pager的右上角对齐屏幕的右上角放置::
+
+    *FvwmPager: Geometry -0+0
+
+

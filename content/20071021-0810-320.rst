@@ -1,0 +1,35 @@
+################################
+LinkStation起死回生記
+################################
+:category: Computer
+:tags: DigiLife,Linux
+:date: 2007-10-21 08:10
+
+
+
+**肇因**
+
+第一次用Debian，是挺方便的，不過對它的stable版本對軟件跟新的保守態度也算是有了體會。于是我用了這個所謂的 `apt pinning <http://jaqque.sbih.org/kplug/apt-pinning.html>`_ 方案，系統以stable為基礎，但是可以安裝testing和unstable的包。亂子就出在這里。
+
+換LinkStation的主要原因是想換個低功耗的設備來24小時跑小動物從網上背東西。mldonkey是個好選擇，但它的2.85以前的版本有中文問題。Debian現在的stable也就是etch提供的mldonky的版本是2.81,所以我就想換用sid里的2.91版本。但問題在于2.91依賴于新的libc。當然我對貿然升級幾乎是一切package的基礎的libc的危險性是有認識的，不過我卻嚴重忽略了修復一個變磚的LinkStation會有多么費勁。
+
+我用*dpkg -i*強行升級了libc到testing版本，重啟動：LinkStation在吭哧吭哧來回啟動了5次後亮起diag紅燈，放棄了。開始我還一點不緊張，因為我以為既然啟動不起來肯定會進入EM模式，我再刷一次flash就可以了，但結果證明我是錯的。
+
+**拆機**
+
+LinkStation啟動不起來的原因很明顯：負責踢狗的avr因為libc的緣故起不來，造成watchdog超時，firmware判斷發生嚴重軟件故障便自動重啟動了。但是此時讓我意外的是LinkStatio卻不進入EM，我在LAN上無論如何都搜索不到它，flash當然也就無從刷起。據網上找到的資料說LinkStation在檢測出硬盤錯誤的時候會進入EM模式，看了我唯一的選擇就是制造出硬盤錯誤來了，我需要拆機。o_o
+
+和大多數電子消費品一樣，LinkStation的外殼被故意設計成很難拆卸。總之我到第二天才想辦法把它拆開，因為網上搜索到的拆卸指南基于我的型號的上一代，沒有提到我的LinkStaion在正面面板下還隱藏著兩顆小螺絲 。。。 後來在裝回去的時候，心急手快，把用來引導主板上LED的光線到面板上指示燈的一個塑料小玩意兒給壓碎了，還把正面的USB插口給壓變了形。USB插口好歹被矯正過來了，裝好后的LinkStation的面板上的指示燈就都不亮啦，還好可以通過縫隙勉強分辨板子上哪個LED在閃光:D
+
+**復活**
+
+拆下硬盤就好辦了，我把它掛到PC上幹掉全部分區，人為制造了一個硬盤錯誤，然后再接回LinkStation，開機，乖乖進入了EM模式，再刷一次Freelink。不過接下來我又犯了一個錯誤：在升級kernel到2.6後我把/usr轉移到了格式化為xfs的hda3上，在kernel 2.6的狀態下一切OK，但是卻重啟動不起來。然后我才意識到，系統是從flash中的kernel 2.4引導起來後再裝載2.6內核的，而我刷的2.4內核卻不支持xfs!于是啟動過程中/usr下的所有東西都找不到，不失敗才有鬼！
+
+只好再刷一次。最后我采用的方案是建一個2GB的ext3格式（2.4能認識）分區hda2，再把/usr轉移過去。世界終于太平了。
+
+最后關于我用的 `Andre的kernel 2.6方案":http://hvkls.dyndns.org/downloads/documentation/README-webinstaller.html，還有一個不大不小的問題需要解決：Andre的方案會通過檢查/boot下有沒有一個叫try_new_kernel的文件來判斷是否要載入kernel 2.6，在載入成功後它會在/boot下創建一個叫try_new_kernel.running的文件來標識kernel 2.6正在運行中。如果這個文件存在的話它會放棄kernel 2.6的載入。現在的問題是，如果通過長按power按鈕兩秒關機的話這個running文件似乎沒有被刪除，造成下次boot只會進kernel 2.4。需要研究下負責監視所有按鍵的AVR daemon。有個控制按鍵等事件和AVR daemon動作的腳本"/etc/avr_evtd/EventScript <http://nas-central.org/index.php/AVR_watch-dog_daemon_for_Linkstation>`_ 。
+
+
+
+
+

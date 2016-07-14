@@ -1,0 +1,15 @@
+##################
+ATI Tools
+##################
+:category: Misc
+:tags: DigiLife,DayDream
+:date: 2007-11-24 03:33
+
+
+
+Raedon9550刷ROM成了9600，再加上ATI Tools助力，我也可以玩上Call Of Duty 4了。画面虽然没有那么精美，但是绝对流畅。
+
+老骥伏枥，志在千里；壮士暮年，雄心不已^_^就是对Linux的驱动太烂点了:-(
+
+
+.. image:: /blogimages/2007/ati-tools.jpg

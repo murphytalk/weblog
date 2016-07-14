@@ -1,0 +1,17 @@
+################################################################
+关于从Linux端访问服务器端通过samba共享的symlink
+################################################################
+:category: Computer
+:tags: Linux
+:date: 2007-09-24 22:28
+
+
+
+默认情况下smbclient会试图把服务器端的symlink匹配到本地：比如服务器端被samba共享的某symlink指向服务器端的/var/blabla的话，访问此连接时，smbclient会试图访问本地的/var/blabla。
+
+解决方法是在smb.conf的global部分作如下设定::
+
+ unix extension = no
+
+注意一定要加在global部分，加在共享目录的描述部分的话无效。
+

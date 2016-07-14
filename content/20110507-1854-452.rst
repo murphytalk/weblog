@@ -1,0 +1,29 @@
+##########################################################################
+LinkStation runs Debian Squeeze now !
+##########################################################################
+:category: Computer
+:tags: DigiLife,English
+:date: 2011-05-07 18:54
+
+
+
+The original etch installation has served me for more than 3 years , although it is already 2 generations behind the current officially supported version, but this is not the reason that makes me decide to spend a whole weekend night to do the upgrade.
+
+I was writing a tool to synchronize my tweets with Sina Weibo, and I just happened to write it by using Java. After I finished the tool , after having it run on my desktop Linux box pretty well , I wanted to deploy it to the LinkStation,which is  my home server.Only by then, I found out there is no JRE for etch PowerPC distribution : SUN/Oracle simply does not support PPC (a friend pointed out actually they do provide an embedded version of JRE for PPC, but not sure if it can run on my etch box) , and OpenJDK is not available to the aging etch ...
+
+In order to upgrade LinkStation to the newest Debian, I have to replace the stock boot loader with uboot. I used the pre-compiled binaries provided by `Buffalo @ NAS Central <http://buffalo.nas-central.org/wiki/Main_Page>`_ .
+
+This uboot is configured with fixed IP addresses : 192.168.11.150 for LinkStation and 192.168.11.149 for workstation. netcat running on workstation can capture all firmware and kernel's outputs. 
+
+Someone from NAS BBS has kindly provided userland of Squeeze for LinkStation. NAS Central also provides a very nice emergency ROM `firmimg.bin` which has built-in telnet/fdisk/ftp support.It saves me from openning my LinkStation ;)
+
+Thanks for uboot, the ROM can be booted from tftp. In netcat press `s` to stop the booting , and then input the following commands to boot the emergency ROM:
+
+.. code-block :: bash
+
+ tftp 800000 firmimg.bin
+ setenv bootargs console=ttyS0,57600 root=/dev/ram0 rw
+ bootm 00800000
+
+    
+

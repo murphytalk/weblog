@@ -1,0 +1,50 @@
+################################################################################
+STL map:inherit value type from key type
+################################################################################
+:category: Computer
+:tags: C/C++
+:date: 2010-04-21 22:28
+
+
+
+In some circumstance it might be convenient.
+
+.. code-block :: c++
+
+    #include <map>
+    #include <iostream>
+   
+    using namespace std;
+   
+    class Key{
+    public:
+        Key(int k):key(k){}
+        int key;
+        bool operator < ( const Key & k ) const{
+            return key<k.key;
+        }
+    };
+   
+    class Value:public Key{
+    public:
+        Value(int k,int v):Key(k),value(v){}
+        int value;
+        bool operator < ( const Value & v ) const{
+            return value<v.value;
+        }
+    };
+   
+    int main()
+    {
+        Value v1(1,100),v2(2,200);
+        typedef map<Key,Value> MAP;
+        MAP m;
+        m.insert(MAP::value_type(v1,v1));
+        m.insert(MAP::value_type(v2,v2));
+        for(MAP::iterator pos=m.begin();pos!=m.end();++pos){
+            cout<<"key="<<pos->first.key<<",value="<<pos->second.value<<endl;
+        }
+        return 0;
+    }
+
+

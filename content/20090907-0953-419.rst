@@ -1,0 +1,17 @@
+##########
+继续说单反
+##########
+:category: Computer
+:tags: DigiLife
+:date: 2009-09-07 09:53
+
+
+
+果然是工欲善其事必先利其器啊！尽管我还是个数码白痴（那本 `dSLR for dummies <http://www.amazon.com/Digital-Cameras-Photography-Dummies-Computer/dp/0470466065/ref=sr_1_1?ie=UTF8&s=books&qid=1252252598&sr=8-1>`_ 才看了一半），拍出来的照片效果已经远非卡片机可比了，用的还是和同事借来的18-50mm kit lens，俗称“狗头”。
+
+接下来就是选镜头。Alex推荐原厂的 `DA17-70mmF4AL [IF] SDM <http://www.pentax.jp/japan/imaging/digital/lens/index35_normalzoom.html#13>`_ 套头，一头拍天下。原厂的这款好处是带超音马达（Pentax管它叫SDM），对焦安静（其实电磁马达也没多大声音，很多人那么讲究安静难道是因为怪黍黎有特殊需求？^_^ ）、速度快。不过我转了圈发现SIGMA有款指标大致对等但价格友好很多的 `17-70mm F2.8-4.5 DC MACRO <http://www.sigma-photo.co.jp/lens/digital/17_70_28_45.htm>`_ ，相比之下缺点是没有超音马达和最大光圈小点，但网上中日英的群众们反应都还不错。在Yahoo Auction上打算以3万3500日元拍一个二手的结果出价以500日元之差被超过，不过想想新的才贵大概1万我还有6000多点，所以也许买个新的更划算。
+
+究竟买哪个明天做决断。
+
+PS. 发现一个很酷的照片共享网站Smugmug，感觉比谁知知道的Flickr强了10倍还不止。建了一个 `相册 <http://murphytalk.smugmug.com/Street-Scenes/Mr-Max/9533861_mDLUs#640854189_6gnPt>`_ ，唯一的问题是服务收费，14天试用期后不交钱的话就要被咔嚓掉。。。
+

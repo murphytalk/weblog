@@ -1,0 +1,13 @@
+####################################
+Nice PDF crop tool
+####################################
+:category: Computer
+:tags: DigiLife,English
+:date: 2010-09-11 00:47
+
+
+
+`briss <http://sourceforge.net/projects/briss/>`_ and it is free !  Comes with a GUI and you can crop odd and even pages differently.
+
+**UPDATE** It looks the Preview program in  MacOS X can also `do this trick <http://www.macworld.com/article/139223/2009/03/previewcrop.html>`_ .
+

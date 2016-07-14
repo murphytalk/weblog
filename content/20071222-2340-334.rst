@@ -1,0 +1,14 @@
+################################################
+Linux环境下Java 1.6的中文字体配置 
+################################################
+:category: Computer
+:tags: Linux
+:date: 2007-12-22 23:40
+
+
+
+不知道在RedHat和SuSE这些被Sun官方支持的distro上如何，反正gentoo上Java 1.6的中文默认效果很渣。参考了下 `Java的文档 <http://java.sun.com/j2se/1.5.0/docs/guide/intl/fontconfig.html>`_ 用simsun简单地配了下中文字体，效果还不错。
+
+``$JAVA_HOME/jre/lib/`` 下有很多预先提供的 ``fontconfig.properites.*.src`` 文件，我用了TurboLinux的那个。把allfonts那段和中文编码有关的字体换成想用的(TTF)中文字体即可。字体名字是标准的X的字体命名方式，可以在filename段指定字体名称到字体文件的对应关系。
+
+

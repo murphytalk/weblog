@@ -1,0 +1,50 @@
+########################################################
+Got myself a new home server
+########################################################
+:category: Computer
+:tags: DigiLife,English
+:date: 2012-04-29 17:58
+
+
+
+It was almost exactly one year ago that I flashed and upgraded my old and trusty LinkStation to run Debian 6.0. It has served me honestly for another year, while I am quite happy with it, there is one thing that bugs me : it is kinda slooooow.
+
+Well, let's face it, it has mere 128M RAM and the CPU runs at 260MHz, it serves as my file server, web server and the most heaviest: P2P download server, it has already been pushed to its limit. The average file copy speed over samba is about 5MB/s, it is OK to play 720p video files over the network, but 1080p ... 
+
+Actually that is not the critical problem ... yet, after all my sweet **jailbroken** Apple TV 2 does not support 1080p videos. What is killing me is that `MoinMoin <http://moinmo.in>`_ , the wiki engine I use to host my personal knowledge base, is really really slow on it. It takes seconds or even tens of seconds to search for something, it is making what is supposed to be productive become unproductive.
+
+As mentioned in my previous post, I was thinking to port MoinMoin to Google App Engine, and leverage Google's fancy infrastructure for my own good, just like this very blog. I made some progress, successfully hacked MoinMoin and make it run on top of GAE, but then I realized the 1,000 files limit of GAE's free service is an insuperable barrier.
+
+Yes I can use the sweet `zipimport` to load all 3rd party python libraries from a single zip file, but how about those static files? I use `MathJax <http://www.mathjax.org>`_ to write math equations a lot, and MathJax alone has more than 10,000 static files (images, css, javascripts, etc.) ! So I dropped my plan of migrating MoinMoin to GAE and decided to wait for some guy who is smarter and has more energy to waste to solve this.
+
+Yesterday I was wandering around Akihabara, which is only 10 minutes by bicycle from my home. I pushed myself through those helpless Otaku who were gathering in front of AKB48 coffee (or theater? Looking at them I have already started to worry about my son ... ) , found my way to the hidden street where lots of small gadget shops are located. From one of the shops I found `this <http://qrpbuilder.com/downloads/thin121310.pdf>`_ .
+
+1GHz CPU, 512MB RAM, no movable parts inside ... WOW it sounds like a perfect candidate for my home server, and the price is only **2,980 yen** !
+
+It is thin, and only a little bigger than my LinkStation.
+
+
+.. image:: http://farm8.staticflickr.com/7069/7123819875_15f35ed383_c.jpg
+   :height: 500px
+   :alt: My new home server
+   :align: center
+
+Because the CPU is a AMD Athlon(mobile edition), finally I can run my favorite and the most elegant distro `ArchLinux <http://www.archlinux.org>`_ . At first I wanted to replace the internal compact flash with a 2.5 inch hard disk, but then it occurred to me that I will need to attach all my external hard disks by USB anyway , why bother to look for another hard disk.  So now it is booting from the internal compact flash ( I put the boot partition there), but the root is mounted from an external USB hard disk. I use the rest of the the compact flash as swap, people say it is a bad idea to use flash memory this way because  the flash memory has a problem that it can only be written for limited times, but I don't think I will hit the swap that much. 
+
+The improvement is significant, the speed of copying files over network now is above 12MB/s. I already found a place for it in my "data center" in the shoe closet ;) 
+
+.. image:: http://farm8.staticflickr.com/7140/7123820451_3804e7e35f_z.jpg
+   :height: 500px
+   :alt: My data center
+   :align: center
+
+I used the picture below to show off how stable my LinkStation is (up and running for 209 days and counting) to my friend, I am pretty confident that the new guy will beat the record ^_^ 
+
+.. image:: http://farm6.staticflickr.com/5179/5522960362_d99e6182a8_z.jpg
+   :alt: My data center
+   :align: center
+    
+
+
+
+

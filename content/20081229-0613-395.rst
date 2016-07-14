@@ -1,0 +1,20 @@
+############
+存储空间倍增
+############
+:category: Computer
+:tags: DigiLife
+:date: 2008-12-29 06:13
+
+
+
+买了个1TB硬盘，几乎是现有所有存储空间的1倍。同时买了个可以接两个STATA硬盘的盒子，把1TB的和上次买的
+640GB的一起放进去了，现在的分区情况如下：
+
+- 1TB Seagate硬盘
+   - **/dev/sda1** STOCK, 600GB 左右，存放打算长久保存的video等资料。
+   - **/dev/sda2** 暂定NTFS文件系统，未处理和分类的下载资料。
+- 640GB WD 硬盘
+   - **/dev/sdb1** BACKUP1, 300GB，每日增量备份。
+   - **/dev/sdb2** DOWNLOAD，下载的incoming目录。
+- 下载专用硬盘 /dev/sdc
+

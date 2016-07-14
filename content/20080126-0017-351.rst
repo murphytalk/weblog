@@ -1,0 +1,44 @@
+############################################################
+C++的singleton pattern实践中的安全小花招
+############################################################
+:category: Computer
+:tags: C/C++
+:date: 2008-01-26 00:17
+
+
+
+用C++实践Singleton pattern时往往采取这样的方法：即在对象类中定义一个static函数，由它负责返回一个且始终返回同一个该类的实例(一般会用一个static变量去保存这个创建好的实例。另外为明了起见，函数名往往是getInstance或者createInstance之类)。外部则始终通过这个static函数来取得对该类的唯一实例的引用。
+
+但是仅仅这样做的话还无法防止外部有意或无意创建一个该类的变量，乃至去new一下该类，从而发生超过一个实例被创建的情况。为了防止这点，可以把构造函数声明为私有，从而根本杜绝在外部创建实例的可能：
+
+.. code-block:: cpp
+
+ #include <iostream>
+ using namespace std;
+ 
+ class Test{
+ private:
+     Test(){}
+     static Test m_this;
+ public:
+     void f(){
+         cout<<"test"<<endl;
+     }
+     static Test* instance(){
+         return &m_this;
+     }
+ };
+ 
+ Test Test::m_this ;
+ 
+ int main()
+ {
+     Test *p=Test::instance(); //成功：返回唯一实例
+     p->f();
+
+     Test  other; // 失败 -> 无法访问私有构造函数
+
+     return 0;
+ }
+ 
+

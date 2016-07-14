@@ -1,0 +1,136 @@
+################################
+Linux Phrasebook
+################################
+:category: Book
+:tags: Linux,ReadingNotes
+:date: 2008-09-16 07:39
+
+
+
+Scott Granneman的书 **Linux Phrasebook** *Essential code and commands* 的笔记。
+
+.. contents:: 目录
+    :backlinks: top
+
+为防止误操作可在root的.bashrc里做的设置
+------------------------------------------------
+
+防止误删、误覆盖等操作::
+
+ #覆盖同名文件前确认
+ alias cp='cp -i'
+
+ #删除前确认
+ alias rm='rm -i'
+
+常用命令
+----------
+
+ls
+=====
+
+列出所有子目录内容::
+
+ ls -R
+
+颠倒排序结果::
+
+ ls -r
+
+按照扩展名排序::
+
+ ls -X
+
+按照日期时间排序::
+
+ ls -t
+
+默认是最新的在最上面，如果要让最旧的在最上面则可以和 *-r* 组合使用::
+
+ ls -tlr
+
+上例还使用了 *-l* 用来列出详细信息。
+
+按文件大小排序::
+
+ ls -S
+
+让文件大小显示易读(human readable)::
+
+ ls -h
+
+cd
+=====
+
+回到之前所在目录::
+
+ cd -
+
+cat
+=====
+
+Concatenate files::
+
+ cat file1 file2
+
+Concatenate files and numer the lines::
+
+ cat -n file1 file2
+
+less
+=====
+
+Some key commands:
+
+-G or p : forward to end of file.
+
+-1G : back to beginning of file.
+
+-Esc-) or right arrow : scroll right.
+
+-Esc-) or left arrow : scroll left.
+
+-v : use default editor to edit. Can specify default editor by this way : **export EDITOR=vim**
+
+su
+=====
+
+su to another user with his env vars::
+
+ su -l username
+
+to become root with his env vars::
+
+ su -
+
+Redirect
+------------
+
+Prevent overwriting files when redirect
+===================================================
+
+Set *noclobber* to on to disable overwriting existing files while redirecting::
+
+ set -o noclobber
+
+When it is enabled,to be able to overwrite a file you have to do like this::
+
+ ls >| old.txt
+
+To turn it off::
+
+ set +o noclobber
+
+Sticky bit
+------------
+
+用命令::
+
+ chmod [+-] t
+
+开关。在Linux中sticky bit只对目录有效。当该位被置时，该目录下的文件只有所有者才能删除或者改名。典型的/tmp的sticky bit 会被打开，因为/tmp是全局可写的，通过sticky bit防止文件被别人修改或删除。
+
+
+
+
+

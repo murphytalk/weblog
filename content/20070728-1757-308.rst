@@ -1,0 +1,96 @@
+########################
+Gentoo Notes
+########################
+:category: Memo
+:tags: Linux,Memo
+:date: 2007-07-28 17:57
+
+
+
+**Kernel**
+
+* The ntfs module would not be loaded defaultly,have to add it to file /etc/modules.autoload.d/kernel-2.6.
+
+* Config the kernel like the following will get radeon frame buffer work,far more faster than the vesa driver,but it seems that the kernel won't recognize the vga=XXX option,so cannot change the resolution and color depth.But the default is enough for me ^_^::
+
+    Device Drivers
+       Graphics support -->
+        <*> Support for frame buffer devices
+               [*] Enable firmware EDID
+        <*> ATI Radeon display support
+        Console display driver support -->
+          [*] Enable Scrollback Buffer in System RAM
+          [*] Video mode selection support
+          <*> Framebuffer  console support
+
+* If the device for USB disk could not be created,make sure the following SCSI modules are installed::
+
+    Device Drivers
+      SCSI Support -->
+       <*> SCSI device support
+         <M> SCSI disk support
+         <M> SCSI generic support
+         [*] Probe all LUNs on each SCSI device
+       Input device support --->
+         <*> Event interface   
+
+* ATI drivers should be re-installed(to compile and install the fglrx module) at every time when the kernel is upgraded.If after ATI drivers' reinstallation some of the other kernel modules fail to be loaded, try make modules_install.
+
+**USE flags**
+
+* Use **/etc/portage/package.use** to declare USE flags for individual packages::
+
+    category/package-name use1 use2 use3
+
+* If **bindist**  USE flag is set, freetype's TrueType bytecode interpreter will be disabled to respect Apple Computer, Inc.'s patents when producing packages for binary distribution.
+
+* **immqt-bc** is required for enabling Chinese IME for QT/KDE apps.But currently it seems only scim-cvs supports this,so have to use xim for QT_IM_MODULE.Put the following lines in ~/.xinitrc（
+
+* *zh_CN.UTF-8** seems be a must：Chinese input doesn't work in en_US.UTF-8, and lots of Chinese characters cannot be displayed in zh_CN.GBK）::
+
+     export XMODIFIERS=@im=SCIM
+     #export QT_IM_MODULE=scim
+     export QT_IM_MODULE=xim
+     export GTK_IM_MODULE=scim
+     export LC_CTYPE="zh_CN.UTF-8"
+
+**Portage system**
+
+* Use **equery** to query info on packages.Example:list all installed packages::
+
+     equery list
+
+* Use **=** to specify version of package while emerging.The following command re-emerges qt 3.3.8-r2 with opengl USE::
+
+     USE="opengl" emerge --reinstall changed-use =qt-3.3.8-r2
+
+* Use **emerge --depclean** to uninstall orphan dependencies,and after that it is highly recommended to run **revdep-rebuild** to rebuild packages which are dynamicly linked to  those packages which have been removed.Sometimes after rebuild library packages with new USE flags,some packages would be broken,also run **revdep-rebuild** to fix it.
+
+* If gcc won't run after run *emerge --depclean* or *revdep-rebuild*,complains about something like "gcc-config:cannot locate gcc",it is probably because there are two versions(or more) of gcc installed and the default version config is missing.Fix it by using **gcc-config -f** to regenerate all config files.
+
+* To use 3rd-party ebuild,have to 
+
+- put it in a local dir which defined in PORTDIR_OVERLAY
+
+- make $PORTDIR_OVERLAY/category/appname dir structure and copy the ebuild into it
+
+- use **sudo ebuild ebuild-file digest** to update the portage. `Here <http://gentoo-wiki.com/HOWTO_Installing_3rd_Party_Ebuilds>`_  is a detailed HOWTO.
+
+* To pretend a package has been installed: add package name with version to /etc/make.profile/package.provided. It is called "injecting".Refer to portage(5) for details.
+
+* Configure LINGUAS for individual packages : use USE varialbles like linguas_en,linguas_zh_CN in /etc/profile/packe.use file.
+
+**X Window**
+
+* Use xv as mplayer's video output.The following command will modify xorg.conf and set overlay type as Xv::
+
+     ati-config --overlay-type=Xv
+
+What this command does seems
+
+**Misc**
+
+* Install **Chinese fonts for JRE** : just create *$JAVA_HOME/jre/lib/fonts/fallback* and link Chinese TTF font files to there.
+
+
+

@@ -1,0 +1,13 @@
+############################################
+Tiling Windows Manager
+############################################
+:category: Computer
+:tags: DigiLife,Linux
+:date: 2009-12-29 10:35
+
+
+
+反反复复用了阵子awesome，除了对每次版本升级就fuck一次前一个版本的设置文件感到受不了外，还有诸多兼容性问题。但问题是习惯了tiling windows的自动布局再用常规的WM感觉那是非常地不自在和低效。
+
+传说KDE 4.4会添加tiling windows功能，不过刚才发现一个好东西：pytyle，会给所有EWMH兼容WM，比如我喜欢的openbox，添加tiling功能 ^_^
+

@@ -1,0 +1,13 @@
+############
+屏蔽点阵字体
+############
+:category: Computer
+:tags: Linux
+:date: 2010-02-06 09:40
+
+
+
+在打开AA的情况下浏览器上某些网页时部分字体还是点阵状态，发现是fontconfig在按照网页指定的字体顺序搜索字体时匹配到了非矢量字体。对新版的fontconfig，把 `/etc/fonts/conf.avail` 下的 `70-no-bitmaps.conf` 给符号链接到 `/etc/fonts/conf.d` 下屏蔽点阵字体就可以。
+
+是立即生效的，不需要重启X，重启下浏览器即可。
+

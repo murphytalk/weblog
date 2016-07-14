@@ -1,0 +1,15 @@
+################################
+几个和搜索引擎技术相关的开源项目
+################################
+:category: Computer
+:tags: Linux
+:date: 2009-08-14 18:49
+
+
+
+- `Nutch <http://en.wikipedia.org/wiki/Nutch>`_
+
+- `Hadoop <http://en.wikipedia.org/wiki/Hadoop>`_
+
+- `Larbin <http://larbin.sourceforge.net/>`_
+

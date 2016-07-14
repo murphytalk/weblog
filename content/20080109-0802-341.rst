@@ -1,0 +1,78 @@
+########################################
+Mako的filter，兼唠Pylons
+########################################
+:category: Computer
+:tags: Python,Pylons,Mako
+:date: 2008-01-09 08:02
+
+
+
+元旦几天在家重新拾起了 `Pylons <http://www.pylonshq.com>`_ ，边看文档边移植原本用 `Django <http://www.djangoproject.com>`_ 写的本网志，进展不错。
+
+之所以对Pylons念念不忘是因为比较认同Pylons的思想(philosophy)。Django是个很出色的web framework，不过还是不如Pylons这个用WSGI粘在一起的框架来得灵活。
+
+和上次看Pylons的时候相比，一个明显的变化是把template系统从 `Myghty <http://www.myghty.org/>`_ 换成了 `Mako <http://www.makotemplates.org/>`_ 。两者的作者都是Michael Bayer（ 这个家伙还是厉害的Python SQL toolkit and Object Relational Mapper框架 `SQLAlchemy <http://www.sqlalchemy.org/>`_ 的作者，真是个如假包换的 **Coding Machine** 啊 (!) o_o ），Mako据说更 *pythonic* ，将取代Myghty。
+
+也许是先入为主，刚上手时不少地方不习惯，老是不自觉地和Django的template去比。最强烈的就是filter，虽然用法类似，但是和Django相比一度有两个怨念:
+
+ 1. filter只能接受一个参数。
+ 
+ 2. 这个参数还只能是unicode型的。
+
+不过继续研究下去方知是自己学艺不精，这两个问题其实都有解决方法。
+
+
+**参数个数的问题**
+
+Python提供一种编程方式叫decorate。具体而言就是用一个函数去"修饰"其他函数，使得所有对被修饰函数（下称函数B）的调用都经由修饰函数（下称函数A），就像挂了一个钩子一样。实现方法是在被函B数外头再包一层函数A，做额外处理后再返回B。这样外部的调用者以为调用的是函数B（拿到的返回值是函数B），但这却是在函数A被事先执行之后。
+
+对于Mako的filter函数只接受一个参数的问题，Mako在执行template中看到 | 符号的处理机制是：先去evaluate | 后面的东西，Mako希望evaluate的结果是个callable object，然后会去调用它，调用时传递的参数参数是 | 前面的变量值（默认是转换成了unicode型）。所以如果这样定义filter函数（该例是根据一个说明格式化文本类型的参数text_type，去做不同的文本渲染工作）:
+
+.. code-block :: py
+
+ def render_markup_text(text_type):
+    def markup(text):
+        log.debug("rendering structured txt,text type is %s",text_type)
+        if text_type == "rs":
+            return myRestructuredtext(text)
+        elif text_type == "st":
+            return structuredtext(text)
+        else:
+            return BBCode(text)
+    return markup
+
+然后在template中这样用filter::
+
+ <%!
+   from mymodule import render_markup_text
+ %>
+  
+ ${post.subject | render_markup_text(post.text_type)} 
+
+Mako在evaluate | 后面的东西时会调用render_markup_text()函数，而render_markup_text()刚好返回一个接受一个参数的函数，所以接下来的调用就如行云流水一般顺畅了^_^
+
+Python直接提供了一个关键字@，在做decorate时可以省掉一些语句。Pylons在下一个版本(开发中：0.97版)会预制一些decorator供使用。准备切换到开发版去尝尝鲜。;-)
+
+顺便说下上面的例子中在template里import filter函数时注意用 <% %>直接import，如果用<%def />或者<%namespace />的话，函数会被自动塞一个context参数。
+
+另外如果不想在每一个template文件里import的话，还有一个把自己的filter弄成Mako预定义filter的方法。在定义render_markup()的module里加这几句:
+
+.. code-block :: py
+
+  import mako
+
+  mako.filters.render_filter = render_markup
+  mako.filters.DEFAULT_ESCAPES['my_render_filter']= 'filters.render_filter'
+
+因为Mako是在其filters.py里定义的dict DEFAULT_ESCAPES里找预定义filter的，这样一来我们的私货my_render_filter就可以直接用啦。^_^  缺点是万一Mako以后的版本改了default filter的做法的话就跑不起来了。。。
+ 
+
+**参数类型只能为unicode型的问题**
+
+这个问题的起因是Mako（或者是Pylons在初始化Mako时）给所有的template加了一转换到unicode的默认filter，所以 `所有evaluate的结果首先会被转换成unicode型 <http://www.makotemplates.org/docs/filtering.html#filtering_expression_defaultfilters>`_ 。根据 `Mako讨论组 <http://groups.google.com/group/mako-discuss>`_  ，对于这种情况Mako早一些的版本好像只能去改template的default filter设定，搞得大家怨念很大，所以作者添加了一个特殊的filter叫 `n <http://www.makotemplates.org/docs/filtering.html#filtering_expression_turning>`_ ，它可以在evaluate一个 ${} 时使tempate的default filter失效，只有在 ${} 里指定的filter才起作用。比如说想用一个接受一个DateTime型参数返回一个星期名称字符串的函数weekday()做filter，可以这么写tempate::
+
+ ${p.post_date|n,weekday}
+
+**题外话**
+
+和Mako相比，Django的template简洁，功能相对弱（Mako的template其实就是Python的module）。但是它可以通过自定义filter和tag的方式去扩展，虽然麻烦点但确实有防止情不自禁在本该是只负责显示的template里塞很多business logic的效果；另外我还多少认同他们把templa
