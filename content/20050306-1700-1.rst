@@ -9,7 +9,10 @@
 
 Powered by WINE;)
 
-<img src="/blogimages/plone-exported/emule-on-linux.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/emule-on-linux.JPG
+   :align: center
+
 
 **W** ine **I** s **N** ot **E** mulator!
 

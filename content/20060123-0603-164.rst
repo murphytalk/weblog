@@ -9,10 +9,16 @@
 
 首航宣传海报
 
-<img src="/blogimages/Tatanic1.jpg">
+
+.. image:: {filename}/images/blogimages/Tatanic1.jpg
+   :align: center
+
 
 设计图
 
-<img src="/blogimages/Tatanic2.jpg">
+
+.. image:: {filename}/images/blogimages/Tatanic2.jpg
+   :align: center
+
 
 NULL

@@ -17,4 +17,6 @@
 
 　　嘿嘿，看来用点心还是能淘到价廉物美的东西的。
 
-<img src="/blogimages/plone-exported/digital/sd-1g.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/sd-1g.JPG
+   :align: center

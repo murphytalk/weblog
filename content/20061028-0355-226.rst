@@ -9,5 +9,8 @@ J-10成軍了
 
 看上去還是很不錯的，所謂的「空中美男子」該一邊涼快去了。
 
-<img src="http://static.flickr.com/102/280503544_146d07a139_o.jpg" height="70%" width="70%">
+
+.. image:: http://static.flickr.com/102/280503544_146d07a139_o.jpg" height="70%" width="70%
+   :align: center
+
 

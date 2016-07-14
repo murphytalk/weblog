@@ -9,4 +9,6 @@
 
 备忘
 
-<img src="/blogimages/plone-exported/digital/firefox_ext.JPG  ">
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/firefox_ext.JPG  
+   :align: center

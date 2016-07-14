@@ -9,5 +9,8 @@
 
 ^_^
 
-<img src="/blogimages/2007/头衔.jpg">
+
+.. image:: {filename}/images/blogimages/2007/头衔.jpg
+   :align: center
+
 

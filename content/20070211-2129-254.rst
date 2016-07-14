@@ -9,5 +9,8 @@
 
 中国模特郑宇光在最近一次国际大赛中的民族服饰展示中的穿着：
 
-<img src="http://farm1.static.flickr.com/181/386147626_5c28fe8fed_o.jpg">
+
+.. image:: http://farm1.static.flickr.com/181/386147626_5c28fe8fed_o.jpg
+   :align: center
+
 

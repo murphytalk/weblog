@@ -9,7 +9,10 @@
 
 再过100年，还会重复这样的轮回吗？
 
-<img src="/blogimages/plone-exported/weiqian.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/weiqian.jpg
+   :align: center
+
 
 照片拍于深圳一家味千拉面。
 

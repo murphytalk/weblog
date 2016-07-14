@@ -26,7 +26,10 @@
 
 从此带着大肥猫二代走南闯北地做任务，矮人和熊一起升级。熊的状态也从“不可靠”慢慢被驯服成了“忠实”。现在火枪手与敌遭遇时的基本战术动作是：1）放猎人标记 2）放熊咬人 3）开火。 兴头上来了可以凑上前去抡几斧子;)
 
-<img src="/blogimages/plone-exported/kalidar-bg.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/kalidar-bg.jpg
+   :align: center
+
 
 **工程师**
 

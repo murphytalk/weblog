@@ -23,4 +23,6 @@ CJKOS的GBK字库文件格式解析
 
 写了个font viewer验证了下:
 
-<img src="/blogimages/plone-exported/digital/cjkfontviewer.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/cjkfontviewer.JPG
+   :align: center

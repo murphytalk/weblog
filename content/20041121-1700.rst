@@ -11,11 +11,17 @@ T3入手！
 
 昨天从USPS的Tracking页面上看到说我的T3正由日本这边的海关处理，下午还正想着这回是不是要收到海关要求缴纳消费税的通知，有人在下面按门铃：我的T3到了:D
 
-<img src="/blogimages/plone-exported/T3.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/T3.JPG
+   :align: center
+
 
 是在苏州生产的：
 
-<img src="/blogimages/plone-exported/T3-BACK.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/T3-BACK.JPG
+   :align: center
+
 
 　　机器成色如卖家所言，基本上是新的。拿在手里发现比原先想象的要纤薄很多，那个被戏称作“裤子”的滑盖设计总体感觉有些怪异，也许可以节约些空间吧。对比TG50，TG50的屏幕偏红，T3的更逼真些:) 
 

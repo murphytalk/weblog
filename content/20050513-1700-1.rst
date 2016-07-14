@@ -11,8 +11,13 @@ The Corner of Starlingrad
 
 德军部分
 
-<img src="/blogimages/plone-exported/WWII/CornerOfStarlingrad_german.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/WWII/CornerOfStarlingrad_german.jpg
+   :align: center
+
 
 苏军部分
 
-<img src="/blogimages/plone-exported/WWII/CornerofStarlingrad_Russia.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/WWII/CornerofStarlingrad_Russia.jpg
+   :align: center

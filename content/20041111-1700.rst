@@ -19,6 +19,9 @@
 
 收到的假邮件(phishing [1])
 
-<img src="/blogimages/plone-exported/fake-ebay-email.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/fake-ebay-email.jpg
+   :align: center
+
 
 .. [1] n. duplication of a Web page that already exists in order to trick users into giving private or financial particulars or giving their password (Internet)

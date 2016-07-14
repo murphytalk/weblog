@@ -13,11 +13,17 @@
 
 在Crossroad，我打光了我M1的全部子弹，只好拣德军的武器用，结果随手捡来的居然差点让我以为是M1,就是换弹夹速度稍慢。以前居然不知道原来德军有Gewehr 43这种半自动步枪:
 
-<img src="/blogimages/plone-exported/WWII/g-43.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/WWII/g-43.jpg
+   :align: center
+
 
 这是其狙击型：
 
-<img src="/blogimages/plone-exported/WWII/gewehr-43sniper.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/WWII/gewehr-43sniper.jpg
+   :align: center
+
 
 其前身是1941年的Gewehr 41，但是Gewehr 41结构太过复杂，不易批量生产。41年德军入侵苏联后，缴获大量 Tokarev 7.62mm SVT38s 步枪，德国借鉴了这种步枪的简单有效的气动退弹装弹机构，发展出Gewehr 43。
 

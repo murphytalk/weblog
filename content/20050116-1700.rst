@@ -23,4 +23,6 @@ CJKOS的日文输入法也基本不可用，在网上找到一个免费的解决
 
 最后来幅输入日文时的截图。POBox自称用了一种输入预测算法，另外有记忆功能：我输过一次“入力”，现在只要输个n“入力”就出来了:)
 
-<img src="/blogimages/plone-exported/jap-ime.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/jap-ime.jpg
+   :align: center

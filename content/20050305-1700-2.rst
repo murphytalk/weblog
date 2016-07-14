@@ -11,6 +11,9 @@
 
 今天在Zope的wiki上看到居然有丧心病狂的家伙把垃圾广告给贴上去了:
 
-<img src="/blogimages/plone-exported/spam.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/spam.JPG
+   :align: center
+
 
 Zope社区活跃的多是开源人士，本来就对商业活动有保留意见，这下可要招起众怒了:(

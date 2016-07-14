@@ -13,24 +13,41 @@
 
 屋前
 
-<img src="/blogimages/plone-exported/view/front.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/view/front.JPG
+   :align: center
+
 
 屋后
 
-<img src="/blogimages/plone-exported/view/behind.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/view/behind.JPG
+   :align: center
+
 
 公车上
 
-<img src="/blogimages/plone-exported/view/bus.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/view/bus.JPG
+   :align: center
+
 
 窗外，感觉象莫奈的画;)
 
-<img src="/blogimages/plone-exported/view/bus_window1.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/view/bus_window1.JPG
+   :align: center
+
 
 继续莫奈
 
-<img src="/blogimages/plone-exported/view/bus_window2.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/view/bus_window2.JPG
+   :align: center
+
 
 川崎站的天桥上
 
-<img src="/blogimages/plone-exported/view/bridge.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/view/bridge.JPG
+   :align: center

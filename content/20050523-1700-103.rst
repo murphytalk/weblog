@@ -23,6 +23,11 @@ iRiver H10 6GB MP3 Player入手
 
 挺满意;)
 
-<img src="/blogimages/plone-exported/digital/iriver0.JPG">
 
-<img src="/blogimages/plone-exported/digital/iriver1.JPG">
+.. image:: {filename}/images/blogimages/plone-exported/digital/iriver0.JPG
+   :align: center
+
+
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/iriver1.JPG
+   :align: center

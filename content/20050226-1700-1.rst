@@ -17,6 +17,11 @@ Running without a video card ...
 
 在纸盒子里为雷鸟搭的巢，就一个字可以形容：简陋;) 两块网卡，充路由器用，这个Blog也跑在上面。
 
-<img src="/blogimages/plone-exported/digital/my-server-1.JPG">
 
-<img src="/blogimages/plone-exported/digital/my-server-2.JPG">
+.. image:: {filename}/images/blogimages/plone-exported/digital/my-server-1.JPG
+   :align: center
+
+
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/my-server-2.JPG
+   :align: center

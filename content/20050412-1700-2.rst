@@ -11,10 +11,16 @@
 
 用了下午和晚上的时间完成了CJKOS的字体转换器，Windows上只要是支持完整中文的unicode字体都可以拿来用。
 
-<img src="/blogimages/plone-exported/digital/cjk-font-tool.JPG">
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/cjk-font-tool.JPG
+   :align: center
+
 
 转换的字体效果图，16点阵的是来自繁体中文的细明体，24点阵的则是来自日文的明朝体。
 
-<img src="/blogimages/plone-exported/digital/mingliu-cjk.jpg">
+
+.. image:: {filename}/images/blogimages/plone-exported/digital/mingliu-cjk.jpg
+   :align: center
+
 
 程序是unicode的，用了iconv库把GBK内码转换为windows用的UCS-2LE内码，用选好的字体画DC，然后取点阵信息。
