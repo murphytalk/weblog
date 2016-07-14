@@ -24,4 +24,3 @@ tar的l参数是表示只拷贝物理存在于该分区上的内容。
  $ tar lcf - .|(cd /mnt/temp; tar xpvf -)
 
 
-NULL

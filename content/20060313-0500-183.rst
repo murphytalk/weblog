@@ -11,4 +11,3 @@ django.contrib.auth.middleware中去除了类RequestUserMiddleware，代之以Au
 
 django-admin.py创建出来的新project的settings.py似乎尚未对应这一最新变化。
 
-NULL

@@ -11,4 +11,3 @@ Google Blog Search
 
  `http://www.google.com/blogsearch <http://www.google.com/blogsearch>`_ 
 
-NULL

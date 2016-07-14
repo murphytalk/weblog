@@ -27,4 +27,3 @@ Firefox的插件
 
 另外FireFox现在已经直接支持Tab了，注意设置中不选择"Select new tabs opened from links"的话右键选择在新Tab中打开时新的Tab就是在后台打开了。用鼠标中键或者左键加Ctrl点击URL也有同样效果。
 
-NULL

@@ -35,4 +35,3 @@ cvs将以通过pserver登录的用户的身份运行，故cvs的用户首先必�
 
 即可访问远程cvs。
 
-NULL

@@ -15,4 +15,3 @@ MS现在引入了一个叫 `Side-by-side DLL <http://msdn.microsoft.com/library/
 
 PS. 文章里提到另一个free的setup制作工具 `Wix <http://wix.sourceforge.net/>`_  采用XML描述安装过程，感觉比NSIS好 。。。
 
-NULL

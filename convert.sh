@@ -7,4 +7,12 @@ for p in content/*.rst;do
     #convert <img/> html to ReStructureText image 
     sed -E -i -e 's/<img *src="(\/.*)">/\n.. image:: {filename}\/images\1\n   :align: center\n/g' $p
     sed -E -i -e 's/<img *src="(http:\/.*)">/\n.. image:: \1\n   :align: center\n/g' $p
+    sed -E -i -e 's/^NULL$//g' $p
+done
+
+for p in content/*.md;do
+    #convert [url=xxx] to MD hyper format
+    sed -E -i -e 's/\[url=(.*)\](.*)\[\/url\]/\[\2\]\(\1\)/g' $p
+    #del NULL line
+    sed -E -i -e 's/^NULL$//g' $p
 done

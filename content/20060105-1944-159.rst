@@ -27,4 +27,3 @@ SONY Rootkit 事件
 
  `EFF:Sony BMG Litigation Info <http://www.eff.org/IP/DRM/Sony-BMG/>`_ 
 
-NULL

@@ -23,4 +23,3 @@ emacs提供了outline mode，可以把文件的内容按照层次结构组织起
   (add-hook 'outline-mode-hook 'my-outline-mode-hook)
 
 
-NULL

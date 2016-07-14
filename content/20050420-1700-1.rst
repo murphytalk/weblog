@@ -36,4 +36,3 @@ slackware的服务启动感觉不如ArchLinux巧妙，完全是在诸rc脚本中
 dhcpd会把ip的lease情况记录在/var/state/dhcp/dhcpd.leases中。
 
 
-NULL

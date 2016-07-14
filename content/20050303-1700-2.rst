@@ -11,4 +11,3 @@
 
  (setq frame-title-format "emacs@%b")
 
-NULL

@@ -11,4 +11,3 @@ Web 2.0
 
 今天发现 `Netvibes <http://www.netvibes.com/>`_  借助时下也是很时髦的Ajax，web页面的生动程度越来越象native client应用了。我的感觉是Netvibes这类应用继续发展下去，至少个人就无需什么Mircosoft Outlook了。
 
-NULL
