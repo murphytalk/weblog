@@ -6,8 +6,8 @@ branches:
   - master
 
 # disable the default submodule logic - by default travis does not have access to them
-git:
-  submodules: false
+#git:
+#  submodules: false
 
 # use sed to replace the SSH URL with the public URL, then init and update submodules
 before_install:
