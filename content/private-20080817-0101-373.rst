@@ -1,0 +1,25 @@
+######################
+转换字符到其他数值类型
+######################
+:category: Computer
+:tags: C/C++
+:date: 2008-08-17 01:01
+
+
+
+其实可以借力iostream这么做：
+
+.. code-block:: cpp
+
+ template<typename T>
+ T convert(const char* str)
+ {
+    istringstream iss(string(str));
+    T result;
+    void *err = (iss >> ret); // if (err != NULL) error handling
+
+    return ret;
+ }
+
+^_^
+
