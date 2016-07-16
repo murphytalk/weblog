@@ -26,7 +26,7 @@ install:
 - pip install ghp-import
 - pip install jupyter 
 script:
-- 'make travis 2> /dev/null'
+- make travis
 env:
   global:
   - secure: "FXtk+L4VezuUQgQo57IguV/Vu1CTczpaWGxb0lFno9v+ClFQ+TfJ0YjdBk/kwmGpWkDlvpkrouzg/0BspLcpUtzI6j75Ok9eksFvO2tkg+PfPPdcx8IiIPnz3Ji7QiTGdYqO579Ao2fH8mvwDeHiBxNzo6H4RvbcgYZrrXAwfcZOOv+TjiaXl+L6t2Wds/ZDWLKTKEVraorxV1uKwGrD0dcyae3zrGmDT9g4iKnZWz5eSV6ImeAO4Zd3T7DvNgw4zYtWQh7kJ0kK45Kff9PizxB+fKevSXrJEx/cUtZh8+M3OHfTjHuiHWIDkf2tPpO6BaVRl0zuZkmhZE2QuWywLylO6Q427Kw6pXBw989Uf9bz+wIL7XVDYjhRJXuxm8FTsUK2tSIIVsl+I4h2uz0DwTJqDmvYBLk5D3f8VW3JgnGoUtQNZPThsobXTeyrKUFkscxnqjNDqFHWmgKIBKpfhCXQiUAIyHzhaOS+oKElbAqUXq/y4VCK9KvZjmTgGIjieRQBQ6MhX6gmvk1O4gkOywcOcItoxp2Dn8HXxkO0AlMVZL2Ygy2rAc4JCuAFCD580X1ySpEUOHU4D75KiQQoETkIw3DkU85J3Fdx9s1MDuZcCvaGFDrjuy1iVfzqHdhNim9+CS84dJa4NlFYVd2vcp4rCJWCek+jorFIswQ6/r4="
