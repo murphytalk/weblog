@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-from os import environ
 
 CACHE_CONTENT = True
 
 AUTHOR = u'Mu Lu'
 SITENAME = u"murphytalk's digitized memo"
 #PUBLISH en var is set in Makefile publish goal
-SITEURL = '' if environ.get('PUBLISH') is None else 'http://murphytalk.github.io'
+SITEURL = ''
 CC_LICENSE = 'CC-BY-NC'
 PATH = 'content'
 
