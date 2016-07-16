@@ -6,13 +6,18 @@ branches:
   - master
 
 # disable the default submodule logic - by default travis does not have access to them
-#git:
-#  submodules: false
+git:
+  submodules: false
 
 # use sed to replace the SSH URL with the public URL, then init and update submodules
 before_install:
-- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-- git submodule update --init --recursive
+- if [ ! -d theme ];then mdir theme;fi
+- if [ ! -d plugin ];then mdir plugin;fi
+- cd theme && git clone https://github.com/murphytalk/pelican-bootstrap3.git && cd -
+- cd plugin && git clone https://github.com/danielfrg/pelican-ipynb.git && cd -
+- cd plugin && git clone https://github.com/getpelican/pelican-plugins.git && cd -
+#- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+#- git submodule update --init --recursive
 
 install:
 - pip install pelican
