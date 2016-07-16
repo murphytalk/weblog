@@ -1,9 +1,9 @@
 [submodule "theme/pelican-bootstrap3"]
 	path = theme/pelican-bootstrap3
-	url = git@github.com:murphytalk/pelican-bootstrap3.git
+	url = https://github.com/murphytalk/pelican-bootstrap3.git
 [submodule "plugin/pelican-ipynb"]
 	path = plugin/pelican-ipynb
-	url = git@github.com:danielfrg/pelican-ipynb.git
+	url = https://github.com/danielfrg/pelican-ipynb.git
 [submodule "plugin/pelican-plugins"]
 	path = plugin/pelican-plugins
-	url = git@github.com:getpelican/pelican-plugins.git
+	url = https://github.com/getpelican/pelican-plugins.git
