@@ -113,7 +113,7 @@ github:publish
 	git push git@github.com:murphytalk/murphytalk.github.io.git gh-pages:master
 
 travis:publish
-	git push gttps://${GH_TOKEN}@github.com:murphytalk/murphytalk.github.io.git gh-pages:master
+	git push https://${GH_TOKEN}@github.com:murphytalk/murphytalk.github.io.git gh-pages:master
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
