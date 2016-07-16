@@ -25,6 +25,9 @@ before_install:
 - ls -all theme
 install:
 - pip install pelican
+- pip install Markdown
+- pip install typogrify
+- pip install bs4
 - pip install ghp-import
 - pip install jupyter 
 script:
