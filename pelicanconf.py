@@ -76,14 +76,20 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-#LINKS = (('The old blog', 'http://murphytalk-log.appspot.com/'),
-#         ('The Portal', 'http://murphytalk.vicp.net/'),)
+
+LINKS = (
+    ('<i class="fa fa-book fa-lg"></i>&nbsp;&nbsp;&nbsp;My Knowledge Base', 'http://murphytalk.pythonanywhere.com'),
+    ('<i class="fa fa-pencil-square-o fa-lg"></i>&nbsp;&nbsp;&nbsp;My Private Diary', 'http://murphytalk.vicp.net/diary'),
+    ('<i class="fa fa-anchor fa-lg"></i>&nbsp;&nbsp;&nbsp;My Online Portal', 'http://murphytalk.vicp.net'),
+)
 
 me = "murphytalk"
 SOCIAL = True
-
+MY_TWITTER_FEED = False
 ABOUT_ME = None
+
+RECENT_POST_COUNT = 25
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 
 #GITHUB_USER = me
 TWITTER_CARDS = True
@@ -91,8 +97,8 @@ TWITTER_USERNAME = me
 ADDTHIS_PROFILE = me
 DEFAULT_PAGINATION = 10
 
-DISQUS_DISPLAY_COUNTS = True
-DISQUS_SITENAME = 'murphytalks-digit-memo'
+#DISQUS_DISPLAY_COUNTS = True
+#DISQUS_SITENAME = 'murphytalks-digit-memo'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
