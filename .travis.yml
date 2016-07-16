@@ -21,8 +21,6 @@ git:
 before_install:
 - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
 - git submodule update --init --recursive
-- ls -all plugin
-- ls -all theme
 install:
 - pip install pelican
 - pip install Markdown
@@ -34,5 +32,5 @@ script:
 - make travis
 env:
   global:
-  - secure: "FXtk+L4VezuUQgQo57IguV/Vu1CTczpaWGxb0lFno9v+ClFQ+TfJ0YjdBk/kwmGpWkDlvpkrouzg/0BspLcpUtzI6j75Ok9eksFvO2tkg+PfPPdcx8IiIPnz3Ji7QiTGdYqO579Ao2fH8mvwDeHiBxNzo6H4RvbcgYZrrXAwfcZOOv+TjiaXl+L6t2Wds/ZDWLKTKEVraorxV1uKwGrD0dcyae3zrGmDT9g4iKnZWz5eSV6ImeAO4Zd3T7DvNgw4zYtWQh7kJ0kK45Kff9PizxB+fKevSXrJEx/cUtZh8+M3OHfTjHuiHWIDkf2tPpO6BaVRl0zuZkmhZE2QuWywLylO6Q427Kw6pXBw989Uf9bz+wIL7XVDYjhRJXuxm8FTsUK2tSIIVsl+I4h2uz0DwTJqDmvYBLk5D3f8VW3JgnGoUtQNZPThsobXTeyrKUFkscxnqjNDqFHWmgKIBKpfhCXQiUAIyHzhaOS+oKElbAqUXq/y4VCK9KvZjmTgGIjieRQBQ6MhX6gmvk1O4gkOywcOcItoxp2Dn8HXxkO0AlMVZL2Ygy2rAc4JCuAFCD580X1ySpEUOHU4D75KiQQoETkIw3DkU85J3Fdx9s1MDuZcCvaGFDrjuy1iVfzqHdhNim9+CS84dJa4NlFYVd2vcp4rCJWCek+jorFIswQ6/r4="
+  - secure: "M1589xZ+U4RApZtwnEa/3rOn4LYClG1rpW99nLUiWjPaKO7tl+V2Y4OeX6xWEao1X3tLUkPxVExLHHEl4F8xf23nJORBObiqxD1vYwbAxUrM6B/rv4g60q+jSqIsnWmHMWnqlj8oK24vVUaqS49F6eTs/Mh02sVvx5xRN3vrXZi7p/xJkDR1tDJwf8IZIWOFj1f9OSfbEV56PPNa06ITZwMTTcZmcIK3eEtG1kY47W0XaQLgJmMU+NpgGdDHFpQB+6dSiEw/HxWxVl6nh4gHxdeZ9ZCG5CeUnpkPbLZofx9vKbF5W+UsdCAtwr61a3TmopmQ2khNMafHaQhTzf1ly0gx+ou1J82M8JTZ4TlmUb6ODpxu8GsHg9TM+pNY8JEk8hKa0xJk2NqEGs2vVIWQWF1dn/WCMmBqAqpfzYeYL841z++0VvS7T2DZJWrsuhIrpk6SInlsJB1LZFA833ZEUN08CNZMOi0hokYNdbfZbIW6YyN/hp0vVE+20HjN1Juphp0oVdLjOWXFaPi5HcPD23v3rm22r05LRqej+0mjcZbRobQXlotsk/gEf2LRHh/sjbz44CIz3kWUQkJ/2REKILQESczI7j4Is7Zib+dFeAfvvWWCb8PAbgaea86EBI6B87g9blgsMz3HOjVrMZQ1jOx/bNTXHbZHtpKnteeUN08="
 
