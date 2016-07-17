@@ -15,7 +15,9 @@ First of all, let me count how many times this had already happened ...
 
 Although I did not like Jekyll, I did get interested in the idea of static websites. Then I discovered `Pelican <http://docs.getpelican.com/>`_ , Python's answer to Jekyll, and I liked it. Meanwhile I keep feeling insecure about my data being hidden inside GAE's data store, finally I was motivated enough to write `a small script <https://bitbucket.org/murphytalk/murphylog/src/3fd9241773e97c366b5c03cb15221b350d5ed680/api.py?fileviewer=file-view-default>`_ to download all data from GAE, and started the migration. The other major reason behind this is because with a plugin, Pelican makes it easy to integrate the ipython notebooks [1]_.
 
-So now I use Emacs to write post (wrote a small e-lisp function to automatically populate the meta data), and after my post is pushed to github, the changes will be detected by `Travis CI <https://travis-ci.org/>`_ , and get built and published automatically :) Not too shabby, isn't it ?
+So now I use Emacs to write post (wrote a small e-lisp function to automatically populate the meta data), and after my post is pushed to github, the changes will be detected by `Travis CI <https://travis-ci.org/>`_ [2]_, and get built and published automatically :) Not too shabby, isn't it ?
 
-.. [1] By default the rendered notebook uses light background for code snippet, which does not work well with my theme. Ipython notebook generates HTML with CSS embedded in it, which makes it very hard to change the style if not impossible. I ended up with a  picece of JavaScript to override the background color.
+.. [1] Ipython notebook is rendered to use light background color for code snippet, but that does not work well with my theme. The endered HTML has CSS embedded in it, which makes it very hard to change the style if not impossible. I ended up with a  picece of JavaScript to override the background color.
 
+
+.. [2] Travis CI only has permission to use git protocol to access the repo you enabled. If there is submodule then it can only use HHTPS to access them. If you don't what to keep using git protocol in the sub models, you can configure Travis to A) disable default git submodule update B) use sed to replace git with HTTPS in submodule file and then C) git submodule update 
