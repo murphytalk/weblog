@@ -54,7 +54,7 @@ wget --header "Accept: application/json" http://api.pearson.com/v2/dictionaries/
 
 `ldoce5` is the ID of Longman Dictionary of Contemporary English. Note `GET` is used. Multiple results will be returned as a JSON object. So that's everything we need to automate the task, let's teach my bot the trick.
 
-My bot is a [Hubot](https://hubot.github.com/), commissioned by GitHub (who, by the way, also coined the term ChatOps). I am pretty sure the original author must be one of those front-end guys who just invaded the back-end territory, because the language he or she chose to write Hubot is  [CoffeeScript](https://en.wikipedia.org/wiki/CoffeeScript), which is not only a bad name play of JavaScript, but also complied to JavaScript. 
+My bot is a [Hubot](https://hubot.github.com/), commissioned by GitHub (who, by the way, also coined the term ChatOps). I am pretty sure the original author must be one of those front-end guys who just invaded the back-end territory, because the language he or she chose to write Hubot is  [CoffeeScript](https://en.wikipedia.org/wiki/CoffeeScript), which is not only a bad name play of JavaScript, but also compiled to JavaScript. 
 
 The bot uses adapter to listen command (which is basically a string of text), then it launches scripts you write to parse the command, and executes the corresponding logic if the command is recognized. I will teach my bot two commands :
 
