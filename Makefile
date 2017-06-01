@@ -110,7 +110,7 @@ publish:
 
 github:publish
 	ghp-import output
-	git push git@github.com:murphytalk/murphytalk.github.io.git gh-pages:master
+	git push --force git@github.com:murphytalk/murphytalk.github.io.git gh-pages:master
 
 travis:publish
 	ghp-import output
