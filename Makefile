@@ -3,7 +3,7 @@ ifeq ($(OS),Windows_NT)
 	PY=/c/Python27/python
 else
 	PELICAN=pelican
-	PY=python2
+	PY=python3
 endif
 
 PELICANOPTS=
