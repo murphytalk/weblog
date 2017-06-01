@@ -1,8 +1,0 @@
-####################################
-我在Google Pages上的页面
-####################################
-:category: Memo
-:tags: Memo
-:date: 2006-03-11 12:08
-
-`http://murphytalk.googlepages.com/ <http://murphytalk.googlepages.com/home>`_ 
