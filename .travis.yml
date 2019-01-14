@@ -29,8 +29,8 @@ install:
 - pip install ghp-import
 - pip install jupyter 
 script:
+# build and publish to github pages
+# Github token is configured in travis repo settings
+# https://docs.travis-ci.com/user/deployment/pages/
 - make travis
-env:
-  global:
-    - secure: "l3vrINW4GjDS15moaT80Ejhsod0oJmSXK0VqYDA8Y629z9vuu9SEfePkdcbVfPs7QYpF/wVRiLCWSKkezd3XURD8P4O+CwdcFqwhZyvRalzeSIg/HSp4pxSsx819p0ymu+zb+scx7wVI3BBo55x8d3fchJGgWYy4awDEm5YHgP700B9pK49ZzDUR3KT/UhV6qFjd4twMTTrFOs9DEFgnPCjltnhxcs6e/K/lLt5enLa2MvuI+Esv9irNXcxwVxMYRaERdRdG5QJqCqrFQQ7HcV+PcAgrqM8czsl9RSrw/9zs48AeqwGkMIukZduSp9E7AcXGjAw6NazkQGoyyfZD1yJLM0FlG+KzhkSAominGQf1S2o4Rw0aC8+IQfJ7c4nZTi7e9HOenSV+ChOeIcbi4lrssL1yrO1zRlGdOQPfVmMsm7ChEL8ie0XBIq81WP0lRLE4QOnmFH4Aa43eh5V6rUN0rkj4YyxtHDkbbV8WYVcUmUNMDXzX+ry1oKvIwgpmOLIdNh+AqYs99/Q7Ag8OGnbmbC69WonKxippvHpp1tQgXMmrHZFj4MdJuyppKBXUOujGYtKsGU9EAn7XgSW2DdsCJYJHsc86i/B5f4FYD9AEGOTxYQUg2kTh89+3mO4BcC52lIanIyc1aH/fRTVb8RmnHZygQ2YXnjkMgreVNbs="
 
