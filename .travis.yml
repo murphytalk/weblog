@@ -21,6 +21,8 @@ git:
 before_install:
 - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
 - git submodule update --init --recursive
+# remove the above line with the line below to use the latest commit rather than recorded commit in submodules
+#- git submodule update --init --recursive --remote  
 install:
 - pip install pelican
 - pip install Markdown

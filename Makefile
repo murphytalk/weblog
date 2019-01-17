@@ -1,10 +1,5 @@
-ifeq ($(OS),Windows_NT)
-	PELICAN=/c/Python27/Scripts/pelican
-	PY=/c/Python27/python
-else
-	PELICAN=pelican
-	PY=python3
-endif
+PELICAN=pelican
+PY=python
 
 PELICANOPTS=
 
